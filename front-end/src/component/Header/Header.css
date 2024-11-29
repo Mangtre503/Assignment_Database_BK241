@@ -26,19 +26,19 @@
   gap: 40px;
   justify-content: space-between;
   align-items: center;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
   font-size: 24px;
 }
 
-.container-header .right-header h4{
+.container-header .right-header h4, .container-header .right-header img{
     cursor: pointer;
+    text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
 }
 
-.container-header .right-header img{
-    cursor: pointer;
+.container-header .right-header h4:hover{
+    text-decoration: none;
+    color: white;
 }
