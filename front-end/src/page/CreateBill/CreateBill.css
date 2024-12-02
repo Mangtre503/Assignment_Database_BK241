@@ -5,7 +5,7 @@
   width: 76.52%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #ffdfd3; /* Màu nền của tổng thể */
+  background-color: #ffdfd3; 
 }
 
 .create-bill-container h1 {
@@ -33,7 +33,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  background-color: #ffdfd3; /* Màu nền trùng với container chính */
+  background-color: #ffdfd3; 
 }
 
 .grid-item-top {
@@ -41,7 +41,7 @@
 }
 
 .grid-container-top .title {
-  background-color: #ffdfd3; /* Trùng màu nền */
+  background-color: #ffdfd3; 
   color: #957dad;
   font-family: Itim;
   font-size: 24px;
@@ -51,14 +51,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none; /* Bỏ đường viền nếu cần */
+  border: none; 
 }
 
 .grid-container-top .item {
-  border: 2px solid #957dad; /* Có thể giữ viền để tạo điểm nhấn */
+  border: 2px solid #957dad; 
   border-left: none;
   border-bottom: none;
-  background-color: #ffdfd3; /* Trùng màu nền */
+  background-color: #ffdfd3; 
 }
 
 .grid-container-top .item input {
@@ -69,7 +69,7 @@
   font-size: 20px;
   padding: 5px;
   color: #000;
-  background-color: #ffdfd3; /* Trùng màu nền */
+  background-color: #ffdfd3; 
 }
 
 .grid-container-top .item input:focus {

@@ -17,7 +17,6 @@ function InformationAccount() {
   
     return (
       <div className="container-account-info">
-        {/* Main */}
         <main className="main-account-info">
         <div className="avatar-container"> 
             <img src={userInfo.avatar} alt="Avatar" className="avatar-img" /> 

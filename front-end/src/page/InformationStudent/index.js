@@ -2,7 +2,6 @@ import React from "react";
 import "./InformationStudent.css";
 
 function InformationStudent() {
-  // Thông tin học sinh
   const studentInfo = {
     name: "Trần Thanh",
     gender: "Nam",
@@ -12,7 +11,7 @@ function InformationStudent() {
     phoneNumber: "0905 123 456",
     email: "thanhtran123@gmail.com",
     socialMedia: "https://facebook.com/thanhtran123",
-    avatar: process.env.PUBLIC_URL + "/trend-avatar-1.jpg"  // Sử dụng đường dẫn từ thư mục public
+    avatar: process.env.PUBLIC_URL + "/trend-avatar-1.jpg"  
   };
 
   return (

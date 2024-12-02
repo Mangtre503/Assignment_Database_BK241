@@ -3,7 +3,6 @@ import { Grid } from "@mui/material";
 import "./CreateBill.css";
 
 function CreateBill() {
-  // State chứa thông tin hóa đơn
   const [bill, setBill] = useState({
     status: "Đã thanh toán",
     deposit: "2,000,000 VND",
@@ -15,7 +14,7 @@ function CreateBill() {
     classCode: "CLS12345",
   });
 
-  // Hàm xử lý khi giá trị input thay đổi
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setBill((prevBill) => ({
