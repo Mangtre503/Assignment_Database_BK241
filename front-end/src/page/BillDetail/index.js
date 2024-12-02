@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Grid } from "@mui/material";
-import EditIcon from "../../assets/icons/EditIcon.svg"; // Thêm icon nếu cần
+import EditIcon from "../../assets/icons/EditIcon.svg"; 
 import "./BillDetail.css";
 
 function BillDetail() {
