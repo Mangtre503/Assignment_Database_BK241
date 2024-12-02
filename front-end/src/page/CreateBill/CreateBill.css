@@ -1,0 +1,100 @@
+.create-bill-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 76.52%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffdfd3; /* Màu nền của tổng thể */
+}
+
+.create-bill-container h1 {
+  color: #957dad;
+  font-family: Itim;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  margin-top: 72px;
+}
+
+.form-create-bill {
+  width: 100%;
+  margin-top: 28px;
+}
+
+.grid-container-top {
+  height: 50px;
+  color: #000;
+  font-family: Itim;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #ffdfd3; /* Màu nền trùng với container chính */
+}
+
+.grid-item-top {
+  height: 50px;
+}
+
+.grid-container-top .title {
+  background-color: #ffdfd3; /* Trùng màu nền */
+  color: #957dad;
+  font-family: Itim;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none; /* Bỏ đường viền nếu cần */
+}
+
+.grid-container-top .item {
+  border: 2px solid #957dad; /* Có thể giữ viền để tạo điểm nhấn */
+  border-left: none;
+  border-bottom: none;
+  background-color: #ffdfd3; /* Trùng màu nền */
+}
+
+.grid-container-top .item input {
+  width: 90%;
+  border: none;
+  outline: none;
+  font-family: Itim;
+  font-size: 20px;
+  padding: 5px;
+  color: #000;
+  background-color: #ffdfd3; /* Trùng màu nền */
+}
+
+.grid-container-top .item input:focus {
+  border-bottom: 2px solid #957dad;
+}
+
+.top1 {
+  border-left: 2px solid #957dad;
+}
+
+.grid-container-top.top1:last-of-type {
+  border-bottom: 2px solid #957dad;
+}
+
+.confirm-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  background-color: #957dad;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #764b8e;
+}

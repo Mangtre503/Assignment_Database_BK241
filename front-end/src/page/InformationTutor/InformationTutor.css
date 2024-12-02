@@ -1,0 +1,79 @@
+/* Container chính */
+.container-tutor-info {
+    font-family: Arial, sans-serif;
+    background-color: #ffe4e1; /* Nền tổng thể */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+  
+  /* Avatar và thông tin gia sư */
+  .main-tutor-info {
+    margin-top: 20px;
+    text-align: center;
+    width: 90vw; /* Sử dụng đơn vị viewport width để phù hợp với kích thước màn hình */
+    max-width: 1000px; /* Giới hạn độ rộng */
+    background-color: #ffe4e1; /* Màu nền trùng với nền tổng thể */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
+  .avatar-container {
+    margin-bottom: 20px;
+  }
+  
+  .avatar-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Đảm bảo hình tròn hoàn hảo */
+    background-color: #d8bfd8; /* Màu nền avatar */
+    display: inline-block;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ để ảnh nổi bật */
+  }
+  
+  /* Bảng thông tin */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .info-table td {
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .info-table td:first-child {
+    font-weight: bold;
+    width: 30%;
+    color: #4b0082; /* Màu chữ nổi bật */
+  }
+  
+  .info-table td:nth-child(2) {
+    background-color: #ffe4e1; /* Nền nội dung */
+    color: #333; /* Màu chữ nội dung */
+  }
+  
+  .info-table tr {
+    border-bottom: 1px solid #d8bfd8;
+  }
+  
+  .info-table tr:last-child {
+    border-bottom: none;
+  }
+  
+  /* Link mạng xã hội */
+  .info-table a {
+    color: #4b0082;
+    text-decoration: none;
+  }
+  
+  .info-table a:hover {
+    text-decoration: underline;
+  }
+  
