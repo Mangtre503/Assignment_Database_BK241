@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JpaBuddyIdeaProjectConfig">
-    <option name="reLastEntityCreationPackage" value="online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/entity" />
+    <option name="reLastEntityCreationPackage" value="online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/entity/address" />
     <option name="reverseEngineeringLastDbConnectionId" value="2118adaa-99ae-4e5a-b533-e007e5801815" />
   </component>
 </project>

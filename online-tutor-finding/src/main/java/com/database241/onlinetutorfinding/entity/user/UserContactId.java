@@ -1,4 +1,4 @@
-package com.database241.onlinetutorfinding.entity;
+package com.database241.onlinetutorfinding.entity.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -43,5 +43,4 @@ public class UserContactId implements Serializable {
     public int hashCode() {
         return Objects.hash(contactEmail, contactPhoneNumber, socialMediaLink, userId);
     }
-
 }

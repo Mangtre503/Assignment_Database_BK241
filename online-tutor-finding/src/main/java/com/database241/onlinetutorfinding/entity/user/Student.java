@@ -1,4 +1,4 @@
-package com.database241.onlinetutorfinding.entity;
+package com.database241.onlinetutorfinding.entity.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;

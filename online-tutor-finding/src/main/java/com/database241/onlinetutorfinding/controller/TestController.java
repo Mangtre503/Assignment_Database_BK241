@@ -1,11 +1,9 @@
 package com.database241.onlinetutorfinding.controller;
 
 
-import com.database241.onlinetutorfinding.entity.SystemUser;
+import com.database241.onlinetutorfinding.entity.user.SystemUser;
 import com.database241.onlinetutorfinding.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 

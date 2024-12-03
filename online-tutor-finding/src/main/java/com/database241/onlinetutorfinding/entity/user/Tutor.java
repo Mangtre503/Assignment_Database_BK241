@@ -1,10 +1,9 @@
-package com.database241.onlinetutorfinding.entity;
+package com.database241.onlinetutorfinding.entity.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Getter
