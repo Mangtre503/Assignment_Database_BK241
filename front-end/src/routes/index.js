@@ -10,6 +10,8 @@ import InformationTutor from "../page/InformationTutor";
 import Login from "../page/Login";
 import NotFound from "../page/NotFound";
 import TeachingApplication from "../page/TeachingApplication";
+import TutorRegistration from "../page/TutotRegistration";
+import ConsultationRequest from "../page/ConsultationRequest";
 
 const Routers = () => {
     // const userData = useSelector(state => state.accountAction);
@@ -58,6 +60,14 @@ const Routers = () => {
                 {
                     path: 'bill/:idBill',
                     element: <BillDetail/>
+                },
+                {
+                    path: 'tutorRegistration',
+                    element: <TutorRegistration/>
+                },
+                {
+                    path: 'consultationRequest',
+                    element: <ConsultationRequest/>
                 },
                 {
                     path: '*',

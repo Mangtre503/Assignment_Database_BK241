@@ -1,66 +1,48 @@
+/* Styles for the container card */
 .container-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #957dad;
-    text-align: center;
-    font-family: Itim;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border-radius: 20px;
-    border: 2px solid #957dad;
-    border-top: none;
-    background: #e0bbe4;
-    flex-grow: 1;
-    height: 152px;
-  }
-  
-  .container-card .title-card {
-    border-radius: 20px;
-    border: 2px solid #957dad;
-    background: #fec8d8;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #957dad;
+  text-align: left;
+  font-family: Itim, sans-serif;
+  font-size: 18px;
+  background: #e0bbe4;
+  border: 2px solid #957dad;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
 
-    align-items: center;
-  }
+/* Styles for the title card */
+.container-card .title-card {
+  font-weight: bold;
+  background-color: #fec8d8;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Styles for the content card */
+.container-card .content-card {
+  display: flex;
+  justify-content: space-between;
   
-  .container-card .title-card h4 {
-    color: #1e1e1e;
-  }
-  
-  .container-card h5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .container-card h5 p {
-    color: #1e1e1e;
-  }
-  
-  .container-card .content-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-left: 11.46px;
-    padding-right: 11.46px;
-  }
-  
-  .container-card .content-card .left-content {
-    text-align: left;
-  }
-  
-  .container-card .content-card .right-content {
-    text-align: right;
-  }
-  
-  .container-card .content-card span {
-    color: #1e1e1e;
-  }
-  
+  gap: 10px;
+}
+
+/* Styles for the left and right content */
+.container-card .content-card .left-content,
+.container-card .content-card .right-content {
+  flex-basis: 48%;
+}
+
+/* Styles for content spans */
+.container-card .content-card span {
+  color: #1e1e1e;
+}
