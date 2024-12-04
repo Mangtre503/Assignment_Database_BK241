@@ -1,8 +1,8 @@
 package com.database241.onlinetutorfinding.controller;
 
 
-import com.database241.onlinetutorfinding.entity.clAss.Subject;
-import com.database241.onlinetutorfinding.repository.SubjectRepository;
+import com.database241.onlinetutorfinding.entity.clAss.ClassType;
+import com.database241.onlinetutorfinding.repository.ClassTypeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,21 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @RestController
-@RequestMapping("api/v1/subjects")
+@RequestMapping("api/v1/types")
 @RequiredArgsConstructor
-public class SubjectController
+public class ClassTypeController
 {
-    private final SubjectRepository subjectRepository;
+    private final ClassTypeRepository classTypeRepository;
+
 
     @GetMapping
     /*
     Skip service layer because of simplicity
      */
-    ResponseEntity<List<Subject>> getAllSubjects()
+    ResponseEntity<List<ClassType>> getAllClassTypes()
     {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(subjectRepository.findAll());
+                .body(classTypeRepository.findAll());
     }
 }

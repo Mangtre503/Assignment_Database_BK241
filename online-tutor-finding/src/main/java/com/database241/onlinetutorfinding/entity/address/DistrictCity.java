@@ -15,8 +15,8 @@ public class DistrictCity {
     @MapsId("proId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "pro_id", nullable = false)
-    private Province pro;
+    private Province province;
 
     @Column(name = "name")
-    private String name;
+    private String districtCityName;
 }

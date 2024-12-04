@@ -19,11 +19,11 @@ public class Address {
     private Integer houseNumber;
 
     @Column(name = "str_name")
-    private String strName;
+    private String streetName;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
-    private SystemUser user;
+    private SystemUser systemUser;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumns({
@@ -32,5 +32,4 @@ public class Address {
             @JoinColumn(name = "ward_id", referencedColumnName = "ward_id")
     })
     private Ward ward;
-
 }

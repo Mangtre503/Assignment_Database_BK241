@@ -15,5 +15,5 @@ public class Province {
     private Long id;
 
     @Column(name = "pro_name")
-    private String proName;
+    private String provinceName;
 }
