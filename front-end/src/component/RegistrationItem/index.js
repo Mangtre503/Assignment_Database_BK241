@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./ClassItem.css";
+import "./RegistrationItem.css";
 
-function ClassItem(props) {
+function RegistrationItem(props) {
   const { infoClass } = props;
   const navigate = useNavigate();
   return (
@@ -30,4 +30,4 @@ function ClassItem(props) {
   );
 }
 
-export default ClassItem;
+export default RegistrationItem;
