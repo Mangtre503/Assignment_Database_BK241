@@ -4,12 +4,12 @@ import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
-import ClassItem from "../../component/RegistrationItem";
+import RegistrationItem from "../../component/RegistrationItem";
 import "./TutorRegistration.css";
 
 function TutorRegistration() {
   // Variable + Hook
-  const listClass = [
+  const listRegistration = [
     {
       classId: "1",
       studentName: "Trần Thanh",
@@ -45,6 +45,18 @@ function TutorRegistration() {
       phoneNumber: "0987 654 321",
       status: "Đã xử lý",
       requirements: "Lịch trình linh hoạt, có thể làm việc vào cuối tuần hoặc buổi tối.",
+    },
+    {
+      classId: "4",
+      studentName: "Đặng Bảo Trâm",
+      subjects: ["KHXH", "Toán", "Ngữ văn"],
+      grade: 2,
+      address: "8, đường Hòa Bình, phường Hiệp Tân, quận Tân Phú, TP. Hồ Chí Minh",
+      teachingStyle: "Trực tiếp",
+      tutorName: "Trần Tuấn Anh",
+      phoneNumber: "0923 123 789",
+      status: "Chưa xử lý",
+      requirements: "Thành thạo các công cụ và nền tảng dạy học trực tuyến.",
     },
   ];
 
@@ -123,8 +135,8 @@ function TutorRegistration() {
           })}
         </div>
         <div className="container-card-list">
-          {listClass.map((item) => (
-            <ClassItem key={item.classId} infoClass={item} />
+          {listRegistration.map((item) => (
+            <RegistrationItem key={item.classId} infoRegistration={item} />
           ))}
         </div>
       </div>

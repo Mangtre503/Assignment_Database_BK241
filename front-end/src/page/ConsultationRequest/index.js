@@ -1,34 +1,58 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
+import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
+import TrashIcon from "../../assets/icons/TrashIcon.svg";
+import RequestItem from "../../component/RequestItem";
 import "./ConsultationRequest.css";
 
 function ConsultationRequest() {
-  const requests = [
+  // Variable + Hook
+  const listRequests = [
     {
-      id: 1,
+      requestId: "1",
       status: "Đã xử lý",
-      student: "Trần Thanh",
-      subjects: ["Ngữ Văn", "KHXH", "Toán"],
+      studentName: "Trần Thanh",
+      subjects: ["Ngữ văn", "KHXH", "Toán"],
       address: "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
-      teachingStyle: "Trực tiếp",
-      grade: 4,
-      phone: "0905 123 456"
+      teachingMethod: "Trực tiếp",
+      classLevel: 4,
+      phoneNumber: "0912 987 654",
     },
     {
-      id: 2,
+      requestId: "2",
       status: "Đã xử lý",
-      student: "Nguyễn Hoàng Anh",
-      subjects: ["Toán", "Toán", "KHTN"],
+      studentName: "Nguyễn Hoàng Anh",
+      subjects: ["Toán", "Tiếng Anh"],
       address: "215, đường Nguyễn Văn Trỗi, phường 11, quận Phú Nhuận, TP. Hồ Chí Minh",
-      teachingStyle: "Trực tiếp",
-      grade: 8,
-      phone: "0937 456 789"
+      teachingMethod: "Trực tiếp",
+      classLevel: 8,
+      phoneNumber: "0937 456 789",
     },
-    // Additional request entries...
+    {
+      requestId: "3",
+      status: "Đã xử lý",
+      studentName: "Lê Khánh Linh",
+      subjects: ["Tiếng Anh", "Ngữ văn", "KHTN"],
+      address: "66, đường Cô Bắc, phường Cầu Ông Lãnh, quận 1, TP. Hồ Chí Minh",
+      teachingMethod: "Trực tiếp",
+      classLevel: 11,
+      phoneNumber: "0987 654 321",
+    },
+  ];
+
+  const sortList = [
+    "Khối lớp",
+    "Kiểu dạy",
+    "Trạng thái",
+    "Môn học",
+    "SĐT học viên",
   ];
 
   const [selectedDateFrom, setSelectedDateFrom] = useState();
   const [selectedDateTo, setSelectedDateTo] = useState();
+  const navigate = useNavigate();
 
   function handleFocus(e) {
     if (e.target.tagName !== "LABEL") {
@@ -49,50 +73,54 @@ function ConsultationRequest() {
   }
 
   return (
-    <div className="container-requests">
-      <h1>Danh sách đơn yêu cầu tư vấn</h1>
-      <div className="container-filter-request">
-        <div className="box-filter filter-from">
-          <h3>Lọc từ ngày: </h3>
-          <div className="box-inp">
-            <label htmlFor="from-date" id="from-date" onClick={handleFocus}>
-              <p>{selectedDateFrom || "nhập ngày bắt đầu..."}</p>
-              <img src={CalendarIcon} alt="CalendarIcon" />
-            </label>
-            <input id="from-date-inp" onChange={handleChangeDate} type="date" />
+    <>
+      <div className="container-requests">
+        <h1>Danh sách yêu cầu tư vấn</h1>
+        <div className="container-filter-request">
+          <div className="box-filter filter-from">
+            <h3>Lọc từ ngày:</h3>
+            <div className="box-inp">
+              <label htmlFor="from-date" id="from-date" onClick={handleFocus}>
+                <p>{selectedDateFrom || "Nhập ngày bắt đầu..."}</p>
+                <img src={CalendarIcon} alt="CalendarIcon" />
+              </label>
+              <input
+                id="from-date-inp"
+                onChange={handleChangeDate}
+                type="date"
+              />
+            </div>
+          </div>
+          <h3>đến ngày:</h3>
+          <div className="filter-to box-filter">
+            <div className="box-inp">
+              <label htmlFor="to-date" id="to-date" onClick={handleFocus}>
+                <p>{selectedDateTo || "Nhập ngày kết thúc..."}</p>
+                <img src={CalendarIcon} alt="CalendarIcon" />
+              </label>
+              <input id="to-date-inp" onChange={handleChangeDate} type="date" />
+            </div>
+          </div>
+          <div className="option-btn">
+            <img src={AddIcon} alt="AddIcon" />
+            <img src={TrashIcon} alt="TrashIcon" />
           </div>
         </div>
-        <h3>đến ngày: </h3>
-        <div className="filter-to box-filter">
-          <div className="box-inp">
-            <label htmlFor="to-date" id="to-date" onClick={handleFocus}>
-              <p>{selectedDateTo || "nhập ngày kết thúc..."}</p>
-              <img src={CalendarIcon} alt="CalendarIcon" />
-            </label>
-            <input id="to-date-inp" onChange={handleChangeDate} type="date" />
-          </div>
+        <div className="sort-list">
+          {sortList.map((item) => (
+            <div className="sort-item" key={item}>
+              <h4>{item}</h4>
+              <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
+            </div>
+          ))}
+        </div>
+        <div className="container-card-list">
+          {listRequests.map((item) => (
+            <RequestItem key={item.requestId} infoRequest={item} />
+          ))}
         </div>
       </div>
-      <div className="filter-options">
-        <div className="filter-option">Khối lớp</div>
-        <div className="filter-option">Kiểu dạy</div>
-        <div className="filter-option">Trạng thái</div>
-        <div className="filter-option">Môn học</div>
-        <div className="filter-option">SDT học viên</div>
-      </div>
-      {requests.map((req) => (
-        <div key={req.id} className="request-card">
-          <h3>Mã đơn yêu cầu tư vấn: {req.id}</h3>
-          <p><strong>Trạng thái:</strong> {req.status}</p>
-          <p><strong>Học viên:</strong> {req.student}</p>
-          <p><strong>Môn học:</strong> {req.subjects.join(", ")}</p>
-          <p><strong>Địa chỉ:</strong> {req.address}</p>
-          <p><strong>Kiểu dạy:</strong> {req.teachingStyle}</p>
-          <p><strong>Khối lớp:</strong> {req.grade}</p>
-          <p><strong>SDT:</strong> {req.phone}</p>
-        </div>
-      ))}
-    </div>
+    </>
   );
 }
 

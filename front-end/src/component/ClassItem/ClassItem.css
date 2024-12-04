@@ -13,8 +13,8 @@
     border: 2px solid #957dad;
     border-top: none;
     background: #e0bbe4;
-    padding: 10px;
-    margin: 10px;
+    flex-grow: 1;
+    height: 152px;
   }
   
   .container-card .title-card {
@@ -25,11 +25,21 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
+
     align-items: center;
-    padding: 5px;
   }
   
   .container-card .title-card h4 {
+    color: #1e1e1e;
+  }
+  
+  .container-card h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container-card h5 p {
     color: #1e1e1e;
   }
   
@@ -53,3 +63,4 @@
   .container-card .content-card span {
     color: #1e1e1e;
   }
+  

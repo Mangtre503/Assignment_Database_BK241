@@ -2,7 +2,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 import Layout from "../component/Layout";
 import BillDetail from "../page/BillDetail";
 import ClassDetail from "../page/ClassDetail";
-import Classes from "../page/Classes";
+// import Classes from "../page/Classes";
 import CreateBill from "../page/CreateBill";
 import InformationAccount from "../page/InformationAccount";
 import InformationStudent from "../page/InformationStudent";
@@ -10,7 +10,7 @@ import InformationTutor from "../page/InformationTutor";
 import Login from "../page/Login";
 import NotFound from "../page/NotFound";
 import TeachingApplication from "../page/TeachingApplication";
-import TutorRegistration from "../page/TutotRegistration";
+// import TutorRegistration from "../page/TutorRegistration";
 import ConsultationRequest from "../page/ConsultationRequest";
 
 const Routers = () => {
@@ -41,10 +41,10 @@ const Routers = () => {
                     path: 'information-tutor/:idTutor',
                     element: <InformationTutor/>
                 },
-                {
-                    path: 'class',
-                    element: <Classes/>
-                },
+                // {
+                //     path: 'class',
+                //     element: <Classes/>
+                // },
                 {
                     path: 'class/:idClass',
                     element: <ClassDetail/>
@@ -61,10 +61,10 @@ const Routers = () => {
                     path: 'bill/:idBill',
                     element: <BillDetail/>
                 },
-                {
-                    path: 'tutorRegistration',
-                    element: <TutorRegistration/>
-                },
+                // {
+                //     path: 'tutorRegistration',
+                //     element: <TutorRegistration/>
+                // },
                 {
                     path: 'consultationRequest',
                     element: <ConsultationRequest/>
