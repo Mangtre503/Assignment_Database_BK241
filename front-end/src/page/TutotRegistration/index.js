@@ -4,7 +4,7 @@ import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
-import ClassItem from "../../component/ClassItem";
+import ClassItem from "../../component/RegistrationItem";
 import "./TutorRegistration.css";
 
 function TutorRegistration() {
