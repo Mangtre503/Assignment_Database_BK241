@@ -7,7 +7,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "user")
+@Table(name = "oft_user")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class SystemUser
 {
