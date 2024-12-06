@@ -16,11 +16,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AddressController
 {
-//    private final;
+//    private final AddressService addressService;
 //
 //
 //    @GetMapping("{phoneNumber}")
-//    public List<AddressGetAllAddressesResponseDto> getAddress(@PathVariable("phoneNumber") String phoneNumber)
+//    public List<AddressGetAddressesDto> getAddress(@PathVariable("phoneNumber") String phoneNumber)
 //    {
 //        return addressService.getAllAddresses(phoneNumber);
 //    }

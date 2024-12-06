@@ -13,7 +13,7 @@ public class DistrictCity {
     private DistrictCityId id;
 
     @MapsId("proId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "pro_id", nullable = false)
     private Province province;
 

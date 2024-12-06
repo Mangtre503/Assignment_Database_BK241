@@ -2,13 +2,15 @@ package com.database241.onlinetutorfinding.entity.address;
 
 import com.database241.onlinetutorfinding.entity.user.SystemUser;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "address")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +27,7 @@ public class Address {
     @JoinColumn(name = "user_id", nullable = false)
     private SystemUser systemUser;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumns({
             @JoinColumn(name = "dist_city_id", referencedColumnName = "dist_city_id"),
             @JoinColumn(name = "pro_id", referencedColumnName = "pro_id"),

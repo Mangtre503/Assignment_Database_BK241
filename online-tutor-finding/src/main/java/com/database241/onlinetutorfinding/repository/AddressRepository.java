@@ -13,9 +13,11 @@ import java.util.List;
 @Repository
 public interface AddressRepository extends JpaRepository<Address, Long>
 {
-    @Query("SELECT a " +
-            "FROM Address a " +
-            "JOIN a.systemUser u " +
-            "WHERE u.phoneNumber = :phoneNumber")
+    @Query("select a from Address a " +
+            "join fetch a.ward w " +
+            "join fetch w.districtCity d " +
+            "join fetch d.province p " +
+            "join a.systemUser u " +
+            "where u.phoneNumber = :phoneNumber")
     List<Address> findAddressesByPhoneNumber(@Param("phoneNumber") String phoneNumber);
 }

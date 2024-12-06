@@ -13,7 +13,7 @@ public class Ward {
     private WardId id;
 
     @MapsId("districtCityId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumns({
             @JoinColumn(name = "dist_city_id", referencedColumnName = "dist_city_id", nullable = false),
             @JoinColumn(name = "pro_id", referencedColumnName = "pro_id", nullable = false)
