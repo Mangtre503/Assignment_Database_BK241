@@ -5,6 +5,7 @@ import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import ClassItem from "../../component/ClassItem";
+import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import "./Classes.css";
 
 function Classes() {
@@ -86,13 +87,15 @@ function Classes() {
           </div>
         </div>
         <div className="sort-list">
-          {sortList.map((item) => {
+          {sortList.map((item, index) => {
             return (
               <>
                 <div className="sort-item">
-                  <h4>{item}</h4>
-                  <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
-                </div>
+                <h4>{item}</h4>
+              {index === sortList.length - 1? 
+                <img src={SearchIcon} alt="SearchIcon" /> : <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
+              }
+              </div>
               </>
             );
           })}

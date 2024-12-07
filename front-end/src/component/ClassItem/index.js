@@ -17,7 +17,7 @@ function ClassItem(props){
         <div className="content-card">
           <div className="left-content">
             <p>
-              Trạng thái: <span>{infoClass.status}</span>
+              Trạng thái: <span className={"status " + (infoClass.status === "Đã giao"? "assigned" : "not-yet-assigned")}>{infoClass.status}</span>
             </p>
             <p>
               Kiểu dạy: <span>{infoClass.teachingStyle}</span>

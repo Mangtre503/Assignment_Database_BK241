@@ -11,10 +11,10 @@
     line-height: normal;
     border-radius: 20px;
     border: 2px solid #957dad;
-    border-top: none;
     background: #e0bbe4;
+    flex-basis: 470px;
     flex-grow: 1;
-    height: 152px;
+    padding: 10px;
   }
   
   .container-card .title-card {
@@ -54,6 +54,26 @@
   
   .container-card .content-card .left-content {
     text-align: left;
+  }
+  .container-card .content-card .left-content p {
+    display: flex;
+  }
+
+  .container-card .content-card .left-content p span{
+    display: flex;
+    align-items: center;
+  }
+
+  .container-card .content-card .left-content p span img{
+    cursor: pointer;
+  }
+
+  .container-card .content-card .left-content .assigned{
+    background: #FEC8D8;
+  }
+
+  .container-card .content-card .left-content .not-yet-assigned{
+    background: #D291BC;
   }
   
   .container-card .content-card .right-content {

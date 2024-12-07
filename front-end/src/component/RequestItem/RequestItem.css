@@ -1,116 +1,16 @@
-/* Container chính cho từng yêu cầu */
-.request-container-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #6a2c70; /* Màu chữ chính */
-  text-align: left;
-  font-family: 'Itim', sans-serif;
-  font-size: 18px;
-  background: #f9e4f0; /* Nền nhẹ nhàng */
-  border: 2px solid #957dad; /* Đường viền phù hợp với giao diện */
+.container-card .content-card .left-content .status{
   border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
-  max-width: 400px;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1px 7px;
 }
 
-/* Hiệu ứng hover cho card */
-.request-container-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.container-card .content-card .left-content .processed{
+  background: #FFDFD3;
 }
 
-/* Tiêu đề cho từng thẻ */
-.request-title-card {
-  font-weight: bold;
-  background-color: #fec8d8;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 10px;
-  color: #4a2c50; /* Màu chữ tối hơn cho tiêu đề */
+.container-card .content-card .left-content .not-yet-processed{
+  background: #FEC8D8;
 }
 
-/* Nội dung chính trong thẻ */
-.request-content-card {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Phần nội dung bên trái */
-.request-content-card .left-content {
-  flex-basis: 48%;
-  color: #1e1e1e; /* Màu chữ đậm hơn cho nội dung */
-  line-height: 1.6; /* Dòng cách thoải mái */
-}
-
-/* Phần nội dung bên phải */
-.request-content-card .right-content {
-  flex-basis: 48%;
-  color: #1e1e1e;
-  line-height: 1.6;
-}
-
-/* Styling cho đoạn văn bản */
-.request-container-card p {
-  margin: 5px 0;
-  font-size: 16px;
-  color: #1e1e1e; /* Màu chữ nổi bật */
-}
-
-/* Trạng thái yêu cầu */
-.request-status {
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-/* Các màu trạng thái */
-.request-status.processed {
-  background-color: #d4edda;
-  color: #155724; /* Trạng thái đã xử lý */
-}
-
-.request-status.pending {
-  background-color: #fff3cd;
-  color: #856404; /* Trạng thái chờ xử lý */
-}
-
-.request-status.failed {
-  background-color: #f8d7da;
-  color: #721c24; /* Trạng thái thất bại */
-}
-
-/* Đường viền phân cách giữa các phần (nếu cần) */
-.request-divider {
-  width: 100%;
-  height: 1px;
-  background: #ddd;
-  margin: 10px 0;
-  border: none;
-}
-
-/* Responsive design cho card */
-@media (max-width: 768px) {
-  .request-container-card {
-    max-width: 100%;
-  }
-
-  .request-content-card {
-    flex-direction: column;
-  }
-
-  .request-content-card .left-content,
-  .request-content-card .right-content {
-    flex-basis: 100%;
-  }
+.container-card .content-card .left-content p:first-of-type{
+  margin-top: 5px;
 }

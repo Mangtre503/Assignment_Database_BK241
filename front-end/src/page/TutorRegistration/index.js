@@ -4,6 +4,7 @@ import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
+import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import RegistrationItem from "../../component/RegistrationItem";
 import "./TutorRegistration.css";
 
@@ -11,7 +12,7 @@ function TutorRegistration() {
   // Variable + Hook
   const listRegistration = [
     {
-      classId: "1",
+      taId: "1",
       studentName: "Trần Thanh",
       subjects: ["Ngữ văn", "KHXH", "Toán"],
       grade: 4,
@@ -19,11 +20,11 @@ function TutorRegistration() {
       teachingStyle: "Trực tiếp",
       tutorName: "Nguyễn Việt Anh",
       phoneNumber: "0912 987 654",
-      status: "Đã xử lý",
+      status: "Đã mở lớp",
       requirements: "Tốt nghiệp đại học chuyên ngành liên quan.",
     },
     {
-      classId: "2",
+      taId: "2",
       studentName: "Nguyễn Hoàng Anh",
       subjects: ["Toán", "Tiếng Anh"],
       grade: 8,
@@ -31,11 +32,11 @@ function TutorRegistration() {
       teachingStyle: "Trực tiếp",
       tutorName: "Phạm Linh Nguyên",
       phoneNumber: "0937 456 789",
-      status: "Đã xử lý",
+      status: "Đã hủy bỏ",
       requirements: "Ít nhất 1-2 năm kinh nghiệm dạy kèm hoặc giảng dạy.",
     },
     {
-      classId: "3",
+      taId: "3",
       studentName: "Lê Khánh Linh",
       subjects: ["Tiếng Anh", "Ngữ văn", "KHTN"],
       grade: 11,
@@ -43,11 +44,11 @@ function TutorRegistration() {
       teachingStyle: "Trực tiếp",
       tutorName: "Nguyễn Duy",
       phoneNumber: "0987 654 321",
-      status: "Đã xử lý",
+      status: "Đang xử lý",
       requirements: "Lịch trình linh hoạt, có thể làm việc vào cuối tuần hoặc buổi tối.",
     },
     {
-      classId: "4",
+      taId: "4",
       studentName: "Đặng Bảo Trâm",
       subjects: ["KHXH", "Toán", "Ngữ văn"],
       grade: 2,
@@ -96,10 +97,10 @@ function TutorRegistration() {
         <h1>Danh sách đơn đăng ký gia sư</h1>
         <div className="container-filter-class">
           <div className="box-filter filter-from">
-            <h3>Lọc từ ngày:</h3>
+            <h3>Lọc từ ngày: </h3>
             <div className="box-inp">
               <label htmlFor="from-date" id="from-date" onClick={handleFocus}>
-                <p>{selectedDateFrom || "Nhập ngày bắt đầu..."}</p>
+                <p>{selectedDateFrom || "nhập ngày bắt đầu..."}</p>
                 <img src={CalendarIcon} alt="CalendarIcon" />
               </label>
               <input
@@ -109,11 +110,11 @@ function TutorRegistration() {
               />
             </div>
           </div>
-          <h3>đến ngày:</h3>
+          <h3>đến ngày: </h3>
           <div className="filter-to box-filter">
             <div className="box-inp">
               <label htmlFor="to-date" id="to-date" onClick={handleFocus}>
-                <p>{selectedDateTo || "Nhập ngày kết thúc..."}</p>
+                <p>{selectedDateTo || "nhập ngày kết thúc..."}</p>
                 <img src={CalendarIcon} alt="CalendarIcon" />
               </label>
               <input id="to-date-inp" onChange={handleChangeDate} type="date" />
@@ -125,18 +126,22 @@ function TutorRegistration() {
           </div>
         </div>
         <div className="sort-list">
-          {sortList.map((item) => {
+        {sortList.map((item, index) => {
             return (
-              <div className="sort-item" key={item}>
+              <>
+                <div className="sort-item">
                 <h4>{item}</h4>
-                <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
+              {index === sortList.length - 1? 
+                <img src={SearchIcon} alt="SearchIcon" /> : <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
+              }
               </div>
+              </>
             );
           })}
         </div>
         <div className="container-card-list">
           {listRegistration.map((item) => (
-            <RegistrationItem key={item.classId} infoRegistration={item} />
+            <RegistrationItem infoRegistration={item} />
           ))}
         </div>
       </div>

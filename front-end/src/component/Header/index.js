@@ -24,6 +24,8 @@ function Header() {
           <h3>Hệ thống Gia sư Dạy kèm tại nhà</h3>
         </div>
         <div className="right-header">
+          <h4 onClick={() => navigate("/tutor-registration")}>Danh sách đơn đăng ký gia sư</h4>
+          <h4 onClick={() => navigate("/consultation-request")}>Danh sách đơn yêu cầu tư vấn</h4>
           <h4 onClick={() => navigate("/class")}>Danh sách lớp học</h4>
           <img
             onClick={() => navigate("/information")}

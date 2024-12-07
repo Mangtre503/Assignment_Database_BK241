@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
+import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import RequestItem from "../../component/RequestItem";
 import "./ConsultationRequest.css";
@@ -18,7 +19,7 @@ function ConsultationRequest() {
       address: "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
       teachingMethod: "Trực tiếp",
       classLevel: 4,
-      phoneNumber: "0912 987 654",
+      phoneNumber: "0912987654",
     },
     {
       requestId: "2",
@@ -28,17 +29,17 @@ function ConsultationRequest() {
       address: "215, đường Nguyễn Văn Trỗi, phường 11, quận Phú Nhuận, TP. Hồ Chí Minh",
       teachingMethod: "Trực tiếp",
       classLevel: 8,
-      phoneNumber: "0937 456 789",
+      phoneNumber: "0937456789",
     },
     {
       requestId: "3",
-      status: "Đã xử lý",
+      status: "Chưa xử lý",
       studentName: "Lê Khánh Linh",
       subjects: ["Tiếng Anh", "Ngữ văn", "KHTN"],
       address: "66, đường Cô Bắc, phường Cầu Ông Lãnh, quận 1, TP. Hồ Chí Minh",
       teachingMethod: "Trực tiếp",
       classLevel: 11,
-      phoneNumber: "0987 654 321",
+      phoneNumber: "0987654321",
     },
   ];
 
@@ -74,14 +75,14 @@ function ConsultationRequest() {
 
   return (
     <>
-      <div className="container-requests">
-        <h1>Danh sách yêu cầu tư vấn</h1>
-        <div className="container-filter-request">
+      <div className="container-classes">
+        <h1>Danh sách đơn yêu cầu tư vấn</h1>
+        <div className="container-filter-class">
           <div className="box-filter filter-from">
-            <h3>Lọc từ ngày:</h3>
+            <h3>Lọc từ ngày: </h3>
             <div className="box-inp">
               <label htmlFor="from-date" id="from-date" onClick={handleFocus}>
-                <p>{selectedDateFrom || "Nhập ngày bắt đầu..."}</p>
+                <p>{selectedDateFrom || "nhập ngày bắt đầu..."}</p>
                 <img src={CalendarIcon} alt="CalendarIcon" />
               </label>
               <input
@@ -91,11 +92,11 @@ function ConsultationRequest() {
               />
             </div>
           </div>
-          <h3>đến ngày:</h3>
+          <h3>đến ngày: </h3>
           <div className="filter-to box-filter">
             <div className="box-inp">
               <label htmlFor="to-date" id="to-date" onClick={handleFocus}>
-                <p>{selectedDateTo || "Nhập ngày kết thúc..."}</p>
+                <p>{selectedDateTo || "nhập ngày kết thúc..."}</p>
                 <img src={CalendarIcon} alt="CalendarIcon" />
               </label>
               <input id="to-date-inp" onChange={handleChangeDate} type="date" />
@@ -107,16 +108,22 @@ function ConsultationRequest() {
           </div>
         </div>
         <div className="sort-list">
-          {sortList.map((item) => (
-            <div className="sort-item" key={item}>
-              <h4>{item}</h4>
-              <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
-            </div>
-          ))}
+        {sortList.map((item, index) => {
+            return (
+              <>
+                <div className="sort-item">
+                <h4>{item}</h4>
+              {index === sortList.length - 1? 
+                <img src={SearchIcon} alt="SearchIcon" /> : <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
+              }
+              </div>
+              </>
+            );
+          })}
         </div>
         <div className="container-card-list">
           {listRequests.map((item) => (
-            <RequestItem key={item.requestId} infoRequest={item} />
+            <RequestItem infoRequest={item} />
           ))}
         </div>
       </div>

@@ -1,9 +1,28 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./InformationTutor.css";
+import { Box, Grid, Rating } from "@mui/material";
+import UserInfoIcon from "../../assets/icons/UserInfoIcon.svg";
 
 function InformationTutor() {
   const { idTutor } = useParams();
+
+  const title = [
+    "Họ và tên",
+    "Giới tính",
+    "Ngày sinh",
+    "Quê quán",
+    "CCCD/ CMND",
+    "Số điện thoại",
+    "Email",
+    "Mạng xã hội",
+    "Địa chỉ",
+    "Ngày tham gia",
+    "Mã giới thiệu",
+    "Số lần giới thiệu",
+    "Mã được giới thiệu",
+    "Tiểu sử",
+  ];
 
   // Thông tin gia sư
   const tutorInfo = {
@@ -12,7 +31,7 @@ function InformationTutor() {
     birthDate: "29/07/1999",
     hometown: "Lâm Đồng",
     idCard: "079618930726",
-    phoneNumber: "0981 234 567",
+    phoneNumber: "0981234567",
     email: "vietanh7777@gmail.com",
     socialMedia: "https://facebook.com/vietanh7777",
     address: "25, đường Lê Duẩn, phường Bến Nghé, quận 1, TP. Hồ Chí Minh",
@@ -20,81 +39,79 @@ function InformationTutor() {
     referralCode: "A3B2C1",
     numberOfReferrals: 1,
     referredByCode: "",
-    biography: "Gia sư với 5 năm kinh nghiệm, giúp học sinh phát huy tối đa khả năng học tập và đạt kết quả xuất sắc."
+    biography:
+      "Gia sư với 5 năm kinh nghiệm, giúp học sinh phát huy tối đa khả năng học tập và đạt kết quả xuất sắc.",
   };
 
   return (
-    <div className="container-tutor-info">
-      {/* Main */}
-      <main className="main-tutor-info">
-        <div className="avatar-container">
-          <img src={process.env.PUBLIC_URL + "/trend-avatar-1.jpg"} alt="Avatar" className="avatar-img" />
+    <div className="container-information-account">
+      <div>
+        
+      <Box display="flex" alignItems="center">
+      <Rating
+        name="half-rating"
+        value={2.4}
+        precision={0.1} // Cho phép hiển thị nửa sao hoặc số lẻ
+        readOnly
+        sx={{color: '#D291BC'}}
+        />
+      </Box>
+      <img src={UserInfoIcon} alt="UserInfoIcon" />
         </div>
-        <table className="info-table">
-          <tbody>
-            <tr>
-              <td>Họ và tên</td>
-              <td>{tutorInfo.name}</td>
-            </tr>
-            <tr>
-              <td>Giới tính</td>
-              <td>{tutorInfo.gender}</td>
-            </tr>
-            <tr>
-              <td>Ngày sinh</td>
-              <td>{tutorInfo.birthDate}</td>
-            </tr>
-            <tr>
-              <td>Quê quán</td>
-              <td>{tutorInfo.hometown}</td>
-            </tr>
-            <tr>
-              <td>CCCD/CMND</td>
-              <td>{tutorInfo.idCard}</td>
-            </tr>
-            <tr>
-              <td>Số điện thoại</td>
-              <td>{tutorInfo.phoneNumber}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>{tutorInfo.email}</td>
-            </tr>
-            <tr>
-              <td>Mạng xã hội</td>
-              <td>
-                <a
-                  href={tutorInfo.socialMedia}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {tutorInfo.socialMedia}
+      <Grid
+        className="container-grid"
+        container
+        sx={{ borderCollapse: "collapse", border: "1px solid #957DAD" }}
+      >
+        {Object.entries(tutorInfo).map((item, index) => (
+          <>
+            <Grid
+              item
+              xs={
+                title[index] === "Số lần giới thiệu" ||
+                title[index] === "Mã được giới thiệu"
+                  ? 2
+                  : 3
+              }
+              className="item title"
+              sx={{
+                border: "1px solid #957DAD",
+                backgroundColor: "#FEC8D8",
+                color: "#957DAD",
+              }}
+            >
+              {title[index]}
+            </Grid>
+            <Grid
+              item
+              xs={
+                title[index] === "Mã giới thiệu" ||
+                title[index] === "Mã được giới thiệu"
+                  ? 2
+                  : title[index] === "Số lần giới thiệu"
+                  ? 1
+                  : 9
+              }
+              className="item"
+              sx={{ border: "1px solid #957DAD" }}
+            >
+              {title[index] === "Mạng xã hội" ? (
+                <a style={{ color: "#000" }} href={item[1]}>
+                  {item[1]}
                 </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Địa chỉ</td>
-              <td>{tutorInfo.address}</td>
-            </tr>
-            <tr>
-              <td>Ngày tham gia</td>
-              <td>{tutorInfo.dateJoined}</td>
-            </tr>
-            <tr>
-              <td>Mã được giới thiệu</td>
-              <td>{tutorInfo.referralCode}</td>
-            </tr>
-            <tr>
-              <td>Số lần giới thiệu</td>
-              <td>{tutorInfo.numberOfReferrals}</td>
-            </tr>
-            <tr>
-              <td>Tiểu sử</td>
-              <td>{tutorInfo.biography}</td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
+              ) : title[index] === "Số điện thoại" ? (
+                String(item[1]).substring(0, 4) +
+                " " +
+                String(item[1]).substring(4, 7) +
+                " " +
+                String(item[1]).substring(7, 10)
+              ) : (
+                item[1]
+              )}
+            </Grid>
+          </>
+        ))}
+      </Grid>
     </div>
   );
 }

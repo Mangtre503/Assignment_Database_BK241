@@ -1,71 +1,76 @@
 import React from "react";
 import "./InformationStudent.css";
+import UserInfoIcon from "../../assets/icons/UserInfoIcon.svg";
+import { Grid } from "@mui/material";
 
 function InformationStudent() {
+  const title = [
+    "Họ và tên",
+    "Giới tính",
+    "Khối lớp",
+    "Trường",
+    "Địa chỉ",
+    "Số điện thoại",
+    "Email",
+    "Mạng xã hội",
+  ];
   const studentInfo = {
     name: "Trần Thanh",
     gender: "Nam",
     grade: "4",
     school: "Trường Tiểu học Quốc tế Á Châu",
-    address: "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
-    phoneNumber: "0905 123 456",
+    address:
+      "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
+    phoneNumber: "0905123456",
     email: "thanhtran123@gmail.com",
     socialMedia: "https://facebook.com/thanhtran123",
-    avatar: process.env.PUBLIC_URL + "/trend-avatar-1.jpg"  
   };
 
   return (
-    <div className="container-student-info">
-      {/* Main */}
-      <main className="main-student-info">
-        <div className="avatar-container">
-          <img src={studentInfo.avatar} alt="Avatar" className="avatar-img" />
-        </div>
-        <table className="info-table">
-          <tbody>
-            <tr>
-              <td>Họ và tên</td>
-              <td>{studentInfo.name}</td>
-            </tr>
-            <tr>
-              <td>Giới tính</td>
-              <td>{studentInfo.gender}</td>
-            </tr>
-            <tr>
-              <td>Khối lớp</td>
-              <td>{studentInfo.grade}</td>
-            </tr>
-            <tr>
-              <td>Trường</td>
-              <td>{studentInfo.school}</td>
-            </tr>
-            <tr>
-              <td>Địa chỉ</td>
-              <td>{studentInfo.address}</td>
-            </tr>
-            <tr>
-              <td>Số điện thoại</td>
-              <td>{studentInfo.phoneNumber}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>{studentInfo.email}</td>
-            </tr>
-            <tr>
-              <td>Mạng xã hội</td>
-              <td>
-                <a
-                  href={studentInfo.socialMedia}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {studentInfo.socialMedia}
+    <div className="container-information-account">
+      <img src={UserInfoIcon} alt="UserInfoIcon" />
+      <Grid
+        className="container-grid"
+        container
+        sx={{ borderCollapse: "collapse", border: "1px solid #957DAD" }}
+      >
+        {Object.entries(studentInfo).map((item, index) => (
+          <>
+            <Grid
+              item
+              xs={3}
+              className="item title"
+              sx={{
+                border: "1px solid #957DAD",
+                backgroundColor: "#FEC8D8",
+                color: "#957DAD",
+              }}
+            >
+              {title[index]}
+            </Grid>
+            <Grid
+              item
+              xs={9}
+              className="item"
+              sx={{ border: "1px solid #957DAD" }}
+            >
+              {title[index] === "Mạng xã hội" ? (
+                <a style={{ color: "#000" }} href={item[1]}>
+                  {item[1]}
                 </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
+              ) : title[index] === "Số điện thoại" ? (
+                String(item[1]).substring(0, 4) +
+                " " +
+                String(item[1]).substring(4, 7) +
+                " " +
+                String(item[1]).substring(7, 10)
+              ) : (
+                item[1]
+              )}
+            </Grid>
+          </>
+        ))}
+      </Grid>
     </div>
   );
 }
