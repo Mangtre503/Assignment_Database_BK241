@@ -915,3 +915,53 @@ REFERENCES [dbo].[district_city] ([dist_city_id], [pro_id])
 GO
 ALTER TABLE [dbo].[ward] CHECK CONSTRAINT [FK75ye4g45h42tv2vmvrbs61pf4]
 GO
+
+--các ràng buộc 
+--Ràng buộc về giới tính người dùng
+ALTER TABLE [dbo].[user]
+ADD CONSTRAINT chk_user_sex
+CHECK ([user_sex] IN ('Male', 'Female', 'Other'));
+
+
+
+
+
+--kiểm tra nhân viên có đủ 18 tuổi trở lên không
+ALTER TABLE [dbo].[staff]
+ADD CONSTRAINT chk_age_limit
+CHECK (DATEDIFF(YEAR, date_of_birth, GETDATE()) BETWEEN 18 AND 65);
+
+-- Kiểm tra rate trong phạm vi từ 1 đến 5
+ALTER TABLE dbo.tutor_review
+ADD CONSTRAINT chk_rate_range
+CHECK (rate >= 1 AND rate <= 5);
+
+
+
+
+
+-- Kiểm tra mật khẩu có độ dài từ 8 đến 30 ký tự, có ít nhất 1 chữ hoa, 1 chữ thường và 1 số
+CREATE TRIGGER trg_check_password_format
+ON dbo.[user]
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    DECLARE @password NVARCHAR(30);
+    SELECT @password = password FROM inserted;
+
+    IF NOT (@password LIKE '%[A-Z]%' AND @password LIKE '%[a-z]%' AND @password LIKE '%[0-9]%' AND LEN(@password) BETWEEN 8 AND 30)
+    BEGIN
+        RAISERROR('Password must be between 8 and 30 characters long and contain at least one uppercase letter, one lowercase letter, and one number.', 16, 1);
+        ROLLBACK;
+    END
+END;
+
+DROP TRIGGER trg_check_tutor_review_rate;
+
+
+--kiểm tra trạng thái thanh toán
+ALTER TABLE dbo.bill
+ADD CONSTRAINT chk_bill_status
+CHECK (Bill_status IN ('Xac nhan', 'Chua xac nhan', 'Da hoan'));
+
+SET IDENTITY_INSERT dbo.[user] ON;
