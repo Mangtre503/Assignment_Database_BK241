@@ -1,8 +1,8 @@
+import MenuItem from "@mui/material/MenuItem";
+import AddCircleIcon from "../../assets/icons/add_circle.svg";
+import Select from "@mui/material/Select";
+import { FiChevronsDown } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import IconCancel from "../../assets/icons/Chevrons down cancel.svg";
-import IconNotYetProcess from "../../assets/icons/Chevrons down notyetprocess.svg";
-import IconOpen from "../../assets/icons/Chevrons down open.svg";
-import IconProcess from "../../assets/icons/Chevrons down process.svg";
 import "./RegistrationItem.css";
 
 function RegistrationItem(props) {
@@ -13,9 +13,10 @@ function RegistrationItem(props) {
       <div className="container-card">
         <div
           className="title-card"
-          onClick={() => navigate("/class/" + infoRegistration.taId)}
+          style={{cursor: "default"}}
         >
           Mã đơn đăng ký gia sư: <h4>{infoRegistration.taId}</h4>
+          <img onClick={() => navigate("/create-class/" + infoRegistration.taId)} src={AddCircleIcon} alt="AddCircleIcon"/>
         </div>
         <div className="content-card">
           <div className="left-content">
@@ -23,7 +24,7 @@ function RegistrationItem(props) {
               Trạng thái:{" "}
               <span
                 className={
-                  "status " +
+                  "status drop " +
                   (infoRegistration.status === "Đã mở lớp"
                     ? "open"
                     : infoRegistration.status === "Đã hủy bỏ"
@@ -33,17 +34,60 @@ function RegistrationItem(props) {
                     : "process")
                 }
               >
-                {infoRegistration.status}
-                <img src={(infoRegistration.status === "Đã mở lớp"
-                    ? IconOpen
-                    : infoRegistration.status === "Đã hủy bỏ"
-                    ? IconCancel
-                    : infoRegistration.status === "Chưa xử lý"
-                    ? IconNotYetProcess
-                    : IconProcess)} alt="Icon"/>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={infoRegistration.status}
+                  // onChange={handleChange}
+                  sx={{
+                    "& .MuiSelect-icon": {
+                      color:
+                        infoRegistration.status === "Đã mở lớp"
+                          ? "#D291BC"
+                          : infoRegistration.status === "Đã hủy bỏ"
+                          ? "#FFDFD3"
+                          : infoRegistration.status === "Đang xử lý"
+                          ? "#D291BC"
+                          : "#D291BC", // Màu mặc định
+                      fontSize: 24,
+                      marginRight: "10px",
+                    },
+                    fontFamily: 'Itim',
+                    fontSize: '20px',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    lineHeight: 'normal',
+                  }}
+                  IconComponent={FiChevronsDown}
+                >
+                  <MenuItem
+                    value={"Đã mở lớp"}
+                    sx={{ background: "#E0BBE4 !important" }}
+                  >
+                    Đã mở lớp
+                  </MenuItem>
+                  <MenuItem
+                    value={"Đã hủy bỏ"}
+                    sx={{ background: "#D291BC !important" }}
+                  >
+                    Đã hủy bỏ
+                  </MenuItem>
+                  <MenuItem
+                    value={"Đang xử lý"}
+                    sx={{ background: "#FFDFD3 !important" }}
+                  >
+                    Đang xử lý
+                  </MenuItem>
+                  <MenuItem
+                    value={"Chưa xử lý"}
+                    sx={{ background: "#FEC8D8 !important" }}
+                  >
+                    Chưa xử lý
+                  </MenuItem>
+                </Select>
               </span>
             </p>
-            <p>
+            <p onClick={() => navigate("/information-student/" + 1)} style={{cursor: "pointer"}}>
               Học viên: <span>{infoRegistration.studentName}</span>
             </p>
             <p>
@@ -67,7 +111,7 @@ function RegistrationItem(props) {
                 </span>
               ))}
             </p>
-            <p>
+            <p onClick={() => navigate("/information-tutor/" + 1)} style={{cursor: "pointer"}}>
               Gia sư: <span>{infoRegistration.tutorName}</span>
             </p>
             <p>

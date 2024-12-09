@@ -8,15 +8,15 @@ function RequestItem({ infoRequest }) {
 
   return (
     <div className="container-card">
-    <div className="title-card" onClick={() => navigate("/class/" + infoRequest.requestId)}>
-      Mã yêu cầu: <h4>{infoRequest.requestId}</h4>
+    <div className="title-card" style={{cursor: "default"}}>
+      Mã đơn yêu cầu tư vấn: <h4>{infoRequest.requestId}</h4>
     </div>
     <div className="content-card">
       <div className="left-content">
         <p>
           Trạng thái: <span className={"status " + (infoRequest.status === "Đã xử lý"? "processed" : "not-yet-processed")}>{infoRequest.status}</span>
         </p>
-        <p>
+        <p onClick={() => navigate("/information-student/" + 1)} style={{cursor: "pointer"}}>
           Học viên: <span>{infoRequest.studentName}</span>
         </p>
         <p>

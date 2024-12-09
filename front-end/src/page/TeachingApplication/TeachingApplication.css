@@ -59,20 +59,6 @@ justify-content: center;
 align-items: center;
 }
 
-.grid-container-top .item{
-    border: 2px solid #957DAD;
-    border-left: none;
-    border-bottom: none;
-}
-
-.top1{
-    border-left: 2px solid #957DAD;
-}
-
-.grid-container-top.top1:last-of-type{
-    border-bottom: 2px solid #957DAD;
-}
-
 .item:not(.item.title){
     padding-left: 30px;
     padding-right: 30px;

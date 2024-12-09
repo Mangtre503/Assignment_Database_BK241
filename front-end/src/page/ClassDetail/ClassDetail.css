@@ -5,6 +5,7 @@
     width: 76.52%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
   }
   
   .container-ta h1 {
@@ -30,6 +31,7 @@
   .container-ta .form-ta {
     width: 100%;
     margin-top: 28px;
+    border: 1px solid #957dad;
   }
   
   .grid-container-top {
@@ -46,7 +48,7 @@
     height: 50px;
   }
   
-  .grid-container-top .title {
+  .item.title {
     background: #fec8d8;
     color: #957dad;
     font-family: Itim;
@@ -58,21 +60,6 @@
     justify-content: center;
     align-items: center;
   }
-  
-  .grid-container-top .item {
-    border: 2px solid #957dad;
-    border-left: none;
-    border-bottom: none;
-  }
-  
-  .top1 {
-    border-left: 2px solid #957dad;
-  }
-  
-  .grid-container-top.top1:last-of-type {
-    border-bottom: 2px solid #957dad;
-  }
-  
   .item:not(.item.title) {
     padding-left: 30px;
     padding-right: 30px;
@@ -80,3 +67,16 @@
     align-items: center;
   }
   
+  .item{
+    border: 1px solid #957dad;
+    color: #000;
+    font-family: Itim;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .item p{
+    cursor: pointer;
+  }

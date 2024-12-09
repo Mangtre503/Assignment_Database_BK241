@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import EditIcon from "../../assets/icons/EditIcon.svg";
 import "./ClassDetail.css";
 
 function ClassDetail() {
   const { idClass } = useParams();
+  const navigate = useNavigate();
   const [data, setData] = useState({
     status: "Đã giao",
     startDate: "07/10/2022",
@@ -22,7 +23,7 @@ function ClassDetail() {
     address: "215, đường Nguyễn Văn Trỗi, phường 11, quận Phú Nhuận, TP. Hồ Chí Minh",
     requirements: "",
     invoiceCode: "2 (Đã hoàn)",
-    teachingApplicationCode: "",
+    teachingApplicationCode: "1 (Từ chối)",
   });
 
   const listTitleTop = [
@@ -40,7 +41,7 @@ function ClassDetail() {
     },
     {
       title1: "Tiền hoa hồng",
-      title2: "Hình thức",
+      title2: "Kiểu dạy",
       data1: data.commission,
       data2: data.form,
     },
@@ -64,7 +65,7 @@ function ClassDetail() {
     },
   ];
 
-  const listTitleBottom = ["Địa chỉ", "Yêu cầu", "Mã hóa đơn", "Mã đơn đăng ký dạy"];
+  const listTitleBottom = ["Địa chỉ", "Yêu cầu"];
 
   return (
     <div className="container-ta">
@@ -105,14 +106,43 @@ function ClassDetail() {
             <Grid item xs={9} className="item">
               {item === "Địa chỉ"
                 ? data.address
-                : item === "Yêu cầu"
-                ? data.requirements
-                : item === "Mã hóa đơn"
-                ? data.invoiceCode
-                : data.teachingApplicationCode}
+                : data.requirements}
             </Grid>
           </Grid>
         ))}
+        <Grid container>
+          <Grid item className="title item" xs={3} 
+            sx={{
+              aspectRatio: "1 / 1", // tỷ lệ 1:1 giữa chiều rộng và chiều cao
+            }}
+          >
+            Mã hóa đơn
+          </Grid>
+          <Grid item xs={3} 
+            sx={{
+              aspectRatio: "1 / 1",
+            }}
+            className="item"
+          >
+            <p onClick={() => navigate("/bill/2")}>{data.invoiceCode}</p>
+          </Grid>
+          <Grid item xs={3} 
+            sx={{
+              aspectRatio: "1 / 1",
+            }}
+            className="title item"
+          >
+            Đơn đăng ký dạy
+          </Grid>
+          <Grid item xs={3} 
+            sx={{
+              aspectRatio: "1 / 1",
+            }}
+            className="item"
+          >
+            <p onClick={() => navigate("/teaching-application/1")}>{data.teachingApplicationCode}</p>
+          </Grid>
+        </Grid>
       </div>
     </div>
   );

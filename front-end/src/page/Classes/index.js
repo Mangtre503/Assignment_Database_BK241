@@ -82,7 +82,7 @@ function Classes() {
             </div>
           </div>
           <div className="option-btn">
-            <img src={AddIcon} alt="AddIcon" />
+            <img onClick={() => navigate("/create-class")} src={AddIcon} alt="AddIcon" />
             <img src={TrashIcon} alt="TrashIcon" />
           </div>
         </div>

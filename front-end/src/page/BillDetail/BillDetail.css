@@ -1,82 +1,18 @@
-.bill-detail-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 76.52%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .bill-detail-container h1 {
-    color: #957dad;
-    font-family: Itim;
-    font-size: 70px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    align-items: center;
-    margin-top: 72px;
-  }
-  
-  .bill-detail-container h1 p {
-    color: #000;
-  }
-  
-  .bill-detail-container > img {
-    margin-left: auto;
-  }
-  
-  .form-bill-detail {
-    width: 100%;
-    margin-top: 28px;
-  }
-  
-  .grid-container-top {
-    height: 50px;
-    color: #000;
-    font-family: Itim;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  
-  .grid-item-top {
-    height: 50px;
-  }
-  
-  .grid-container-top .title {
-    background: #fec8d8;
-    color: #957dad;
-    font-family: Itim;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .grid-container-top .item {
-    border: 2px solid #957dad;
-    border-left: none;
-    border-bottom: none;
-  }
-  
-  .top1 {
-    border-left: 2px solid #957dad;
-  }
-  
-  .grid-container-top.top1:last-of-type {
-    border-bottom: 2px solid #957dad;
-  }
-  
-  .item:not(.item.title) {
-    padding-left: 30px;
-    padding-right: 30px;
-    display: flex;
-    align-items: center;
-  }
-  
+.grid-container-top .open{
+  background: #E0BBE4;
+}
+.grid-container-top .cancel{
+  background: #D291BC;
+}
+.grid-container-top .process{
+  background: #FFDFD3;
+}
+
+.grid-container-top .not-yet-process{
+  background: #FEC8D8;
+}
+
+.grid-container-top .status{
+  border-radius: 15px;
+  padding: 0 15px;
+}

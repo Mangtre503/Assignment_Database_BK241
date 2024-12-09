@@ -120,10 +120,6 @@ function TutorRegistration() {
               <input id="to-date-inp" onChange={handleChangeDate} type="date" />
             </div>
           </div>
-          <div className="option-btn">
-            <img src={AddIcon} alt="AddIcon" />
-            <img src={TrashIcon} alt="TrashIcon" />
-          </div>
         </div>
         <div className="sort-list">
         {sortList.map((item, index) => {
