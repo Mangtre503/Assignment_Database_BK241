@@ -12,7 +12,7 @@ public class DatabaseService {
 
     // Thay đổi thủ tục trong đây để chạy v1-v4
     public void renameTable() {
-        String sql = "EXEC sp_rename 'dbo.[system_user]', 'oft_user'";
+        String sql = "EXEC sp_rename 'dbo.[user]', 'oft_user'";
         jdbcTemplate.execute(sql);
     }
 }

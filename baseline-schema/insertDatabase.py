@@ -15,7 +15,12 @@ from sqlalchemy import create_engine
 
 # connection_string = 'mssql+pyodbc://localhost:1433/Ass2_CO2013?driver=ODBC+Driver+17+for+SQL+Server'
 # connection_string = 'mssql+pyodbc://SA:Str0ngPassword@localhost:1433/Ass2_CO2013?driver=ODBC+Driver+18+for+SQL+Server&encrypt=no'
-connection_string = 'mssql+pyodbc://sa:123456789@localhost:1433/Ass2_CO2013?driver=ODBC+Driver+18+for+SQL+Server&encrypt=no'
+# connection_string = 'mssql+pyodbc://sa:123456789@localhost:1433/Ass2_CO2013?driver=ODBC+Driver+18+for+SQL+Server&encrypt=no'
+from urllib.parse import quote_plus
+
+password = quote_plus("Quy0905859213@.")
+connection_string = f'mssql+pyodbc://sa:{password}@localhost:1433/Ass2_CO2013?driver=ODBC+Driver+18+for+SQL+Server&encrypt=no'
+
 engine = create_engine(connection_string)
 
 def user():
@@ -23,7 +28,7 @@ def user():
     user = user[['full_name', 'password', 'phone_number', 'user_sex']].copy()
 
     try:
-        user.to_sql('user', con=engine, if_exists='append', index=False)
+        user.to_sql('oft_user', con=engine, if_exists='append', index=False)
         print("User data has been inserted successfully!")
     except Exception as e:
         print(f"Error occurred during insertion: {e}")

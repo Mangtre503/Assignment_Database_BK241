@@ -25,6 +25,18 @@ public class GlobalExceptionHandler
                .build();
     }
 
+    @ExceptionHandler(PasswordNotMatchException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiError handlePasswordNotMatchException(PasswordNotMatchException passwordNotMatchException)
+    {
+       return ApiError
+               .builder()
+               .status(HttpStatus.BAD_REQUEST.value())
+               .error("BAD_REQUEST")
+               .message(passwordNotMatchException.getMessage())
+               .timestamp(LocalDateTime.now())
+               .build();
+    }
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)

@@ -536,7 +536,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[user](
+CREATE TABLE [dbo].[oft_user](
 	[user_id] [bigint] IDENTITY(1,1) NOT NULL,
 	[full_name] [varchar](255) NULL,
 	[password] [varchar](255) NOT NULL,
@@ -611,7 +611,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[address]  WITH CHECK ADD  CONSTRAINT [FK6i66ijb8twgcqtetl8eeeed6v] FOREIGN KEY([user_id])
-REFERENCES [dbo].[user] ([user_id])
+REFERENCES [dbo].[oft_user] ([user_id])
 GO
 ALTER TABLE [dbo].[address] CHECK CONSTRAINT [FK6i66ijb8twgcqtetl8eeeed6v]
 GO
@@ -811,12 +811,12 @@ GO
 ALTER TABLE [dbo].[qualification] CHECK CONSTRAINT [FKk2tcm4ke292hb7abt38te0ncs]
 GO
 ALTER TABLE [dbo].[staff]  WITH CHECK ADD  CONSTRAINT [FKdb7iapv23chqgotel5wy2s5y6] FOREIGN KEY([staff_id])
-REFERENCES [dbo].[user] ([user_id])
+REFERENCES [dbo].[oft_user] ([user_id])
 GO
 ALTER TABLE [dbo].[staff] CHECK CONSTRAINT [FKdb7iapv23chqgotel5wy2s5y6]
 GO
 ALTER TABLE [dbo].[student]  WITH CHECK ADD  CONSTRAINT [FKg7bmoq2rcqn7hb518ecjrrofk] FOREIGN KEY([student_id])
-REFERENCES [dbo].[user] ([user_id])
+REFERENCES [dbo].[oft_user] ([user_id])
 GO
 ALTER TABLE [dbo].[student] CHECK CONSTRAINT [FKg7bmoq2rcqn7hb518ecjrrofk]
 GO
@@ -891,7 +891,7 @@ GO
 ALTER TABLE [dbo].[tutor_review] CHECK CONSTRAINT [FKn1grl881osn7u0qtqi9epb4t3]
 GO
 ALTER TABLE [dbo].[user_contact]  WITH CHECK ADD  CONSTRAINT [FKddu27uy0rw5j7e3oso0oaixpb] FOREIGN KEY([user_id])
-REFERENCES [dbo].[user] ([user_id])
+REFERENCES [dbo].[oft_user] ([user_id])
 GO
 ALTER TABLE [dbo].[user_contact] CHECK CONSTRAINT [FKddu27uy0rw5j7e3oso0oaixpb]
 GO
