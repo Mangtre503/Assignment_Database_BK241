@@ -3,13 +3,16 @@ import Layout from "../component/Layout";
 import BillDetail from "../page/BillDetail";
 import ClassDetail from "../page/ClassDetail";
 import Classes from "../page/Classes";
+import ConsultationRequest from "../page/ConsultationRequest";
 import CreateBill from "../page/CreateBill";
+import CreateClass from "../page/CreateClass";
 import InformationAccount from "../page/InformationAccount";
 import InformationStudent from "../page/InformationStudent";
 import InformationTutor from "../page/InformationTutor";
 import Login from "../page/Login";
 import NotFound from "../page/NotFound";
 import TeachingApplication from "../page/TeachingApplication";
+import TutorRegistration from "../page/TutorRegistration";
 
 const Routers = () => {
     // const userData = useSelector(state => state.accountAction);
@@ -48,6 +51,14 @@ const Routers = () => {
                     element: <ClassDetail/>
                 },
                 {
+                    path: 'create-class',
+                    element: <CreateClass/>
+                },
+                {
+                    path: 'create-class/:idTa',
+                    element: <CreateClass/>
+                },
+                {
                     path: 'teaching-application/:idTa',
                     element: <TeachingApplication/>
                 },
@@ -58,6 +69,14 @@ const Routers = () => {
                 {
                     path: 'bill/:idBill',
                     element: <BillDetail/>
+                },
+                {
+                    path: 'tutor-registration',
+                    element: <TutorRegistration/>
+                },
+                {
+                    path: 'consultation-request',
+                    element: <ConsultationRequest/>
                 },
                 {
                     path: '*',
