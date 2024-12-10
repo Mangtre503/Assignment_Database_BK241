@@ -17,15 +17,34 @@ function Login() {
   });
 
   // ------------------Function------------------
-  function handleSubmit() {
-    try{
-        // const response = api.post("", formLogin);
-        // dispatch(loginSuccess(response.data));
-        navigate("/information");
-    }catch(e){
-        console.error(e);
+  async function handleSubmit() {
+    
+    try {
+      const response = await api.post("http://localhost:8080/api/v1/auth/login", formLogin); 
+     
+      if (response.status === 200) {
+        alert("Login successful");
+        navigate("/information"); 
+      }
+    } catch (error) {
+      
+      if (error.response) {
+        
+        const status = error.response.status;
+        if (status === 404) {
+          alert("Phone number not found"); 
+        } else if (status === 401) {
+          alert("Incorrect password"); 
+        } else {
+          alert("An error occurred. Please try again."); 
+        }
+      } else {
+        alert("No response!");
+        console.error(error);
+      }
     }
   }
+  
 
   function handleChange(e){
     const { name, value } = e.target;
