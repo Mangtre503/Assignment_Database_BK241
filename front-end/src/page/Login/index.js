@@ -31,7 +31,7 @@ function Login() {
     const { name, value } = e.target;
     setFormLogin((prev) => ({
         ...prev,
-        [name]: value,
+        [name]: value,  
     }))
   }
 
