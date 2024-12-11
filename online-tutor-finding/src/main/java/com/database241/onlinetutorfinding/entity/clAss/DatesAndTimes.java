@@ -8,17 +8,18 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "is_held_on")
-public class DatesAndTimes {
+public class DatesAndTimes
+{
     @EmbeddedId
     private DateAndTimeId id;
 
     @MapsId("slotId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "slot_id", nullable = false)
     private TimeSlot slot;
 
     @MapsId("weekId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "week_id", nullable = false)
     private WeekDay week;
 
