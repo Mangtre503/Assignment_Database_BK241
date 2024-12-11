@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2919fcfe-1c82-408a-a2fd-e8c7a931df6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd61afdb-0de1-441e-90ee-b8e2e2424d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fd61afdb-0de1-441e-90ee-b8e2e2424d14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/controller/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/response/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/response/AddressMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/AddressService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +24,9 @@
         <option value="com.intellij.jpb.NewClass" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="com.intellij.jpb.JpaRepository" />
         <option value="com.intellij.jpb.NewRecord" />
         <option value="com.intellij.jpb.NewInterface" />
-        <option value="com.intellij.jpb.JpaRepository" />
       </list>
     </option>
   </component>
