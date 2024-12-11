@@ -2,6 +2,7 @@ package com.database241.onlinetutorfinding.repository;
 
 import com.database241.onlinetutorfinding.request.DateAndTimeDto;
 import com.microsoft.sqlserver.jdbc.SQLServerDataTable;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -16,11 +17,11 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ClassDao
 {
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
 
-    public void insertHasSubject(Long classId, List<Long> subjectIds)
-    {
+    public void insertHasSubject(Long classId, List<Long> subjectIds) throws SQLServerException {
+        SQLServerDataTable table = createSubjectIdTable(subjectIds);
         SimpleJdbcCall simpleJdbcCall =
                 new SimpleJdbcCall(jdbcTemplate)
                 .withSchemaName("dbo")
@@ -28,14 +29,14 @@ public class ClassDao
 
         Map<String, Object> inputParams = new HashMap<>();
         inputParams.put("class_id", classId);
-        inputParams.put("subject_id_list", createTVP(subjectIds));
+        inputParams.put("subject_id_list", table);
 
         simpleJdbcCall.execute(inputParams);
     }
 
 
-    public void insertHasClassType(Long classId, List<Long> classTypeIds)
-    {
+    public void insertHasClassType(Long classId, List<Long> classTypeIds) throws SQLServerException {
+        SQLServerDataTable table = createClassTypeIdTable(classTypeIds);
         SimpleJdbcCall simpleJdbcCall =
                 new SimpleJdbcCall(jdbcTemplate)
                 .withSchemaName("dbo")
@@ -43,7 +44,7 @@ public class ClassDao
 
         Map<String, Object> inputParams = new HashMap<>();
         inputParams.put("class_id", classId);
-        inputParams.put("class_type_id_list", createTVP(classTypeIds));
+        inputParams.put("class_type_id_list", table);
 
         simpleJdbcCall.execute(inputParams);
     }
@@ -66,19 +67,27 @@ public class ClassDao
     }
 
 
-    private Map<String, Object> createTVP(List<Long> subjectIds)
+    private SQLServerDataTable createSubjectIdTable(List<Long> subjectIds) throws SQLServerException
     {
-        Map<String, Object> tvp = new HashMap<>();
-        tvp.put("subject_id", subjectIds);
-        return tvp;
+        SQLServerDataTable table = new SQLServerDataTable();
+
+        table.addColumnMetadata("subject_id", java.sql.Types.BIGINT);
+
+        for (Long subjectId : subjectIds)
+            table.addRow(subjectId);
+
+        return table;
     }
 
 
-    private Map<String, Object> createTVP(Long classId, List<Long> classTypeIds)
-    {
-        Map<String, Object> tvp = new HashMap<>();
-        tvp.put("class_type_id", classTypeIds);
-        return tvp;
+    private SQLServerDataTable createClassTypeIdTable(List<Long> classTypeIds) throws SQLServerException {
+        SQLServerDataTable table = new SQLServerDataTable();
+        table.addColumnMetadata("class_type_id", java.sql.Types.BIGINT);
+
+        for (Long classTypeId : classTypeIds)
+            table.addRow(classTypeId);
+
+        return table;
     }
 
 
@@ -87,11 +96,14 @@ public class ClassDao
     {
         SQLServerDataTable table = new SQLServerDataTable();
 
+
         table.addColumnMetadata("week_id", java.sql.Types.BIGINT);
         table.addColumnMetadata("slot_id", java.sql.Types.BIGINT);
 
         for (DateAndTimeDto dateAndTimeDto : dateAndTimeDtoList)
-            table.addRow(dateAndTimeDto.weeKId(), dateAndTimeDto.slotId());
+        {
+            table.addRow(dateAndTimeDto.weekId(), dateAndTimeDto.slotId());
+        }
         return table;
     }
 }
