@@ -17,6 +17,7 @@ public record ClassCreateClassRequestDto
                 Long salary,
                 Long addrId,
                 Long studentId,
+                Long tsId,
                 Long tutorId,
                 List<Long> subjectIds,
                 List<Long> classTypeIds,

@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2919fcfe-1c82-408a-a2fd-e8c7a931df6b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/dto/ClassCreateClassRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/dto/ClassCreateClassRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/dto/DateAndTimeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/dto/DateAndTimeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/exception/ApiError.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/exception/ApiError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/controller/ClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/controller/ClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/entity/clAss/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/entity/clAss/Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/entity/clAss/TutorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/entity/clAss/TutorApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/repository/ClassRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/repository/ClassRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/repository/ClassRepositoryProcedure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/request/ClassCreateClassRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/request/ClassCreateClassRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/response/TutorApplicationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/response/TutorApplicationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/ClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/ClassService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +31,10 @@
         <option value="Exception" />
         <option value="Python Script" />
         <option value="com.intellij.jpb.NewClass" />
+        <option value="com.intellij.jpb.NewRecord" />
         <option value="com.intellij.jpb.NewInterface" />
         <option value="com.intellij.jpb.JpaRepository" />
         <option value="Interface" />
-        <option value="com.intellij.jpb.NewRecord" />
         <option value="Class" />
       </list>
     </option>
@@ -34,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="entity" />
+        <entry key="$PROJECT_DIR$" value="merging-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +94,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
@@ -260,8 +268,7 @@
       <workItem from="1733532862425" duration="6432000" />
       <workItem from="1733801591899" duration="432000" />
       <workItem from="1733802277086" duration="1050000" />
-      <workItem from="1733890398944" duration="606000" />
-      <workItem from="1733900053570" duration="2755000" />
+      <workItem from="1733890398944" duration="1542000" />
     </task>
     <servers />
   </component>

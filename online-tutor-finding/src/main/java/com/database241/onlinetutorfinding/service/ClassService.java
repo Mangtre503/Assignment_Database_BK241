@@ -1,28 +1,40 @@
 package com.database241.onlinetutorfinding.service;
 
 
-import com.database241.onlinetutorfinding.repository.ClassRepositoryProcedure;
+import com.database241.onlinetutorfinding.repository.ClassDao;
+import com.database241.onlinetutorfinding.repository.ClassRepository;
+import com.database241.onlinetutorfinding.request.ClassCreateClassRequestDto;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 
 @Service
 @RequiredArgsConstructor
 public class ClassService
 {
-    private final ClassRepositoryProcedure classRepositoryProcedure;
+    private final ClassRepository classRepository;
+    private final ClassDao classDao;
 
-
-    public void createClass()
+    public void createClass(ClassCreateClassRequestDto classCreateClassRequestDto)
+            throws SQLServerException
     {
-        /*
-        insert basic information using the insert_class procedure
-        assign different properties of the class using JPA
-         */
-        Long insertedClassId = classRepositoryProcedure
-                .insertClass(100_000L, "Chua giao", 50L, "At JLPT N5", LocalDateTime.of(2024, 12, 24, 0, 0, 0), 500_000L, 2L, 2L, 1L, 13L);
-        System.out.println(insertedClassId);
+        Long insertedClassId = classRepository.insertTableClass
+                (
+                        classCreateClassRequestDto.classDeposit(),
+                        classCreateClassRequestDto.classStatus(),
+                        classCreateClassRequestDto.commissionFee(),
+                        classCreateClassRequestDto.requirements(),
+                        classCreateClassRequestDto.dateStart(),
+                        classCreateClassRequestDto.salary(),
+                        classCreateClassRequestDto.addrId(),
+                        classCreateClassRequestDto.studentId(),
+                        classCreateClassRequestDto.tsId(),
+                        classCreateClassRequestDto.tutorId()
+                );
+
+        classDao.insertHasSubject(insertedClassId, classCreateClassRequestDto.subjectIds());
+        classDao.insertHasClassType(insertedClassId, classCreateClassRequestDto.classTypeIds());
+        classDao.insertTime(insertedClassId, classCreateClassRequestDto.dateAndTimeDtoList());
     }
 }
