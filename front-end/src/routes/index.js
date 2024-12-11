@@ -13,10 +13,11 @@ import Login from "../page/Login";
 import NotFound from "../page/NotFound";
 import TeachingApplication from "../page/TeachingApplication";
 import TutorRegistration from "../page/TutorRegistration";
+import { useSelector } from "react-redux";
 
 const Routers = () => {
-    // const userData = useSelector(state => state.accountAction);
-    const userData = true;
+    const userData = useSelector(state => state.accountAction);
+    // const userData = true;
     const routes = useRoutes([
         {
             path: '/',
@@ -32,51 +33,51 @@ const Routers = () => {
                 },
                 {
                     path: 'information',
-                    element: <InformationAccount/>
+                    element: userData? <InformationAccount/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'information-student/:idStudent',
-                    element: <InformationStudent/>
+                    element: userData? <InformationStudent/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'information-tutor/:idTutor',
-                    element: <InformationTutor/>
+                    element: userData? <InformationTutor/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'class',
-                    element: <Classes/>
+                    element: userData? <Classes/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'class/:idClass',
-                    element: <ClassDetail/>
+                    element: userData? <ClassDetail/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'create-class',
-                    element: <CreateClass/>
+                    element: userData? <CreateClass/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'create-class/:idTa',
-                    element: <CreateClass/>
+                    element: userData? <CreateClass/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'teaching-application/:idTa',
-                    element: <TeachingApplication/>
+                    element: userData? <TeachingApplication/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'create-bill',
-                    element: <CreateBill/>
+                    element: userData? <CreateBill/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'bill/:idBill',
-                    element: <BillDetail/>
+                    element: userData? <BillDetail/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'tutor-registration',
-                    element: <TutorRegistration/>
+                    element: userData? <TutorRegistration/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'consultation-request',
-                    element: <ConsultationRequest/>
+                    element: userData? <ConsultationRequest/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: '*',

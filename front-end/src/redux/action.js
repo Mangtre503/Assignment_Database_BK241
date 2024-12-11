@@ -21,3 +21,26 @@ export const accountAction = (state = null, action) => {
             return state;
     }
 }
+
+export const openBackDrop = () => {
+    return {
+      type: 'OPENBACKDROP',
+    }
+  }
+  
+  export const closeBackDrop = () => {
+    return {
+      type: 'CLOSEBACKDROP',
+    }
+  }
+  
+  export const backdropAction = (state = false, action) => {
+    switch (action.type) {
+      case "OPENBACKDROP":
+        return true;
+        case "CLOSEBACKDROP":
+          return false;
+      default:
+        return state;
+    }
+  }

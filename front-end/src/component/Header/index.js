@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import UserHoverIcon from "../../assets/icons/Avatar-White.svg";
 import UserIcon from "../../assets/icons/Avatar.svg";
@@ -10,6 +10,7 @@ import "./Header.css";
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const userData = useSelector(state => state.accountAction);
   const [user, setUser] = useState(false);
 
   function handleLogout() {
@@ -23,7 +24,7 @@ function Header() {
           <img src={PenToolIcon} alt="SystemIcon" />
           <h3>Hệ thống Gia sư Dạy kèm tại nhà</h3>
         </div>
-        <div className="right-header">
+        {userData? <div className="right-header">
           <h4 onClick={() => navigate("/tutor-registration")}>Danh sách đơn đăng ký gia sư</h4>
           <h4 onClick={() => navigate("/consultation-request")}>Danh sách đơn yêu cầu tư vấn</h4>
           <h4 onClick={() => navigate("/class")}>Danh sách lớp học</h4>
@@ -35,7 +36,7 @@ function Header() {
             alt="UserIconZ"
           />
           <h4 onClick={handleLogout}>Đăng xuất</h4>
-        </div>
+        </div> : <></>}
       </div>
     </>
   );

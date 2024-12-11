@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./InformationAccount.css";
 import UserInfoIcon from "../../assets/icons/UserInfoIcon.svg";
 import Grid from "@mui/material/Grid";
+import { useDispatch, useSelector } from "react-redux";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
+import api from "../../api";
+import { useSnackbar } from "../../component/SnackbarProvider";
+import { useNavigate } from "react-router-dom";
+import { Backdrop, CircularProgress } from "@mui/material";
+import dayjs from "dayjs";
+
+const formatDate = (dateStr) => {
+  return dayjs(dateStr).format("DD/MM/YYYY");
+}
 
 function InformationAccount() {
+
+  const dispatch = useDispatch();
+  const { showSnackbar } = useSnackbar();
+  const userData = useSelector(state => state.accountAction);
+  const navigate = useNavigate();
+  const open = useSelector(state => state.backdropAction);
+
   // Thông tin người dùng
   const title = [
     "Họ và tên",
@@ -15,20 +33,56 @@ function InformationAccount() {
     "Email",
     "Mạng xã hội",
   ];
-  const userInfo = {
-    name: "Vũ Quỳnh Anh",
-    gender: "Nữ",
-    birthDate: "20/05/1988",
-    hometown: "TP. Hồ Chí Minh",
-    idCard: "079221762419",
-    phoneNumber: "0978234567",
-    email: "quynhanh9876@gmail.com",
-    socialMedia: "https://facebook.com/quynhanh9876",
-    // avatar: process.env.PUBLIC_URL + "/trend-avatar-1.jpg"
-  };
+  const [userInfo, setUserInfo] = useState({
+    fullname: "",
+    sex: "",
+    birthday: null,
+    hometown: "",
+    cccd: "",
+    phoneNumber: "",
+    email: "",
+    association: "",
+  });
+
+  async function getInformation(){
+    try{
+      dispatch(openBackDrop());
+      const response = await api.get(`user/information?id=${userData.id}`);
+      const data = {
+        ...response.data, 
+        phoneNumber: Array.from(response.data.contact).map(it => it.phoneNumber).join(', '),
+        email: Array.from(response.data.contact).map(it => it.email).join(', '),
+        association: Array.from(response.data.contact).map(it => it.association).join(', '),
+        birthday: formatDate(response.data.birthday),
+      }
+      delete data.contact;
+      setUserInfo(data);
+      console.log(response);
+    }catch(e){
+      if(e.response.status === 404){
+        showSnackbar("Tài khoản hiện tại không khả dụng");
+      } else if(e.response.status === 500){
+        showSnackbar("Vui lòng đăng nhập lại");
+        navigate("/login");
+      } else {
+        showSnackbar("Lỗi kết nối. Vui lòng thử lại sau ít phút");
+      }
+    }
+    dispatch(closeBackDrop());
+  }
+
+  useEffect(() => {
+    getInformation();
+  }, []);
 
   return (
     <>
+    <Backdrop
+        sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <div className="container-information-account">
         <img src={UserInfoIcon} alt="UserInfoIcon" />
         <Grid

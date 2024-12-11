@@ -1,15 +1,20 @@
+import { Backdrop, CircularProgress } from "@mui/material";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import api from "../../api";
 import PenToolPink from "../../assets/icons/Pen tool-Pink.svg";
+import { closeBackDrop, loginSuccess, openBackDrop } from "../../redux/action";
 import "./Login.css";
+import { useSnackbar } from "../../component/SnackbarProvider";
 
 function Login() {
 
   // --------------------Hook-------------------
   const navigate = useNavigate();
+  const open = useSelector(state => state.backdropAction);
   const dispatch = useDispatch();
+  const { showSnackbar } = useSnackbar();
   const [formLogin, setFormLogin] = useState({
     phoneNumber: "",
     password: "",
@@ -19,29 +24,26 @@ function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
+      dispatch(openBackDrop());
       const response = await api.post("api/v1/auth/login", formLogin); 
-      console.log(response);
-      if (response.status === 200) {
-        alert("Login successful");
+      if (response.status === 200 && response.data.role === 'admin') {
+        dispatch(loginSuccess(response.data));
         navigate("/information"); 
+        showSnackbar("Đăng nhập thành công");
+      } else {
+        showSnackbar("Vui lòng đăng nhập bằng tài khoản admin");
       }
     } catch (error) {
-      
-      if (error.response) {
-        
         const status = error.response.status;
         if (status === 404) {
-          alert("Phone number not found"); 
-        } else if (status === 401) {
-          alert("Incorrect password"); 
+          showSnackbar("Tài khoản không tồn tại")
+        } else if (status === 400) {
+          showSnackbar("Sai mật khẩu"); 
         } else {
-          alert("An error occurred. Please try again."); 
+          showSnackbar("Lỗi kết nối. Vui lòng thử lại sau ít phút"); 
         }
-      } else {
-        alert("No response!");
-        console.error(error);
-      }
     }
+    dispatch(closeBackDrop());
   }
   
 
@@ -55,6 +57,12 @@ function Login() {
 
   return (
     <>
+    <Backdrop
+        sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <div className="container-login">
         <h1>
           <img src={PenToolPink} alt="PenToolPink" />

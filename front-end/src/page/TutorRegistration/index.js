@@ -1,65 +1,43 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
+import { debounce } from "lodash";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import RegistrationItem from "../../component/RegistrationItem";
 import "./TutorRegistration.css";
+import { useDispatch, useSelector } from "react-redux";
+import { Backdrop, CircularProgress } from "@mui/material";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
+import api from "../../api";
+import { useSnackbar } from "../../component/SnackbarProvider";
 
 function TutorRegistration() {
   // Variable + Hook
-  const listRegistration = [
+
+  const dispatch = useDispatch();
+  const { showSnackbar } = useSnackbar();
+  const componentRef = useRef(null);
+    const [hasMore, setHasMore] = useState(true);
+  const [page, setPage] = useState(0);
+  const open = useSelector(state => state.backdropAction);
+
+  const [listRegistration, setListRegistration] = useState([
     {
-      taId: "1",
-      studentName: "Trần Thanh",
+      id: "1",
+      nameStudent: "Trần Thanh",
       subjects: ["Ngữ văn", "KHXH", "Toán"],
       grade: 4,
       address: "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
-      teachingStyle: "Trực tiếp",
-      tutorName: "Nguyễn Việt Anh",
+      styleTeaching: "Trực tiếp",
+      nameTutor: "Nguyễn Việt Anh",
       phoneNumber: "0912 987 654",
       status: "Đã mở lớp",
-      requirements: "Tốt nghiệp đại học chuyên ngành liên quan.",
-    },
-    {
-      taId: "2",
-      studentName: "Nguyễn Hoàng Anh",
-      subjects: ["Toán", "Tiếng Anh"],
-      grade: 8,
-      address: "215, đường Nguyễn Văn Trỗi, phường 11, quận Phú Nhuận, TP. Hồ Chí Minh",
-      teachingStyle: "Trực tiếp",
-      tutorName: "Phạm Linh Nguyên",
-      phoneNumber: "0937 456 789",
-      status: "Đã hủy bỏ",
-      requirements: "Ít nhất 1-2 năm kinh nghiệm dạy kèm hoặc giảng dạy.",
-    },
-    {
-      taId: "3",
-      studentName: "Lê Khánh Linh",
-      subjects: ["Tiếng Anh", "Ngữ văn", "KHTN"],
-      grade: 11,
-      address: "66, đường Cô Bắc, phường Cầu Ông Lãnh, quận 1, TP. Hồ Chí Minh",
-      teachingStyle: "Trực tiếp",
-      tutorName: "Nguyễn Duy",
-      phoneNumber: "0987 654 321",
-      status: "Đang xử lý",
-      requirements: "Lịch trình linh hoạt, có thể làm việc vào cuối tuần hoặc buổi tối.",
-    },
-    {
-      taId: "4",
-      studentName: "Đặng Bảo Trâm",
-      subjects: ["KHXH", "Toán", "Ngữ văn"],
-      grade: 2,
-      address: "8, đường Hòa Bình, phường Hiệp Tân, quận Tân Phú, TP. Hồ Chí Minh",
-      teachingStyle: "Trực tiếp",
-      tutorName: "Trần Tuấn Anh",
-      phoneNumber: "0923 123 789",
-      status: "Chưa xử lý",
-      requirements: "Thành thạo các công cụ và nền tảng dạy học trực tuyến.",
-    },
-  ];
+      requirement: "Tốt nghiệp đại học chuyên ngành liên quan.",
+    }
+  ]);
 
   const sortList = [
     "Khối lớp",
@@ -91,8 +69,62 @@ function TutorRegistration() {
     }
   }
 
+  async function getListTutorApplication(pageReq = page){
+    try{
+      dispatch(openBackDrop());
+      const response = await api.get(`user/teaching-applications?pageNo=${pageReq}&pageSize=`);
+      setListRegistration((prev) => [
+        ...prev,
+        ...response.data.content
+      ])
+      console.log(response);
+    }catch(e){
+      showSnackbar("Lỗi kết nối. Vui lòng thử lại sau ít phút");
+    }
+    dispatch(closeBackDrop());
+  }
+
+  useEffect(() => {
+    getListTutorApplication();
+  }, []);
+
+   // Kiểm tra nếu mà người dùng kéo xuống thì sẽ load thêm trang
+   useEffect(() => {
+    if (!hasMore) return;
+    const handleScroll = debounce(() => {
+        if (componentRef.current) {
+          const { scrollTop, scrollHeight, clientHeight } = componentRef.current;
+    
+          if (scrollTop + clientHeight >= scrollHeight - 100) {
+            const newPage = page + 1;
+            getListTutorApplication(newPage);
+            setPage(newPage);
+          }
+        }
+      }, 300); // Chỉ gọi sau mỗi 300ms
+    
+
+    const refCurrent = componentRef.current;
+    if (refCurrent) {
+        refCurrent.addEventListener('scroll', handleScroll);
+    }
+
+    // Cleanup sự kiện khi component bị hủy
+    return () => {
+        if (refCurrent) {
+            refCurrent.removeEventListener('scroll', handleScroll);
+        }
+    };
+}, [hasMore, page]);
+
   return (
     <>
+    <Backdrop
+        sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <div className="container-classes">
         <h1>Danh sách đơn đăng ký gia sư</h1>
         <div className="container-filter-class">
