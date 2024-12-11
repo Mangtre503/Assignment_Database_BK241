@@ -1,6 +1,6 @@
 package com.database241.onlinetutorfinding.mapper;
 
-import com.database241.onlinetutorfinding.dto.ClassGetAllClassesResponseDto;
+import com.database241.onlinetutorfinding.response.ClassGetAllClassesResponseDto;
 import com.database241.onlinetutorfinding.entity.clAss.Class;
 import org.mapstruct.*;
 

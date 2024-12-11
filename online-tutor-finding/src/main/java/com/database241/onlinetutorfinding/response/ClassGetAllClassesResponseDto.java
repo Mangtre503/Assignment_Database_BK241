@@ -1,4 +1,4 @@
-package com.database241.onlinetutorfinding.dto;
+package com.database241.onlinetutorfinding.response;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
