@@ -1,11 +1,15 @@
 package com.database241.onlinetutorfinding.exception;
 
 
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 
 
@@ -37,6 +41,21 @@ public class GlobalExceptionHandler
                .timestamp(LocalDateTime.now())
                .build();
     }
+
+
+    @ExceptionHandler(DataAccessException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiError handleDataAccessException(DataAccessException dataAccessException)
+    {
+        return ApiError
+                .builder()
+                .status(HttpStatus.BAD_REQUEST.value())
+                .error("BAD_REQUEST")
+                .message(dataAccessException.getRootCause().getMessage())
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)

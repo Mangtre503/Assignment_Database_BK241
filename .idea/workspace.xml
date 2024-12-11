@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2919fcfe-1c82-408a-a2fd-e8c7a931df6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd61afdb-0de1-441e-90ee-b8e2e2424d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fd61afdb-0de1-441e-90ee-b8e2e2424d14.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/repository/ClassDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/repository/ClassDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/request/DateAndTimeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/request/DateAndTimeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/ClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/ClassService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/exception/GlobalExceptionHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +77,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.OnlineTutorFindingApplication.executor": "Run",
+    "git-widget-placeholder": "merging-branch",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/coding-space/ass2-db/online-tutor-finding",
     "node.js.detected.package.eslint": "true",
