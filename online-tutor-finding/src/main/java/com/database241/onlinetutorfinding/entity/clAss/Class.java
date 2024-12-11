@@ -13,9 +13,29 @@ import java.util.Set;
 
 @Getter
 @Setter
+@NamedStoredProcedureQuery
+        (
+            name = "Class.insertClass",
+            procedureName = "dbo.insert_class",
+            parameters =
+                    {
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "class_deposit", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "class_status", type = String.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "commission_fee", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "requirements", type = String.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "date_start", type = LocalDateTime.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "salary", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "addr_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "student_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "ts_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "tutor_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.OUT, name = "inserted_class_id", type = Long.class)
+                    }
+        )
 @Entity
 @Table(name = "class")
-public class Class {
+public class Class
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "class_id", nullable = false)
