@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import PenToolPink from "../../assets/icons/Pen tool-Pink.svg";
-import { loginSuccess } from "../../redux/action";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import api from "../../api";
+import PenToolPink from "../../assets/icons/Pen tool-Pink.svg";
 import "./Login.css";
 
 function Login() {
@@ -17,11 +16,11 @@ function Login() {
   });
 
   // ------------------Function------------------
-  async function handleSubmit() {
-    
+  async function handleSubmit(e) {
+    e.preventDefault();
     try {
-      const response = await api.post("http://localhost:8080/api/v1/auth/login", formLogin); 
-     
+      const response = await api.post("api/v1/auth/login", formLogin); 
+      console.log(response);
       if (response.status === 200) {
         alert("Login successful");
         navigate("/information"); 

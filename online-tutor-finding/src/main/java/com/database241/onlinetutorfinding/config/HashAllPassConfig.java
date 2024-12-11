@@ -1,13 +1,9 @@
 package com.database241.onlinetutorfinding.config;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import com.database241.onlinetutorfinding.entity.user.SystemUser;
 import com.database241.onlinetutorfinding.repository.SystemUserRepository;
-import com.database241.onlinetutorfinding.service.DatabaseService;
 import com.database241.onlinetutorfinding.util.Util;
 
 @Configuration
