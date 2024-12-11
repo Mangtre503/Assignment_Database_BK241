@@ -10,3 +10,4 @@ import org.springframework.stereotype.Repository;
 public interface ClassTypeRepository extends JpaRepository<ClassType, Long>
 {
 }
+

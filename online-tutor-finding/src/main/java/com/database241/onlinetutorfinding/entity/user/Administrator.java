@@ -11,5 +11,5 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "admin_id")
 public class Administrator extends Staff
 {
-
+    
 }

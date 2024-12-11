@@ -13,8 +13,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @Embeddable
-public class DateAndTimeId implements Serializable
-{
+public class DateAndTimeId implements Serializable {
     @Serial
     private static final long serialVersionUID = -2132291863218881962L;
     @Column(name = "class_id", nullable = false)
@@ -27,8 +26,7 @@ public class DateAndTimeId implements Serializable
     private Long weekId;
 
     @Override
-    public boolean equals(Object o)
-    {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         DateAndTimeId entity = (DateAndTimeId) o;

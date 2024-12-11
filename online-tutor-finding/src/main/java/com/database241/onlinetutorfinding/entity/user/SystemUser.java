@@ -1,14 +1,30 @@
 package com.database241.onlinetutorfinding.entity.user;
 
-import jakarta.persistence.*;
-
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import com.database241.onlinetutorfinding.entity.address.Address;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "oft_user")
+@Setter
 @Inheritance(strategy = InheritanceType.JOINED)
+@Getter
 public abstract class SystemUser
 {
     @Id
@@ -33,4 +49,10 @@ public abstract class SystemUser
             cascade = CascadeType.PERSIST,
             orphanRemoval = true)
     private Set<UserContact> userContacts = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "systemUser",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.PERSIST,
+            orphanRemoval = true)
+    private Set<Address> addresses = new LinkedHashSet<>();
 }
