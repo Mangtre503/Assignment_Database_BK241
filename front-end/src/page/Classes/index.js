@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
@@ -7,6 +7,7 @@ import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import ClassItem from "../../component/ClassItem";
 import IncreaseIcon from "../../assets/icons/increase.svg";
 import SearchIcon from "../../assets/icons/SearchIcon.svg";
+import  api from "../../api";
 import "./Classes.css";
 
 function Classes() {
@@ -53,6 +54,7 @@ function Classes() {
       setSelectedDateTo(e.target.value);
     }
   }
+
   return (
     <>
       <div className="container-classes">

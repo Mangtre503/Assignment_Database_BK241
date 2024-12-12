@@ -1,14 +1,18 @@
 package com.database241.onlinetutorfinding.service;
 
 
-import com.database241.onlinetutorfinding.entity.address.Address;
-import com.database241.onlinetutorfinding.repository.AddressRepository;
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.database241.onlinetutorfinding.entity.address.Address;
+import com.database241.onlinetutorfinding.mapper.AddressMapper;
+import com.database241.onlinetutorfinding.repository.AddressRepository;
+import com.database241.onlinetutorfinding.response.AddressGetAllResponseDto;
+
+import lombok.RequiredArgsConstructor;
 
 
 @Service
@@ -20,7 +24,7 @@ public class AddressService
     private final AddressMapper addressMapper;
 
 
-    public List<AddressGetAllAddressesResponseDto> getAllAddresses(String phoneNumber)
+    public List<AddressGetAllResponseDto> getAllAddresses(String phoneNumber)
     {
         List<Address> addressList = addressRepository.findAddressesByPhoneNumber(phoneNumber);
 

@@ -158,6 +158,4 @@ public void updateStatusTa(Long id, String status) {
         System.err.println("Error executing stored procedure: " + e.getMessage());
     }
 }
-
-
 }

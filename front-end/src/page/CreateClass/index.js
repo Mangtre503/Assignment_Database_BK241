@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { useState } from "react";
 import "./CreateClass.css";
 import { useParams } from "react-router-dom";
+import api from "../../api";
 
 function CreateClass() {
   const { idTa } = useParams("idTa");
@@ -10,7 +11,7 @@ function CreateClass() {
     status: "Đã giao",
     startDay: "09/05/2022",
     salary: "2000000",
-    deposit: "200000",
+    deposit: "",
     commission: "",
     styleTeaching: "Trực tiếp",
     student: "Nguyễn Phong",
@@ -75,6 +76,14 @@ function CreateClass() {
 
   function handleSubmit(e) {
     e.preventDefault();
+  }
+
+  async function createClass(){
+    try{
+      const response = api.post(`api/v1/classes`, formCreateClass);
+    }catch(e){
+
+    }
   }
 
   return (
