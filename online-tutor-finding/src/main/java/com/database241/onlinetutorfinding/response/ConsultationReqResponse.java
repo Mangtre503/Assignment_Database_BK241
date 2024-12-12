@@ -17,6 +17,7 @@ public class ConsultationReqResponse {
     private Long id;
     private String status;
     private String nameStudent;
+    private Long idStudent;
     private List<String> subjects;
     private String address;
     private String teachingStyle;

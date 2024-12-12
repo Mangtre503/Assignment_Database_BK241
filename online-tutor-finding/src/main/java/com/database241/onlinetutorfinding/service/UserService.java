@@ -11,4 +11,6 @@ public interface UserService {
     public Page<TutorApplicationResponse> getTutorApplications(Integer pageNo, Integer pageSize);
 
     public Page<ConsultationReqResponse> getConsultations(Integer pageNo, Integer pageSize);
+
+    public void updateStatusTa(Long id, String status);
 }

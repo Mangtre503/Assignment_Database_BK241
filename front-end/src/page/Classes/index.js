@@ -5,6 +5,7 @@ import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import ClassItem from "../../component/ClassItem";
+import IncreaseIcon from "../../assets/icons/increase.svg";
 import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import "./Classes.css";
 
@@ -91,9 +92,9 @@ function Classes() {
             return (
               <>
                 <div className="sort-item">
-                <h4>{item}</h4>
+                {index === sortList.length - 1? <input type="text" placeholder={item}/> : <h4>{item}</h4>}
               {index === sortList.length - 1? 
-                <img src={SearchIcon} alt="SearchIcon" /> : <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
+                <img src={SearchIcon} alt="SearchIcon" /> : index === sortList.length - 2? <img src={IncreaseIcon} alt="IncreaseIcon"/> : <img src={ChevronsDownIcon} alt="ChevronsDownIcon" />
               }
               </div>
               </>

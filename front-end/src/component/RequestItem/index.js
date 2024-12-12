@@ -2,6 +2,11 @@ import React from "react";
 import "./RequestItem.css";
 import { useNavigate } from "react-router-dom";
 
+const enumerate = {
+  "Da xu ly": "Đã xử lý",
+  "Chua xu ly": "Chưa xử lý"
+}
+
 function RequestItem({ infoRequest }) {
 
   const navigate = useNavigate();
@@ -9,15 +14,15 @@ function RequestItem({ infoRequest }) {
   return (
     <div className="container-card">
     <div className="title-card" style={{cursor: "default"}}>
-      Mã đơn yêu cầu tư vấn: <h4>{infoRequest.requestId}</h4>
+      Mã đơn yêu cầu tư vấn: <h4>{infoRequest.id}</h4>
     </div>
     <div className="content-card">
       <div className="left-content">
         <p>
-          Trạng thái: <span className={"status " + (infoRequest.status === "Đã xử lý"? "processed" : "not-yet-processed")}>{infoRequest.status}</span>
+          Trạng thái: <span className={"status " + (infoRequest.status === "Da xu ly"? "processed" : "not-yet-processed")}>{enumerate[infoRequest.status]}</span>
         </p>
-        <p onClick={() => navigate("/information-student/" + 1)} style={{cursor: "pointer"}}>
-          Học viên: <span>{infoRequest.studentName}</span>
+        <p onClick={() => navigate("/information-student/" + infoRequest.idStudent)} style={{cursor: "pointer"}}>
+          Học viên: <span>{infoRequest.nameStudent}</span>
         </p>
         <p>
           Môn học: <span>{infoRequest.subjects.join(", ")}</span>
@@ -28,10 +33,10 @@ function RequestItem({ infoRequest }) {
       </div>
       <div className="right-content">
         <p>
-          Kiểu dạy: <span>{infoRequest.teachingMethod}</span>
+          Kiểu dạy: <span>{infoRequest.teachingStyle}</span>
         </p>
         <p>
-          Khối lớp: <span>{infoRequest.classLevel}</span>
+          Khối lớp: <span>{infoRequest.grade}</span>
         </p>
         <p>
           SĐT:{" "}

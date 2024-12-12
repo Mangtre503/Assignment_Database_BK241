@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
@@ -7,41 +7,18 @@ import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import RequestItem from "../../component/RequestItem";
 import "./ConsultationRequest.css";
+import api from "../../api";
+import { Backdrop, CircularProgress } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
+import { useSnackbar } from "../../component/SnackbarProvider";
 
 function ConsultationRequest() {
   // Variable + Hook
-  const listRequests = [
-    {
-      requestId: "1",
-      status: "Đã xử lý",
-      studentName: "Trần Thanh",
-      subjects: ["Ngữ văn", "KHXH", "Toán"],
-      address: "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
-      teachingMethod: "Trực tiếp",
-      classLevel: 4,
-      phoneNumber: "0912987654",
-    },
-    {
-      requestId: "2",
-      status: "Đã xử lý",
-      studentName: "Nguyễn Hoàng Anh",
-      subjects: ["Toán", "Tiếng Anh"],
-      address: "215, đường Nguyễn Văn Trỗi, phường 11, quận Phú Nhuận, TP. Hồ Chí Minh",
-      teachingMethod: "Trực tiếp",
-      classLevel: 8,
-      phoneNumber: "0937456789",
-    },
-    {
-      requestId: "3",
-      status: "Chưa xử lý",
-      studentName: "Lê Khánh Linh",
-      subjects: ["Tiếng Anh", "Ngữ văn", "KHTN"],
-      address: "66, đường Cô Bắc, phường Cầu Ông Lãnh, quận 1, TP. Hồ Chí Minh",
-      teachingMethod: "Trực tiếp",
-      classLevel: 11,
-      phoneNumber: "0987654321",
-    },
-  ];
+  const [listRequests, setListRequests] = useState([]);
+  const dispatch = useDispatch();
+  const { showSnackbar } = useSnackbar();
+  const open = useSelector(state => state.backdropAction);
 
   const sortList = [
     "Khối lớp",
@@ -73,9 +50,30 @@ function ConsultationRequest() {
     }
   }
 
+  async function getListConsultation(){
+    try{
+      dispatch(openBackDrop());
+      const response = await api.get(`user/consultation-reqs`);
+      setListRequests(response.data.content);
+    }catch(e){
+      showSnackbar("Lỗi kết nối, vui lòng thử lại sau ít phút");
+    }
+    dispatch(closeBackDrop());
+  }
+
+  useEffect(() => {
+    getListConsultation();
+  }, []);
+
   return (
     <>
       <div className="container-classes">
+      <Backdrop
+        sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
         <h1>Danh sách đơn yêu cầu tư vấn</h1>
         <div className="container-filter-class">
           <div className="box-filter filter-from">

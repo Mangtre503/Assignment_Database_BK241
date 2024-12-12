@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./InformationStudent.css";
 import UserInfoIcon from "../../assets/icons/UserInfoIcon.svg";
-import { Grid } from "@mui/material";
+import { Backdrop, CircularProgress, Grid } from "@mui/material";
+import { useParams } from "react-router-dom";
+import api from "../../api";
+import { useDispatch, useSelector } from "react-redux";
+import { useSnackbar } from "../../component/SnackbarProvider";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
 
 function InformationStudent() {
+
+  const { idStudent } = useParams('idStudent');
+  const open = useSelector(state => state.backdropAction);
+  const dispatch = useDispatch();
+  const { showSnackbar } = useSnackbar();
   const title = [
     "Họ và tên",
     "Giới tính",
@@ -14,20 +24,49 @@ function InformationStudent() {
     "Email",
     "Mạng xã hội",
   ];
-  const studentInfo = {
-    name: "Trần Thanh",
-    gender: "Nam",
-    grade: "4",
-    school: "Trường Tiểu học Quốc tế Á Châu",
-    address:
-      "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
-    phoneNumber: "0905123456",
-    email: "thanhtran123@gmail.com",
-    socialMedia: "https://facebook.com/thanhtran123",
-  };
+  const [studentInfo, setStudentInfo] = useState({
+    fullname: "",
+    sex: "",
+    grade: null,
+    school: "",
+    address:"",
+    phoneNumber: "",
+    email: "",
+    association: "",
+  });
+
+  async function getStudentInfo(){
+    try{
+      dispatch(openBackDrop());
+      const response = await api.get(`user/information?id=${idStudent}`);
+      console.log(response);
+      const data = {
+        ...response.data, 
+        phoneNumber: Array.from(response.data.contact).map(it => it.phoneNumber).join(', '),
+        email: Array.from(response.data.contact).map(it => it.email).join(', '),
+        association: Array.from(response.data.contact).map(it => it.association).join(', '),
+        address: Array.from(response.data.address).map(it => it).join('\n'),
+      }
+      delete data.contact;
+      setStudentInfo(data);
+    }catch(e){
+      showSnackbar("Lỗi kết nối, vui lòng thử lại sau ít phút");
+    }
+    dispatch(closeBackDrop());
+  }
+
+  useEffect(() => {
+    getStudentInfo();
+  }, []);
 
   return (
     <div className="container-information-account">
+      <Backdrop
+        sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <img src={UserInfoIcon} alt="UserInfoIcon" />
       <Grid
         className="container-grid"

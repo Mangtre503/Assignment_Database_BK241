@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.database241.onlinetutorfinding.entity.address.Address;
@@ -37,6 +39,9 @@ public class UserServiceImpl implements UserService {
 
         @Autowired
         private SystemUserRepository systemUserRepository;
+
+        @Autowired
+        private JdbcTemplate jdbcTemplate;
 
         @Autowired
         private TutorApplicationRepository tutorApplicationRepository;
@@ -116,8 +121,8 @@ public class UserServiceImpl implements UserService {
         public Page<TutorApplicationResponse> getTutorApplications(Integer pageNo, Integer pageSize) {
                 Pageable pageable = PageRequest.of(pageNo, pageSize);
                 Page<TutorApplication> taPage = tutorApplicationRepository.findAll(pageable);
-                List<TutorApplicationResponse> responses = taPage.stream().map(it -> TutorApplicationResponse.builder()
-                                .address(buildAddress(it.getAddress())).grade(it.getStudent().getStuGrade())
+                List<TutorApplicationResponse> responses = taPage.stream().map(it -> TutorApplicationResponse.builder().idStudent(it.getStudent().getId()).idTutor(it.getTutor().getId())
+                                .address(buildAddress(it.getAddress())).idAddr(it.getAddress().getId()).grade(it.getStudent().getStuGrade())
                                 .id(it.getId()).nameStudent(it.getStudent().getFullName())
                                 .nameTutor(it.getTutor().getFullName()).phoneNumber(it.getStudent().getPhoneNumber())
                                 .requirement(it.getRequirement()).status(it.getTaStatus())
@@ -132,7 +137,7 @@ public class UserServiceImpl implements UserService {
                 Pageable pageable = PageRequest.of(pageNo, pageSize);
                 Page<ConsultationReq> cqPage = consultationReqRepository.findAll(pageable);
                 List<ConsultationReqResponse> responses = cqPage.stream().map(it -> ConsultationReqResponse.builder()
-                                .address(buildAddress(it.getAddress())).grade(it.getStudent().getStuGrade())
+                                .address(buildAddress(it.getAddress())).grade(it.getStudent().getStuGrade()).idStudent(it.getStudent().getId())
                                 .id(it.getId()).nameStudent(it.getStudent().getFullName())
                                 .phoneNumber(it.getStudent().getPhoneNumber()).status(it.getCqStatus())
                                 .subjects(it.getSubjects().stream().map(item -> item.getSubjectName())
@@ -142,4 +147,17 @@ public class UserServiceImpl implements UserService {
                                 .build()).collect(Collectors.toList());
                 return new PageImpl<>(responses, pageable, responses.size());
         }
+
+       @Override
+public void updateStatusTa(Long id, String status) {
+    try {
+        String sql = "EXECUTE Update_Application_Status @Tutor_App_Status = ?, @Tutor_App_Id = ?";
+        jdbcTemplate.update(sql, status, id);
+        System.out.println("Stored procedure executed successfully!");
+    } catch (DataAccessException e) {
+        System.err.println("Error executing stored procedure: " + e.getMessage());
+    }
+}
+
+
 }

@@ -24,20 +24,7 @@ function TutorRegistration() {
   const [page, setPage] = useState(0);
   const open = useSelector(state => state.backdropAction);
 
-  const [listRegistration, setListRegistration] = useState([
-    {
-      id: "1",
-      nameStudent: "Trần Thanh",
-      subjects: ["Ngữ văn", "KHXH", "Toán"],
-      grade: 4,
-      address: "190, đường Lê Thánh Tôn, phường Bến Thành, quận 1, TP. Hồ Chí Minh",
-      styleTeaching: "Trực tiếp",
-      nameTutor: "Nguyễn Việt Anh",
-      phoneNumber: "0912 987 654",
-      status: "Đã mở lớp",
-      requirement: "Tốt nghiệp đại học chuyên ngành liên quan.",
-    }
-  ]);
+  const [listRegistration, setListRegistration] = useState([]);
 
   const sortList = [
     "Khối lớp",
@@ -73,11 +60,14 @@ function TutorRegistration() {
     try{
       dispatch(openBackDrop());
       const response = await api.get(`user/teaching-applications?pageNo=${pageReq}&pageSize=`);
+      if(Array.isArray(response.data.content) && Array.from(response.data.content).length > 0){
       setListRegistration((prev) => [
         ...prev,
         ...response.data.content
       ])
-      console.log(response);
+    } else{
+      setHasMore(false);
+    }
     }catch(e){
       showSnackbar("Lỗi kết nối. Vui lòng thử lại sau ít phút");
     }
@@ -116,6 +106,12 @@ function TutorRegistration() {
         }
     };
 }, [hasMore, page]);
+
+  function resetList(){
+    setListRegistration([]);
+    setPage(0);
+    getListTutorApplication(page);
+  }
 
   return (
     <>
@@ -169,7 +165,7 @@ function TutorRegistration() {
         </div>
         <div className="container-card-list">
           {listRegistration.map((item) => (
-            <RegistrationItem infoRegistration={item} />
+            <RegistrationItem infoRegistration={item} resetList={resetList}/>
           ))}
         </div>
       </div>

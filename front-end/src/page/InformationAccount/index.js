@@ -57,7 +57,6 @@ function InformationAccount() {
       }
       delete data.contact;
       setUserInfo(data);
-      console.log(response);
     }catch(e){
       if(e.response.status === 404){
         showSnackbar("Tài khoản hiện tại không khả dụng");

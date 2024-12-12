@@ -71,44 +71,40 @@ BEGIN
 END;
 
 
--- Khong demo nay
-CREATE TRIGGER Calculate_Tutor_Rate
-ON [Ass2_CO2013].[dbo].[tutor_review]
-AFTER INSERT, DELETE, UPDATE
-AS
-BEGIN
-    SET NOCOUNT ON;
+-- -- Khong demo nay
+-- CREATE TRIGGER Calculate_Tutor_Rate
+-- ON [Ass2_CO2013].[dbo].[tutor_review]
+-- AFTER INSERT, DELETE, UPDATE
+-- AS
+-- BEGIN
+--     SET NOCOUNT ON;
 
-    -- Bảng tạm lưu danh sách tutor_id bị ảnh hưởng
-    DECLARE @AffectedTutors TABLE (tutor_id BIGINT);
+--     -- Bảng tạm lưu danh sách tutor_id bị ảnh hưởng
+--     DECLARE @AffectedTutors TABLE (tutor_id BIGINT);
 
-    -- Thêm tutor_id bị ảnh hưởng từ thao tác INSERT hoặc UPDATE
-    INSERT INTO @AffectedTutors (tutor_id)
-    SELECT DISTINCT c.tutor_id
-    FROM inserted i
-    JOIN [Ass2_CO2013].[dbo].[class] c ON i.class_id = c.class_id;
+--     -- Thêm tutor_id bị ảnh hưởng từ thao tác INSERT hoặc UPDATE
+--     INSERT INTO @AffectedTutors (tutor_id)
+--     SELECT DISTINCT c.tutor_id
+--     FROM inserted i
+--     JOIN [Ass2_CO2013].[dbo].[class] c ON i.class_id = c.class_id;
 
-    -- Thêm tutor_id bị ảnh hưởng từ thao tác DELETE
-    INSERT INTO @AffectedTutors (tutor_id)
-    SELECT DISTINCT c.tutor_id
-    FROM deleted d
-    JOIN [Ass2_CO2013].[dbo].[class] c ON d.class_id = c.class_id;
+--     -- Thêm tutor_id bị ảnh hưởng từ thao tác DELETE
+--     INSERT INTO @AffectedTutors (tutor_id)
+--     SELECT DISTINCT c.tutor_id
+--     FROM deleted d
+--     JOIN [Ass2_CO2013].[dbo].[class] c ON d.class_id = c.class_id;
 
-    -- Loại bỏ các giá trị NULL
-    DELETE FROM @AffectedTutors WHERE tutor_id IS NULL;
+--     -- Loại bỏ các giá trị NULL
+--     DELETE FROM @AffectedTutors WHERE tutor_id IS NULL;
 
-    -- Cập nhật lại điểm đánh giá cho từng tutor_id bị ảnh hưởng
-    UPDATE t
-    SET rate = (
-        SELECT AVG(r.rate)
-        FROM [Ass2_CO2013].[dbo].[tutor_review] r
-        JOIN [Ass2_CO2013].[dbo].[class] c ON r.class_id = c.class_id
-        WHERE c.tutor_id = t.tutor_id
-    )
-    FROM [Ass2_CO2013].[dbo].[tutor] t
-    WHERE t.tutor_id IN (SELECT tutor_id FROM @AffectedTutors);
-END;
-
-
-
-
+--     -- Cập nhật lại điểm đánh giá cho từng tutor_id bị ảnh hưởng
+--     UPDATE t
+--     SET rate = (
+--         SELECT AVG(r.rate)
+--         FROM [Ass2_CO2013].[dbo].[tutor_review] r
+--         JOIN [Ass2_CO2013].[dbo].[class] c ON r.class_id = c.class_id
+--         WHERE c.tutor_id = t.tutor_id
+--     )
+--     FROM [Ass2_CO2013].[dbo].[tutor] t
+--     WHERE t.tutor_id IN (SELECT tutor_id FROM @AffectedTutors);
+-- END;

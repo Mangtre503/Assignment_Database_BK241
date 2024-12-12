@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./InformationTutor.css";
-import { Box, Grid, Rating } from "@mui/material";
+import { Backdrop, Box, CircularProgress, Grid, Rating } from "@mui/material";
 import UserInfoIcon from "../../assets/icons/UserInfoIcon.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { useSnackbar } from "../../component/SnackbarProvider";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
+import api from "../../api";
+import dayjs from "dayjs";
+
+const formatDate = (dateStr) => {
+  return dayjs(dateStr).format("DD/MM/YYYY");
+};
 
 function InformationTutor() {
-  const { idTutor } = useParams();
+  const { idTutor } = useParams("idTutor");
+  const open = useSelector((state) => state.backdropAction);
+  const dispatch = useDispatch();
+  const { showSnackbar } = useSnackbar();
 
   const title = [
     "Họ và tên",
@@ -25,39 +37,84 @@ function InformationTutor() {
   ];
 
   // Thông tin gia sư
-  const tutorInfo = {
-    name: "Nguyệt Việt Anh",
-    gender: "Nam",
-    birthDate: "29/07/1999",
-    hometown: "Lâm Đồng",
-    idCard: "079618930726",
-    phoneNumber: "0981234567",
-    email: "vietanh7777@gmail.com",
-    socialMedia: "https://facebook.com/vietanh7777",
-    address: "25, đường Lê Duẩn, phường Bến Nghé, quận 1, TP. Hồ Chí Minh",
-    dateJoined: "02/04/2022",
-    referralCode: "A3B2C1",
-    numberOfReferrals: 1,
-    referredByCode: "",
-    biography:
-      "Gia sư với 5 năm kinh nghiệm, giúp học sinh phát huy tối đa khả năng học tập và đạt kết quả xuất sắc.",
-  };
+  const [tutorInfo, setTutorInfo] = useState({
+    fullname: "",
+    sex: "",
+    birthday: null,
+    hometown: "",
+    cccd: "",
+    phoneNumber: "",
+    email: "",
+    association: "",
+    address: "",
+    dateJoin: null,
+    codeInviting: "",
+    nofInvitations: null,
+    codeInvited: "",
+    bio: "",
+  });
+
+  async function getTutorInfo() {
+    try {
+      dispatch(openBackDrop());
+      const response = await api.get(`user/information?id=${idTutor}`);
+      const data = {
+        fullname: response.data.fullname,
+        sex: response.data.sex,
+        birthday: formatDate(response.data.birthday),
+        hometown: response.data.hometown,
+        cccd: response.data.cccd,
+        phoneNumber: Array.from(response.data.contact)
+          .map((it) => it.phoneNumber)
+          .join(", "),
+        email: Array.from(response.data.contact)
+          .map((it) => it.email)
+          .join(", "),
+        association: Array.from(response.data.contact)
+          .map((it) => it.association)
+          .join(", "),
+        address: Array.from(response.data.address)
+          .map((it) => it)
+          .join("\n"),
+        dateJoin: formatDate(response.data.dateJoin),
+        codeInviting: response.data.codeInviting,
+        nofInvitations: response.data.nofInvitations,
+        codeInvited: response.data.codeInvited,
+        bio: response.data.bio,
+      };
+      delete data.contact;
+      console.log(data);
+      setTutorInfo(data);
+    } catch (e) {
+      showSnackbar("Lỗi kết nối, vui lòng thử lại sau ít phút");
+    }
+    dispatch(closeBackDrop());
+  }
+
+  useEffect(() => {
+    getTutorInfo();
+  }, []);
 
   return (
     <div className="container-information-account">
+      <Backdrop
+        sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <div>
-        
-      <Box display="flex" alignItems="center">
-      <Rating
-        name="half-rating"
-        value={2.4}
-        precision={0.1} // Cho phép hiển thị nửa sao hoặc số lẻ
-        readOnly
-        sx={{color: '#D291BC'}}
-        />
-      </Box>
-      <img src={UserInfoIcon} alt="UserInfoIcon" />
-        </div>
+        <Box display="flex" alignItems="center">
+          <Rating
+            name="half-rating"
+            value={2.4}
+            precision={0.1} // Cho phép hiển thị nửa sao hoặc số lẻ
+            readOnly
+            sx={{ color: "#D291BC" }}
+          />
+        </Box>
+        <img src={UserInfoIcon} alt="UserInfoIcon" />
+      </div>
       <Grid
         className="container-grid"
         container
