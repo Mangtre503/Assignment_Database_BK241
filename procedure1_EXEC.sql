@@ -24,7 +24,7 @@ EXEC FindClassByFilter
 	
 -- exec7. Loc nhung lop hoc theo "SDT: 0905 123 456".
 EXEC FindClassByFilter
-    @phone_number = '0905 123 456';
+    @phone_number = '0905123457';
 
 -- exec8. Loc nhung lop hoc trong khoang thoi gian tu ngay "07-10-2022" den "07-10-2023".
 EXEC FindClassByFilter
@@ -51,7 +51,7 @@ EXEC FindClassByFilter
     @name = 'Quan Phu Nhuan',
     @class_status = 'Da giao',
     @subject_name = 'Toan',
-    @phone_number = '0905 123 456', 
+    @phone_number = '0905123457', 
     @date_start_from = '2022-01-01',
     @date_start_to = '2024-01-01',
     @sort_order = 'DESC';

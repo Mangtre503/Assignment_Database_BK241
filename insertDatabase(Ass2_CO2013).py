@@ -7,7 +7,7 @@ engine = create_engine(connection_string)
 def user():
     user = pd.read_excel('Dataset/user.xlsx')
     user = user[['full_name', 'password', 'phone_number', 'user_sex']].copy()
-
+    user['phone_number'] = user['phone_number'].apply(lambda x: '0' + str(x) if len(str(x)) == 9 else str(x))
     try:
         user.to_sql('user', con=engine, if_exists='append', index=False)
         print("User data has been inserted successfully!")
@@ -17,6 +17,7 @@ def user():
 def user_contact():
     user_contact = pd.read_excel('Dataset/user_contact.xlsx')
     user_contact = user_contact[['contact_email', 'contact_phone_number', 'social_media_link', 'user_id']].copy()
+    user_contact['contact_phone_number'] = user_contact['contact_phone_number'].apply(lambda x: '0' + str(x) if len(str(x)) == 9 else str(x))
     try:
         user_contact.to_sql('user_contact', con=engine, if_exists='append', index=False)
         print("User contact data has been inserted successfully!")

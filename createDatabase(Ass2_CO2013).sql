@@ -10,7 +10,7 @@ GO
 CREATE TABLE [dbo].[address](
 	[addr_id] [bigint] IDENTITY(1,1) NOT NULL,
 	[house_number] [int] NULL,
-	[str_name] [varchar](255) NULL,
+	[str_name] [nvarchar](255) NULL,
 	[user_id] [bigint] NOT NULL,
 	[dist_city_id] [bigint] NULL,
 	[pro_id] [bigint] NULL,
@@ -58,8 +58,8 @@ CREATE TABLE [dbo].[bill](
 	[bill_id] [bigint] IDENTITY(1,1) NOT NULL,
 	[bill_money] [bigint] NULL,
 	[bill_photo_url] [varbinary](max) NULL,
-	[bill_status] [varchar](255) NULL,
-	[bill_type] [varchar](255) NULL,
+	[bill_status] [nvarchar](255) NULL,
+	[bill_type] [nvarchar](255) NULL,
 	[admin_id] [bigint] NULL,
 	[vou_id] [bigint] NULL,
 PRIMARY KEY CLUSTERED 
@@ -134,7 +134,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[certificate_type](
 	[ct_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[ct_name] [varchar](255) NULL,
+	[ct_name] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[ct_id] ASC
@@ -149,9 +149,9 @@ GO
 CREATE TABLE [dbo].[class](
 	[class_id] [bigint] IDENTITY(1,1) NOT NULL,
 	[class_deposit] [bigint] NULL,
-	[class_status] [varchar](255) NULL,
+	[class_status] [nvarchar](255) NULL,
 	[commission_fee] [bigint] NULL,
-	[requirements] [varchar](255) NULL,
+	[requirements] [nvarchar](255) NULL,
     [date_start] [datetime2](7) NULL,
 	[salary] [bigint] NULL,
 	[addr_id] [bigint] NOT NULL,
@@ -171,7 +171,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[class_type](
 	[class_type_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[class_type_name] [varchar](255) NULL,
+	[class_type_name] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[class_type_id] ASC
@@ -185,8 +185,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[consultation_req](
 	[cq_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[cq_status] [varchar](255) NULL,
-	[requirement] [varchar](255) NULL,
+	[cq_status] [nvarchar](255) NULL,
+	[requirement] [nvarchar](255) NULL,
 	[addr_id] [bigint] NOT NULL,
 	[student_id] [bigint] NOT NULL,
 PRIMARY KEY CLUSTERED 
@@ -222,8 +222,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[degree](
 	[degr_id] [bigint] NOT NULL,
-	[degr_major_name] [varchar](255) NULL,
-	[degr_type] [varchar](255) NULL,
+	[degr_major_name] [nvarchar](255) NULL,
+	[degr_type] [nvarchar](255) NULL,
 	[degr_year] [int] NULL,
 	[tutor_id] [bigint] NOT NULL,
 	[edi_code] [bigint] NOT NULL,
@@ -241,7 +241,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[educational_institution](
 	[edi_code] [bigint] IDENTITY(1,1) NOT NULL,
-	[edi_name] [varchar](255) NULL,
+	[edi_name] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[edi_code] ASC
@@ -255,7 +255,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[district_city](
 	[dist_city_id] [bigint] NOT NULL,
-	[name] [varchar](255) NULL,
+	[name] [nvarchar](255) NULL,
 	[pro_id] [bigint] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -318,7 +318,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[province](
 	[pro_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[pro_name] [varchar](255) NULL,
+	[pro_name] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[pro_id] ASC
@@ -331,7 +331,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[qualification](
-	[qualification] [varchar](255) NOT NULL,
+	[qualification] [nvarchar](255) NOT NULL,
 	[tutor_id] [bigint] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -348,7 +348,7 @@ GO
 CREATE TABLE [dbo].[staff](
 	[date_of_birth] [datetime2](7) NULL,
 	[national_id] [varchar](255) NULL,
-	[place_of_origin] [varchar](255) NULL,
+	[place_of_origin] [nvarchar](255) NULL,
 	[profile_photo_url] [varbinary](max) NULL,
 	[staff_id] [bigint] NOT NULL,
 PRIMARY KEY CLUSTERED 
@@ -364,7 +364,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[student](
 	[stu_grade] [int] NULL,
-	[stu_school] [varchar](255) NULL,
+	[stu_school] [nvarchar](255) NULL,
 	[student_id] [bigint] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -379,7 +379,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[subject](
 	[subject_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[subject_name] [varchar](255) NULL,
+	[subject_name] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[subject_id] ASC
@@ -413,7 +413,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[teaching_application](
 	[teaching_appl_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[application_status] [varchar](255) NULL,
+	[application_status] [nvarchar](255) NULL,
 	[date_of_creation] [datetime2](7) NULL,
 	[class_id] [bigint] NOT NULL,
 	[tutor_id] [bigint] NOT NULL,
@@ -430,7 +430,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[teaching_style](
 	[ts_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[ts_name] [varchar](255) NULL,
+	[ts_name] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[ts_id] ASC
@@ -444,8 +444,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[time_slot](
 	[slot_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[end_time] [datetime2](7) NULL,
-	[start_time] [datetime2](7) NULL,
+	[end_time] [TIME] NULL,
+	[start_time] [TIME] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[slot_id] ASC
@@ -458,7 +458,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[tutor](
-	[bio] [varchar](255) NULL,
+	[bio] [nvarchar](255) NULL,
 	[date_joined] [datetime2](7) NULL,
 	[inviting_code] [varchar](255) NULL,
 	[n_of_invitations] [int] NULL,
@@ -482,8 +482,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[tutor_application](
 	[ta_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[requirement] [varchar](255) NULL,
-	[ta_status] [varchar](255) NULL,
+	[requirement] [nvarchar](255) NULL,
+	[ta_status] [nvarchar](255) NULL,
 	[addr_id] [bigint] NOT NULL,
 	[student_id] [bigint] NOT NULL,
 	[ts_id] [bigint] NOT NULL,
@@ -501,7 +501,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[tutor_review](
 	[tutor_review_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[comment] [varchar](255) NULL,
+	[comment] [nvarchar](255) NULL,
 	[rate] [int] NULL,
 	[time_stamp] [datetime2](7) NULL,
 	[class_id] [bigint] NOT NULL,
@@ -538,10 +538,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[user](
 	[user_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[full_name] [varchar](255) NULL,
+	[full_name] [nvarchar](255) NULL,
 	[password] [varchar](255) NOT NULL,
 	[phone_number] [varchar](255) NOT NULL,
-	[user_sex] [varchar](255) NULL,
+	[user_sex] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[user_id] ASC
@@ -560,7 +560,7 @@ GO
 CREATE TABLE [dbo].[voucher](
 	[vou_id] [bigint] IDENTITY(1,1) NOT NULL,
 	[vou_discount] [NUMERIC](10,2) NULL,
-	[vou_status] [varchar](255) NULL,
+	[vou_status] [nvarchar](255) NULL,
 	[tutor_id] [bigint] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -585,7 +585,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ward](
 	[ward_id] [bigint] NOT NULL,
-	[ward_name] [varchar](255) NULL,
+	[ward_name] [nvarchar](255) NULL,
 	[dist_city_id] [bigint] NOT NULL,
 	[pro_id] [bigint] NOT NULL,
 PRIMARY KEY CLUSTERED 
@@ -603,7 +603,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[week_day](
 	[week_id] [bigint] IDENTITY(1,1) NOT NULL,
-	[name] [varchar](255) NULL,
+	[name] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[week_id] ASC

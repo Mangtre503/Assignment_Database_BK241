@@ -11,7 +11,6 @@
 	@sort_order NVARCHAR(4) = 'ASC'
 AS
 BEGIN
-
 	-- 1. Truy van kiem tra su ton tai cua du lieu.
 	IF NOT EXISTS (
 		SELECT 1
@@ -64,7 +63,6 @@ BEGIN
 			(@date_start_from IS NULL OR c.date_start >= @date_start_from) AND
 			(@date_start_to	IS NULL OR c.date_start <= @date_start_to)
 	)
-
 	BEGIN
 		-- Thong bao loi neu khong tim thay du lieu phu hop.
 		RAISERROR('Khong tim thay du lieu phu hop yeu cau.', 16, 1);
@@ -73,7 +71,6 @@ BEGIN
 
 	-- 2. Truy van thong tin khi du lieu ton tai.
 	DECLARE @sql_query NVARCHAR(MAX);
-
 	SET @sql_query = N'
 	SELECT
 		-- Tu Bang @class: ma lop hoc, ngay bat dau, trang thai.
@@ -140,8 +137,6 @@ BEGIN
 		
 	-- Thuc thi truy van
 	EXEC sp_executesql @sql_query,
-		N'@class_type_name VARCHAR(255), @ts_name VARCHAR(255), @name VARCHAR(255), 
-			@class_status VARCHAR(255), @subject_name VARCHAR(255), 
-			@phone_number VARCHAR(255), @date_start_from DATETIME2(7), @date_start_to DATETIME2(7)',
+		N'@class_type_name VARCHAR(255), @ts_name VARCHAR(255), @name VARCHAR(255), @class_status VARCHAR(255), @subject_name VARCHAR(255), @phone_number VARCHAR(255), @date_start_from DATETIME2(7), @date_start_to DATETIME2(7)', 
 		@class_type_name, @ts_name, @name, @class_status, @subject_name, @phone_number, @date_start_from, @date_start_to;
 END;
