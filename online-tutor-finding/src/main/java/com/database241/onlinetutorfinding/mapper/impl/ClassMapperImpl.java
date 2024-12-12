@@ -40,8 +40,22 @@ public class ClassMapperImpl implements ClassMapper
                                 class1
                                         .getDatesAndTimes()
                                         .stream()
-                                        .map(dateAndTime ->
-                                                new DateAndTimeDto(dateAndTime.getWeek().getId(), dateAndTime.getSlot().getId()))
+                                        .map
+                                                (
+                                                dateAndTime ->
+                                                        ClassGetClassResponseDto
+                                                                .DateAndTime
+                                                                .builder()
+                                                                .weekDay(dateAndTime.getWeek().getName())
+                                                                .time
+                                                                (
+                                                                        String
+                                                                                .format("%s:00 to %s:00",
+                                                                                        dateAndTime.getSlot().getStartTime().getHour(),
+                                                                                        dateAndTime.getSlot().getEndTime().getHour())
+                                                                )
+                                                                .build()
+                                                )
                                         .collect(Collectors.toSet())
                         )
                 .address

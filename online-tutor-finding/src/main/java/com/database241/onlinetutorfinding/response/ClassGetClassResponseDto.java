@@ -22,7 +22,7 @@ public class ClassGetClassResponseDto implements Serializable
     Long commissionFee;
     String studentName;
     Set<String> subjects;
-    Set<DateAndTimeDto> dateAndTimeList;
+    Set<DateAndTime> dateAndTimeList;
     String address;
     String requirements;
     String dateStart;
@@ -30,4 +30,13 @@ public class ClassGetClassResponseDto implements Serializable
     String teachingStyleTName;
     String tutorFullName;
     Set<String> classTypes;
+
+
+    @Value
+    @Builder
+    public static class DateAndTime
+    {
+        String weekDay;
+        String time;
+    }
 }
