@@ -1,13 +1,16 @@
 package com.database241.onlinetutorfinding.controller;
 
 import com.database241.onlinetutorfinding.request.ClassCreateClassRequestDto;
+import com.database241.onlinetutorfinding.request.ClassUpdateClassRequestDto;
+import com.database241.onlinetutorfinding.response.ClassGetClassResponseDto;
 import com.database241.onlinetutorfinding.service.ClassService;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.sql.SQLException;
 
 
 @RestController
@@ -22,6 +25,33 @@ public class ClassController
             throws SQLServerException
     {
         classService.createClass(classCreateClassRequestDto);
+    }
+
+
+    @GetMapping("{classId}")
+    public ResponseEntity<ClassGetClassResponseDto> getClass(@PathVariable Long classId)
+    {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body
+                        (
+                                classService.getClass(classId)
+                        );
+    }
+
+
+    @PutMapping
+    public void updateClass(@RequestBody ClassUpdateClassRequestDto classUpdateClassRequestDto) throws SQLServerException
+    {
+        classService.updateClass(classUpdateClassRequestDto);
+    }
+
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteClass(@PathVariable Long id) throws SQLServerException
+    {
+        classService.deleteClass(id);
     }
 }
 

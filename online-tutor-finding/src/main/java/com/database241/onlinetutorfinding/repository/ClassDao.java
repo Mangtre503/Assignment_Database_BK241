@@ -1,8 +1,8 @@
 package com.database241.onlinetutorfinding.repository;
 
+import com.database241.onlinetutorfinding.request.ClassUpdateClassRequestDto;
 import com.database241.onlinetutorfinding.request.DateAndTimeDto;
 import com.microsoft.sqlserver.jdbc.SQLServerDataTable;
-import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,8 +15,7 @@ import java.util.Map;
 
 @Repository
 @RequiredArgsConstructor
-public class ClassDao
-{
+public class ClassDao {
     private final JdbcTemplate jdbcTemplate;
 
 
@@ -24,8 +23,8 @@ public class ClassDao
         SQLServerDataTable table = createSubjectIdTable(subjectIds);
         SimpleJdbcCall simpleJdbcCall =
                 new SimpleJdbcCall(jdbcTemplate)
-                .withSchemaName("dbo")
-                .withProcedureName("insert_has_subject");
+                        .withSchemaName("dbo")
+                        .withProcedureName("insert_has_subject");
 
         Map<String, Object> inputParams = new HashMap<>();
         inputParams.put("class_id", classId);
@@ -39,8 +38,8 @@ public class ClassDao
         SQLServerDataTable table = createClassTypeIdTable(classTypeIds);
         SimpleJdbcCall simpleJdbcCall =
                 new SimpleJdbcCall(jdbcTemplate)
-                .withSchemaName("dbo")
-                .withProcedureName("insert_has_class_type");
+                        .withSchemaName("dbo")
+                        .withProcedureName("insert_has_class_type");
 
         Map<String, Object> inputParams = new HashMap<>();
         inputParams.put("class_id", classId);
@@ -51,13 +50,12 @@ public class ClassDao
 
 
     public void insertTime(Long classId, List<DateAndTimeDto> dateAndTimeDtoList)
-            throws SQLServerException
-    {
+            throws SQLServerException {
         SQLServerDataTable timeListDataTable = createTimeListDataTable(dateAndTimeDtoList);
         SimpleJdbcCall simpleJdbcCall =
                 new SimpleJdbcCall(jdbcTemplate)
-                .withSchemaName("dbo")
-                .withProcedureName("insert_is_held_on");
+                        .withSchemaName("dbo")
+                        .withProcedureName("insert_is_held_on");
 
         Map<String, Object> inParams = new HashMap<>();
         inParams.put("class_id", classId);
@@ -67,10 +65,46 @@ public class ClassDao
     }
 
 
+    public int updateClass(ClassUpdateClassRequestDto classUpdateClassRequestDto)
+            throws SQLServerException
+    {
+        String sql = "{CALL update_class(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+
+        return jdbcTemplate.update
+                (
+                        sql,
+                        classUpdateClassRequestDto.classId(),
+                        classUpdateClassRequestDto.classDeposit(),
+                        classUpdateClassRequestDto.classStatus(),
+                        classUpdateClassRequestDto.commissionFee(),
+                        classUpdateClassRequestDto.requirements(),
+                        classUpdateClassRequestDto.dateStart(),
+                        classUpdateClassRequestDto.salary(),
+                        classUpdateClassRequestDto.addrId(),
+                        classUpdateClassRequestDto.studentId(),
+                        classUpdateClassRequestDto.tsId(),
+                        classUpdateClassRequestDto.tutorId()
+                );
+    }
+
+
+    public void deleteClass(Long classId) throws SQLServerException
+    {
+        SimpleJdbcCall simpleJdbcCall =
+                new SimpleJdbcCall(jdbcTemplate)
+                .withSchemaName("dbo")
+                .withProcedureName("delete_class");
+
+        Map<String, Object> inParams = new HashMap<>();
+        inParams.put("class_id", classId);
+
+        simpleJdbcCall.execute(inParams);
+    }
+
+
     private SQLServerDataTable createSubjectIdTable(List<Long> subjectIds) throws SQLServerException
     {
         SQLServerDataTable table = new SQLServerDataTable();
-
         table.addColumnMetadata("subject_id", java.sql.Types.BIGINT);
 
         for (Long subjectId : subjectIds)
@@ -95,7 +129,6 @@ public class ClassDao
             throws SQLServerException
     {
         SQLServerDataTable table = new SQLServerDataTable();
-
 
         table.addColumnMetadata("week_id", java.sql.Types.BIGINT);
         table.addColumnMetadata("slot_id", java.sql.Types.BIGINT);

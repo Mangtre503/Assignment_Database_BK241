@@ -7,7 +7,9 @@ import java.util.List;
 /**
  * DTO for {@link com.database241.onlinetutorfinding.entity.clAss.Class}
  */
-public record ClassCreateClassRequestDto(
+public record ClassUpdateClassRequestDto
+        (
+                Long classId,
                 Long classDeposit,
                 String classStatus,
                 Long commissionFee,
@@ -15,11 +17,13 @@ public record ClassCreateClassRequestDto(
                 LocalDateTime dateStart,
                 Long salary,
                 Long addrId,
-                String studentPhoneNumber,
+                Long studentId,
                 Long tsId,
-                String tutorPhoneNumber,
+                Long tutorId,
                 List<Long> subjectIds,
                 List<Long> classTypeIds,
-                List<DateAndTimeDto> dateAndTimeDtoList)
-                implements Serializable {
+                List<DateAndTimeDto> dateAndTimeDtoList
+        )
+        implements Serializable
+{
 }

@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2919fcfe-1c82-408a-a2fd-e8c7a931df6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/controller/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/response/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/response/AddressMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/service/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/mapper/impl/ClassMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/online-tutor-finding/src/main/java/com/database241/onlinetutorfinding/mapper/impl/ClassMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +20,13 @@
         <option value="Enum" />
         <option value="Exception" />
         <option value="Python Script" />
-        <option value="com.intellij.jpb.NewClass" />
-        <option value="Class" />
-        <option value="Interface" />
         <option value="com.intellij.jpb.JpaRepository" />
+        <option value="Record" />
         <option value="com.intellij.jpb.NewRecord" />
+        <option value="com.intellij.jpb.NewClass" />
         <option value="com.intellij.jpb.NewInterface" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +67,6 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
-    "DtoCreateDialog.USE_JAVA_RECORDS_INITIAL_PROP_KEY": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -77,7 +76,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.OnlineTutorFindingApplication.executor": "Run",
-    "git-widget-placeholder": "merging-branch",
+    "git-widget-placeholder": "create-new-class",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/coding-space/ass2-db/online-tutor-finding",
     "node.js.detected.package.eslint": "true",
@@ -260,6 +259,7 @@
       <workItem from="1733801591899" duration="432000" />
       <workItem from="1733802277086" duration="1050000" />
       <workItem from="1733890398944" duration="1542000" />
+      <workItem from="1734009322021" duration="20209000" />
     </task>
     <servers />
   </component>
