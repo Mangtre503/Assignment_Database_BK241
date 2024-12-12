@@ -16,9 +16,9 @@ public record ClassCreateClassRequestDto
                 LocalDateTime dateStart,
                 Long salary,
                 Long addrId,
-                Long studentId,
+                String studentPhoneNumber,
                 Long tsId,
-                Long tutorId,
+                String tutorPhoneNumber,
                 List<Long> subjectIds,
                 List<Long> classTypeIds,
                 List<DateAndTimeDto> dateAndTimeDtoList
