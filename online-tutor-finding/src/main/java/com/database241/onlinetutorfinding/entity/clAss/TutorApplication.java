@@ -30,7 +30,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class TutorApplication {
+public class TutorApplication
+{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="ta_id")

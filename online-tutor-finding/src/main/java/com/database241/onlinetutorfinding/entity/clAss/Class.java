@@ -8,24 +8,31 @@ import com.database241.onlinetutorfinding.entity.address.Address;
 import com.database241.onlinetutorfinding.entity.user.Student;
 import com.database241.onlinetutorfinding.entity.user.Tutor;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NamedStoredProcedureQuery
+        (
+            name = "Class.insertClass",
+            procedureName = "dbo.insert_class",
+            parameters =
+                    {
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "class_deposit", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "class_status", type = String.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "commission_fee", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "requirements", type = String.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "date_start", type = LocalDateTime.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "salary", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "addr_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "student_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "ts_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.IN, name = "tutor_id", type = Long.class),
+                            @StoredProcedureParameter(mode = ParameterMode.OUT, name = "inserted_class_id", type = Long.class)
+                    }
+        )
 @Entity
 @Table(name = "class")
 public class Class {

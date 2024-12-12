@@ -1,6 +1,7 @@
 package com.database241.onlinetutorfinding.controller;
 
 
+import com.database241.onlinetutorfinding.response.AddressGetAllResponseDto;
 import com.database241.onlinetutorfinding.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,6 @@ public class AddressController
 //
 //
 //    @GetMapping("{phoneNumber}")
-//    public List<AddressGetAddressesDto> getAddress(@PathVariable("phoneNumber") String phoneNumber)
-//    {
-//        return addressService.getAllAddresses(phoneNumber);
-//    }
+//    public List<AddressGetAllResponseDto> ge
 }
 

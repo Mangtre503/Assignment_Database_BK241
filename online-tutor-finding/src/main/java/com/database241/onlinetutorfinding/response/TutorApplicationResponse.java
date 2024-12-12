@@ -13,7 +13,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class TutorApplicationResponse {
+public class TutorApplicationResponse
+{
     private Long id;
     private String status;
     private String nameStudent;
