@@ -5,7 +5,6 @@ import com.database241.onlinetutorfinding.entity.clAss.Class;
 import com.database241.onlinetutorfinding.entity.clAss.ClassType;
 import com.database241.onlinetutorfinding.entity.clAss.Subject;
 import com.database241.onlinetutorfinding.mapper.ClassMapper;
-import com.database241.onlinetutorfinding.request.DateAndTimeDto;
 import com.database241.onlinetutorfinding.response.ClassGetClassResponseDto;
 import org.springframework.stereotype.Component;
 
@@ -50,7 +49,7 @@ public class ClassMapperImpl implements ClassMapper
                                                                 .time
                                                                 (
                                                                         String
-                                                                                .format("%s:00 to %s:00",
+                                                                                .format("%s:00 - %s:00",
                                                                                         dateAndTime.getSlot().getStartTime().getHour(),
                                                                                         dateAndTime.getSlot().getEndTime().getHour())
                                                                 )
