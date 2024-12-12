@@ -33,6 +33,15 @@ import lombok.Setter;
                             @StoredProcedureParameter(mode = ParameterMode.OUT, name = "inserted_class_id", type = Long.class)
                     }
         )
+@NamedStoredProcedureQuery
+        (
+                name = "Class.deleteClass",
+                procedureName = "dbo.delete_class",
+                parameters =
+                        {
+                                @StoredProcedureParameter(mode = ParameterMode.IN, name = "class_id", type = Long.class)
+                        }
+        )
 @Entity
 @Table(name = "class")
 public class Class {
