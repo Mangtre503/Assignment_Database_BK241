@@ -2,6 +2,7 @@ package com.database241.onlinetutorfinding.service;
 
 
 import com.database241.onlinetutorfinding.repository.TutorDao;
+import com.database241.onlinetutorfinding.response.TutorApplicationFunctionResponseDto;
 import com.database241.onlinetutorfinding.response.TutorSummaryResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,11 @@ public class TutorService
             )
     {
         return tutorDao.getTutorSummary(minClassNum, minClassMoney, pageNumber, pageSize);
+    }
+
+
+    public TutorApplicationFunctionResponseDto getTutorApplicationSummary(int tutorId)
+    {
+        return tutorDao.getTutorApplicationSummary(tutorId);
     }
 }
