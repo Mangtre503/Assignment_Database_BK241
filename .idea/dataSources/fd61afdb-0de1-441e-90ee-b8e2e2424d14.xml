@@ -16816,8 +16816,8 @@
     </schema>
     <schema id="5563" parent="5510" name="dbo">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-12-13.17:00:12.657</IntrospectionTimestamp>
-      <LastIntrospectionLocalTimestamp>2024-12-13.10:00:12</LastIntrospectionLocalTimestamp>
+      <IntrospectionTimestamp>2024-12-13.19:34:00.243</IntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-12-13.12:34:00</LastIntrospectionLocalTimestamp>
       <ObjectId>1</ObjectId>
     </schema>
     <schema id="5564" parent="5510" name="guest">
@@ -16868,49 +16868,56 @@
       <RoutineType>proc</RoutineType>
       <SourceTextLength>1276</SourceTextLength>
     </routine>
-    <routine id="5572" parent="5563" name="get_tutor_class_summary">
+    <routine id="5572" parent="5563" name="fn_TutorApplicationSummary">
+      <CreatedTimestamp>2024-12-13.17:58:19.997</CreatedTimestamp>
+      <ModifiedTimestamp>2024-12-13.17:58:19.997</ModifiedTimestamp>
+      <ObjectId>606625204</ObjectId>
+      <RoutineType>tab-fun</RoutineType>
+      <SourceTextLength>1262</SourceTextLength>
+    </routine>
+    <routine id="5573" parent="5563" name="get_tutor_class_summary">
       <CreatedTimestamp>2024-12-13.07:09:56.757</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-13.07:09:56.757</ModifiedTimestamp>
       <ObjectId>462624691</ObjectId>
       <RoutineType>proc</RoutineType>
       <SourceTextLength>2191</SourceTextLength>
     </routine>
-    <routine id="5573" parent="5563" name="insert_class">
+    <routine id="5574" parent="5563" name="insert_class">
       <CreatedTimestamp>2024-12-11.13:03:14.717</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-11.13:03:14.717</ModifiedTimestamp>
       <ObjectId>1938105945</ObjectId>
       <RoutineType>proc</RoutineType>
       <SourceTextLength>2380</SourceTextLength>
     </routine>
-    <routine id="5574" parent="5563" name="insert_has_class_type">
+    <routine id="5575" parent="5563" name="insert_has_class_type">
       <CreatedTimestamp>2024-12-11.16:13:25.937</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-11.16:13:25.937</ModifiedTimestamp>
       <ObjectId>158623608</ObjectId>
       <RoutineType>proc</RoutineType>
       <SourceTextLength>1529</SourceTextLength>
     </routine>
-    <routine id="5575" parent="5563" name="insert_has_subject">
+    <routine id="5576" parent="5563" name="insert_has_subject">
       <CreatedTimestamp>2024-12-11.15:48:52.933</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-11.15:48:52.933</ModifiedTimestamp>
       <ObjectId>126623494</ObjectId>
       <RoutineType>proc</RoutineType>
       <SourceTextLength>1522</SourceTextLength>
     </routine>
-    <routine id="5576" parent="5563" name="insert_is_held_on">
+    <routine id="5577" parent="5563" name="insert_is_held_on">
       <CreatedTimestamp>2024-12-11.16:57:09.960</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-11.16:57:09.960</ModifiedTimestamp>
       <ObjectId>190623722</ObjectId>
       <RoutineType>proc</RoutineType>
       <SourceTextLength>1777</SourceTextLength>
     </routine>
-    <routine id="5577" parent="5563" name="update_class">
+    <routine id="5578" parent="5563" name="update_class">
       <CreatedTimestamp>2024-12-10.07:12:47.970</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.07:12:47.970</ModifiedTimestamp>
       <ObjectId>1618104805</ObjectId>
       <RoutineType>proc</RoutineType>
       <SourceTextLength>2336</SourceTextLength>
     </routine>
-    <table id="5578" parent="5563" name="address">
+    <table id="5579" parent="5563" name="address">
       <CreatedTimestamp>2024-11-27.01:33:42.530</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.313</ModifiedTimestamp>
@@ -16918,7 +16925,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5579" parent="5563" name="administrator">
+    <table id="5580" parent="5563" name="administrator">
       <CreatedTimestamp>2024-11-27.01:33:42.553</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.367</ModifiedTimestamp>
@@ -16926,7 +16933,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5580" parent="5563" name="belongs_to">
+    <table id="5581" parent="5563" name="belongs_to">
       <CreatedTimestamp>2024-11-27.01:33:42.567</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.08:34:07.943</ModifiedTimestamp>
@@ -16934,7 +16941,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5581" parent="5563" name="bill">
+    <table id="5582" parent="5563" name="bill">
       <CreatedTimestamp>2024-11-27.01:33:42.583</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.387</ModifiedTimestamp>
@@ -16942,7 +16949,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>1</LobDataSpaceId>
     </table>
-    <table id="5582" parent="5563" name="can_teach">
+    <table id="5583" parent="5563" name="can_teach">
       <CreatedTimestamp>2024-11-27.01:33:42.630</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.507</ModifiedTimestamp>
@@ -16951,7 +16958,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5583" parent="5563" name="can_teach_at">
+    <table id="5584" parent="5563" name="can_teach_at">
       <CreatedTimestamp>2024-11-27.01:33:42.603</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.430</ModifiedTimestamp>
@@ -16960,7 +16967,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5584" parent="5563" name="can_teach_style">
+    <table id="5585" parent="5563" name="can_teach_style">
       <CreatedTimestamp>2024-11-27.01:33:42.617</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.470</ModifiedTimestamp>
@@ -16969,7 +16976,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5585" parent="5563" name="can_teach_type">
+    <table id="5586" parent="5563" name="can_teach_type">
       <CreatedTimestamp>2024-11-27.01:33:42.643</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.550</ModifiedTimestamp>
@@ -16978,7 +16985,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5586" parent="5563" name="certificate">
+    <table id="5587" parent="5563" name="certificate">
       <CreatedTimestamp>2024-11-27.01:33:42.660</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.610</ModifiedTimestamp>
@@ -16986,7 +16993,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5587" parent="5563" name="certificate_type">
+    <table id="5588" parent="5563" name="certificate_type">
       <CreatedTimestamp>2024-11-27.01:33:42.673</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.567</ModifiedTimestamp>
@@ -16994,7 +17001,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5588" parent="5563" name="class">
+    <table id="5589" parent="5563" name="class">
       <CreatedTimestamp>2024-11-27.01:33:42.687</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.09:49:26.793</ModifiedTimestamp>
@@ -17002,7 +17009,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5589" parent="5563" name="class_type">
+    <table id="5590" parent="5563" name="class_type">
       <CreatedTimestamp>2024-11-27.01:33:42.700</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.177</ModifiedTimestamp>
@@ -17010,7 +17017,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5590" parent="5563" name="consultation_req">
+    <table id="5591" parent="5563" name="consultation_req">
       <CreatedTimestamp>2024-11-27.01:33:42.713</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.493</ModifiedTimestamp>
@@ -17018,7 +17025,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5591" parent="5563" name="degree">
+    <table id="5592" parent="5563" name="degree">
       <CreatedTimestamp>2024-11-27.01:33:42.757</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.850</ModifiedTimestamp>
@@ -17026,7 +17033,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5592" parent="5563" name="district_city">
+    <table id="5593" parent="5563" name="district_city">
       <CreatedTimestamp>2024-11-27.01:33:42.787</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.533</ModifiedTimestamp>
@@ -17034,7 +17041,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5593" parent="5563" name="educational_institution">
+    <table id="5594" parent="5563" name="educational_institution">
       <CreatedTimestamp>2024-11-27.01:33:42.770</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.910</ModifiedTimestamp>
@@ -17042,7 +17049,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5594" parent="5563" name="flyway_schema_history">
+    <table id="5595" parent="5563" name="flyway_schema_history">
       <CreatedTimestamp>2024-12-06.09:11:11.430</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-06.09:11:11.667</ModifiedTimestamp>
@@ -17050,7 +17057,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5595" parent="5563" name="has">
+    <table id="5596" parent="5563" name="has">
       <CreatedTimestamp>2024-11-27.01:33:42.810</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.910</ModifiedTimestamp>
@@ -17059,7 +17066,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5596" parent="5563" name="has_class_type">
+    <table id="5597" parent="5563" name="has_class_type">
       <CreatedTimestamp>2024-11-27.01:33:42.843</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.08:08:14.500</ModifiedTimestamp>
@@ -17068,7 +17075,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5597" parent="5563" name="has_subject">
+    <table id="5598" parent="5563" name="has_subject">
       <CreatedTimestamp>2024-11-27.01:33:42.860</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.09:26:42.913</ModifiedTimestamp>
@@ -17077,7 +17084,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5598" parent="5563" name="is_held_on">
+    <table id="5599" parent="5563" name="is_held_on">
       <CreatedTimestamp>2024-11-27.01:33:42.873</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.08:12:25.213</ModifiedTimestamp>
@@ -17085,7 +17092,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5599" parent="5563" name="oft_user">
+    <table id="5600" parent="5563" name="oft_user">
       <CreatedTimestamp>2024-11-27.01:33:43.163</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-06.09:36:36.293</ModifiedTimestamp>
@@ -17093,7 +17100,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5600" parent="5563" name="province">
+    <table id="5601" parent="5563" name="province">
       <CreatedTimestamp>2024-11-27.01:33:42.890</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.870</ModifiedTimestamp>
@@ -17101,7 +17108,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5601" parent="5563" name="qualification">
+    <table id="5602" parent="5563" name="qualification">
       <CreatedTimestamp>2024-11-27.01:33:42.910</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.073</ModifiedTimestamp>
@@ -17109,7 +17116,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5602" parent="5563" name="s_wants_subject">
+    <table id="5603" parent="5563" name="s_wants_subject">
       <CreatedTimestamp>2024-11-27.01:33:42.973</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.157</ModifiedTimestamp>
@@ -17118,7 +17125,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5603" parent="5563" name="s_wants_type">
+    <table id="5604" parent="5563" name="s_wants_type">
       <CreatedTimestamp>2024-11-27.01:33:42.990</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.200</ModifiedTimestamp>
@@ -17127,7 +17134,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5604" parent="5563" name="staff">
+    <table id="5605" parent="5563" name="staff">
       <CreatedTimestamp>2024-11-27.01:33:42.923</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-11.17:36:52.390</ModifiedTimestamp>
@@ -17135,7 +17142,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>1</LobDataSpaceId>
     </table>
-    <table id="5605" parent="5563" name="student">
+    <table id="5606" parent="5563" name="student">
       <CreatedTimestamp>2024-11-27.01:33:42.940</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.08:18:44.953</ModifiedTimestamp>
@@ -17143,7 +17150,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5606" parent="5563" name="subject">
+    <table id="5607" parent="5563" name="subject">
       <CreatedTimestamp>2024-11-27.01:33:42.957</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.140</ModifiedTimestamp>
@@ -17151,7 +17158,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5607" parent="5563" name="teaching_application">
+    <table id="5608" parent="5563" name="teaching_application">
       <CreatedTimestamp>2024-11-27.01:33:43.007</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.08:44:26.460</ModifiedTimestamp>
@@ -17159,7 +17166,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5608" parent="5563" name="teaching_style">
+    <table id="5609" parent="5563" name="teaching_style">
       <CreatedTimestamp>2024-11-27.01:33:43.023</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.513</ModifiedTimestamp>
@@ -17167,7 +17174,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5609" parent="5563" name="time_slot">
+    <table id="5610" parent="5563" name="time_slot">
       <CreatedTimestamp>2024-11-27.01:33:43.040</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.037</ModifiedTimestamp>
@@ -17175,7 +17182,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5610" parent="5563" name="tutor">
+    <table id="5611" parent="5563" name="tutor">
       <CreatedTimestamp>2024-11-27.01:33:43.057</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.08:44:26.463</ModifiedTimestamp>
@@ -17183,7 +17190,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5611" parent="5563" name="tutor_application">
+    <table id="5612" parent="5563" name="tutor_application">
       <CreatedTimestamp>2024-11-27.01:33:43.090</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.377</ModifiedTimestamp>
@@ -17191,7 +17198,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5612" parent="5563" name="tutor_review">
+    <table id="5613" parent="5563" name="tutor_review">
       <CreatedTimestamp>2024-11-27.01:33:43.110</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-12-10.08:18:44.953</ModifiedTimestamp>
@@ -17199,7 +17206,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5613" parent="5563" name="user_contact">
+    <table id="5614" parent="5563" name="user_contact">
       <CreatedTimestamp>2024-11-27.01:33:43.130</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.450</ModifiedTimestamp>
@@ -17207,7 +17214,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5614" parent="5563" name="voucher">
+    <table id="5615" parent="5563" name="voucher">
       <CreatedTimestamp>2024-11-27.01:33:43.180</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.470</ModifiedTimestamp>
@@ -17215,7 +17222,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5615" parent="5563" name="wants_style">
+    <table id="5616" parent="5563" name="wants_style">
       <CreatedTimestamp>2024-11-27.01:33:43.197</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.513</ModifiedTimestamp>
@@ -17224,7 +17231,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5616" parent="5563" name="wants_subject">
+    <table id="5617" parent="5563" name="wants_subject">
       <CreatedTimestamp>2024-11-27.01:33:42.730</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.753</ModifiedTimestamp>
@@ -17233,7 +17240,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5617" parent="5563" name="wants_type">
+    <table id="5618" parent="5563" name="wants_type">
       <CreatedTimestamp>2024-11-27.01:33:42.743</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:43.790</ModifiedTimestamp>
@@ -17242,7 +17249,7 @@
       <LobDataSpaceId>0</LobDataSpaceId>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </table>
-    <table id="5618" parent="5563" name="ward">
+    <table id="5619" parent="5563" name="ward">
       <CreatedTimestamp>2024-11-27.01:33:43.213</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.533</ModifiedTimestamp>
@@ -17250,7 +17257,7 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table id="5619" parent="5563" name="week_day">
+    <table id="5620" parent="5563" name="week_day">
       <CreatedTimestamp>2024-11-27.01:33:43.230</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
       <ModifiedTimestamp>2024-11-27.01:33:44.053</ModifiedTimestamp>
@@ -17258,351 +17265,371 @@
       <LedgerViewId>0</LedgerViewId>
       <LobDataSpaceId>0</LobDataSpaceId>
     </table>
-    <table-type id="5620" parent="5563" name="CLASS_TYPE_ID_LIST">
+    <table-type id="5621" parent="5563" name="CLASS_TYPE_ID_LIST">
       <CreatedTimestamp>2024-12-11.16:13:14.880</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-11.16:13:14.880</ModifiedTimestamp>
       <ObjectId>142623551</ObjectId>
       <TypeId>258</TypeId>
     </table-type>
-    <table-type id="5621" parent="5563" name="SUBJECT_ID_LIST">
+    <table-type id="5622" parent="5563" name="SUBJECT_ID_LIST">
       <CreatedTimestamp>2024-12-11.15:48:10.157</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-11.15:48:10.157</ModifiedTimestamp>
       <ObjectId>110623437</ObjectId>
       <TypeId>257</TypeId>
     </table-type>
-    <table-type id="5622" parent="5563" name="TIME_LIST">
+    <table-type id="5623" parent="5563" name="TIME_LIST">
       <CreatedTimestamp>2024-12-11.16:57:09.497</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-11.16:57:09.497</ModifiedTimestamp>
       <ObjectId>174623665</ObjectId>
       <TypeId>259</TypeId>
     </table-type>
-    <argument id="5623" parent="5566" name="@Types">
+    <argument id="5624" parent="5566" name="@Types">
       <Position>1</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5624" parent="5566" name="@InputValues">
+    <argument id="5625" parent="5566" name="@InputValues">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <column id="5625" parent="5566" name="Current_Revenue">
+    <column id="5626" parent="5566" name="Current_Revenue">
       <Position>1</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5626" parent="5566" name="Expected_Revenue">
+    <column id="5627" parent="5566" name="Expected_Revenue">
       <Position>2</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5627" parent="5566" name="Discount_Revenue">
+    <column id="5628" parent="5566" name="Discount_Revenue">
       <Position>3</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5628" parent="5566" name="Error_Message">
+    <column id="5629" parent="5566" name="Error_Message">
       <Position>4</Position>
       <StoredType>nvarchar(255 char)|0s</StoredType>
     </column>
-    <column id="5629" parent="5567" name="Current_Revenue">
+    <column id="5630" parent="5567" name="Current_Revenue">
       <Position>1</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5630" parent="5567" name="Expected_Revenue">
+    <column id="5631" parent="5567" name="Expected_Revenue">
       <Position>2</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5631" parent="5567" name="Discount_Revenue">
+    <column id="5632" parent="5567" name="Discount_Revenue">
       <Position>3</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <argument id="5632" parent="5568" name="@SubjectID">
+    <argument id="5633" parent="5568" name="@SubjectID">
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <column id="5633" parent="5568" name="Current_Revenue">
+    <column id="5634" parent="5568" name="Current_Revenue">
       <Position>1</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5634" parent="5568" name="Expected_Revenue">
+    <column id="5635" parent="5568" name="Expected_Revenue">
       <Position>2</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5635" parent="5568" name="Discount_Revenue">
+    <column id="5636" parent="5568" name="Discount_Revenue">
       <Position>3</Position>
       <StoredType>decimal(18,2)|0s</StoredType>
     </column>
-    <column id="5636" parent="5568" name="Error_Message">
+    <column id="5637" parent="5568" name="Error_Message">
       <Position>4</Position>
       <StoredType>nvarchar(255 char)|0s</StoredType>
     </column>
-    <argument id="5637" parent="5569" name="@class_type_name">
+    <argument id="5638" parent="5569" name="@class_type_name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>1</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5638" parent="5569" name="@ts_name">
+    <argument id="5639" parent="5569" name="@ts_name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5639" parent="5569" name="@name">
+    <argument id="5640" parent="5569" name="@name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5640" parent="5569" name="@class_status">
+    <argument id="5641" parent="5569" name="@class_status">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>4</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5641" parent="5569" name="@subject_name">
+    <argument id="5642" parent="5569" name="@subject_name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>5</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5642" parent="5569" name="@phone_number">
+    <argument id="5643" parent="5569" name="@phone_number">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>6</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5643" parent="5569" name="@date_start_from">
+    <argument id="5644" parent="5569" name="@date_start_from">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>7</Position>
       <StoredType>datetime2|0s</StoredType>
     </argument>
-    <argument id="5644" parent="5569" name="@date_start_to">
+    <argument id="5645" parent="5569" name="@date_start_to">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>8</Position>
       <StoredType>datetime2|0s</StoredType>
     </argument>
-    <argument id="5645" parent="5569" name="@sort_order">
+    <argument id="5646" parent="5569" name="@sort_order">
       <DefaultExpression>&apos;ASC&apos;</DefaultExpression>
       <Position>9</Position>
       <StoredType>nvarchar(4 char)|0s</StoredType>
     </argument>
-    <argument id="5646" parent="5570" name="@class_type_name">
+    <argument id="5647" parent="5570" name="@class_type_name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>1</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5647" parent="5570" name="@ts_name">
+    <argument id="5648" parent="5570" name="@ts_name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5648" parent="5570" name="@name">
+    <argument id="5649" parent="5570" name="@name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5649" parent="5570" name="@class_status">
+    <argument id="5650" parent="5570" name="@class_status">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>4</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5650" parent="5570" name="@subject_name">
+    <argument id="5651" parent="5570" name="@subject_name">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>5</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5651" parent="5570" name="@phone_number">
+    <argument id="5652" parent="5570" name="@phone_number">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>6</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5652" parent="5570" name="@date_start_from">
+    <argument id="5653" parent="5570" name="@date_start_from">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>7</Position>
       <StoredType>datetime2|0s</StoredType>
     </argument>
-    <argument id="5653" parent="5570" name="@date_start_to">
+    <argument id="5654" parent="5570" name="@date_start_to">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>8</Position>
       <StoredType>datetime2|0s</StoredType>
     </argument>
-    <argument id="5654" parent="5570" name="@sort_order">
+    <argument id="5655" parent="5570" name="@sort_order">
       <DefaultExpression>&apos;ASC&apos;</DefaultExpression>
       <Position>9</Position>
       <StoredType>nvarchar(4 char)|0s</StoredType>
     </argument>
-    <argument id="5655" parent="5571" name="@class_id">
+    <argument id="5656" parent="5571" name="@class_id">
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5656" parent="5572" name="@min_class_num">
+    <argument id="5657" parent="5572" name="@tutor_id">
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </argument>
+    <column id="5658" parent="5572" name="tutor_id">
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="5659" parent="5572" name="accepted_count">
+      <Position>2</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="5660" parent="5572" name="denied_count">
+      <Position>3</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="5661" parent="5572" name="error_message">
+      <Position>4</Position>
+      <StoredType>nvarchar(255 char)|0s</StoredType>
+    </column>
+    <argument id="5662" parent="5573" name="@min_class_num">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5657" parent="5572" name="@min_class_money">
+    <argument id="5663" parent="5573" name="@min_class_money">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5658" parent="5572" name="@page_number">
+    <argument id="5664" parent="5573" name="@page_number">
       <DefaultExpression>1</DefaultExpression>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5659" parent="5572" name="@page_size">
+    <argument id="5665" parent="5573" name="@page_size">
       <DefaultExpression>10</DefaultExpression>
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </argument>
-    <argument id="5660" parent="5573" name="@class_deposit">
+    <argument id="5666" parent="5574" name="@class_deposit">
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5661" parent="5573" name="@class_status">
+    <argument id="5667" parent="5574" name="@class_status">
       <DefaultExpression>&apos;Chua giao&apos;</DefaultExpression>
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5662" parent="5573" name="@commission_fee">
+    <argument id="5668" parent="5574" name="@commission_fee">
       <Position>3</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5663" parent="5573" name="@requirements">
+    <argument id="5669" parent="5574" name="@requirements">
       <Position>4</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5664" parent="5573" name="@date_start">
+    <argument id="5670" parent="5574" name="@date_start">
       <Position>5</Position>
       <StoredType>datetime2|0s</StoredType>
     </argument>
-    <argument id="5665" parent="5573" name="@salary">
+    <argument id="5671" parent="5574" name="@salary">
       <Position>6</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5666" parent="5573" name="@addr_id">
+    <argument id="5672" parent="5574" name="@addr_id">
       <Position>7</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5667" parent="5573" name="@student_id">
+    <argument id="5673" parent="5574" name="@student_id">
       <Position>8</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5668" parent="5573" name="@ts_id">
+    <argument id="5674" parent="5574" name="@ts_id">
       <Position>9</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5669" parent="5573" name="@tutor_id">
+    <argument id="5675" parent="5574" name="@tutor_id">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>10</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5670" parent="5573" name="@inserted_class_id">
+    <argument id="5676" parent="5574" name="@inserted_class_id">
       <ArgumentDirection>O</ArgumentDirection>
       <Position>11</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5671" parent="5574" name="@class_id">
+    <argument id="5677" parent="5575" name="@class_id">
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5672" parent="5574" name="@class_type_id_list">
+    <argument id="5678" parent="5575" name="@class_type_id_list">
       <Position>2</Position>
       <StoredType>CLASS_TYPE_ID_LIST|0s</StoredType>
     </argument>
-    <argument id="5673" parent="5575" name="@class_id">
+    <argument id="5679" parent="5576" name="@class_id">
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5674" parent="5575" name="@subject_id_list">
+    <argument id="5680" parent="5576" name="@subject_id_list">
       <Position>2</Position>
       <StoredType>SUBJECT_ID_LIST|0s</StoredType>
     </argument>
-    <argument id="5675" parent="5576" name="@class_id">
+    <argument id="5681" parent="5577" name="@class_id">
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5676" parent="5576" name="@time_list">
+    <argument id="5682" parent="5577" name="@time_list">
       <Position>2</Position>
       <StoredType>TIME_LIST|0s</StoredType>
     </argument>
-    <argument id="5677" parent="5577" name="@class_id">
+    <argument id="5683" parent="5578" name="@class_id">
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5678" parent="5577" name="@class_deposit">
+    <argument id="5684" parent="5578" name="@class_deposit">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5679" parent="5577" name="@class_status">
+    <argument id="5685" parent="5578" name="@class_status">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5680" parent="5577" name="@commission_fee">
+    <argument id="5686" parent="5578" name="@commission_fee">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5681" parent="5577" name="@requirements">
+    <argument id="5687" parent="5578" name="@requirements">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>5</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </argument>
-    <argument id="5682" parent="5577" name="@date_start">
+    <argument id="5688" parent="5578" name="@date_start">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>6</Position>
       <StoredType>datetime2|0s</StoredType>
     </argument>
-    <argument id="5683" parent="5577" name="@salary">
+    <argument id="5689" parent="5578" name="@salary">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>7</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5684" parent="5577" name="@addr_id">
+    <argument id="5690" parent="5578" name="@addr_id">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>8</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5685" parent="5577" name="@student_id">
+    <argument id="5691" parent="5578" name="@student_id">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>9</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5686" parent="5577" name="@ts_id">
+    <argument id="5692" parent="5578" name="@ts_id">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>10</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="5687" parent="5577" name="@tutor_id">
+    <argument id="5693" parent="5578" name="@tutor_id">
       <DefaultExpression>NULL</DefaultExpression>
       <Position>11</Position>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <column id="5688" parent="5578" name="addr_id">
+    <column id="5694" parent="5579" name="addr_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(21)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5689" parent="5578" name="house_number">
+    <column id="5695" parent="5579" name="house_number">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5690" parent="5578" name="str_name">
+    <column id="5696" parent="5579" name="str_name">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5691" parent="5578" name="user_id">
+    <column id="5697" parent="5579" name="user_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5692" parent="5578" name="dist_city_id">
+    <column id="5698" parent="5579" name="dist_city_id">
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5693" parent="5578" name="pro_id">
+    <column id="5699" parent="5579" name="pro_id">
       <Position>6</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5694" parent="5578" name="ward_id">
+    <column id="5700" parent="5579" name="ward_id">
       <Position>7</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5695" parent="5578" name="FK6i66ijb8twgcqtetl8eeeed6v">
+    <foreign-key id="5701" parent="5579" name="FK6i66ijb8twgcqtetl8eeeed6v">
       <ColNames>user_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.243</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.243</ModifiedTimestamp>
@@ -17611,7 +17638,7 @@
       <RefTableId>1573580644</RefTableId>
       <RefTableName>oft_user</RefTableName>
     </foreign-key>
-    <foreign-key id="5696" parent="5578" name="FK8dcilp3ck0yr1t3xj5pjjlegh">
+    <foreign-key id="5702" parent="5579" name="FK8dcilp3ck0yr1t3xj5pjjlegh">
       <ColNames>dist_city_id
 pro_id
 ward_id</ColNames>
@@ -17624,7 +17651,7 @@ ward_id</RefColNames>
       <RefTableId>1669580986</RefTableId>
       <RefTableName>ward</RefTableName>
     </foreign-key>
-    <index id="5697" parent="5578" name="PK__address__71BB49232190A1D8">
+    <index id="5703" parent="5579" name="PK__address__71BB49232190A1D8">
       <Clustering>1</Clustering>
       <ColNames>addr_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -17632,7 +17659,7 @@ ward_id</RefColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5698" parent="5578" name="PK__address__71BB49232190A1D8">
+    <key id="5704" parent="5579" name="PK__address__71BB49232190A1D8">
       <CreatedTimestamp>2024-11-27.01:33:42.537</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.537</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -17640,12 +17667,12 @@ ward_id</RefColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__address__71BB49232190A1D8</UnderlyingIndexName>
     </key>
-    <column id="5699" parent="5579" name="admin_id">
+    <column id="5705" parent="5580" name="admin_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5700" parent="5579" name="FKacuqf1ft0tfly1qywmstsm7k7">
+    <foreign-key id="5706" parent="5580" name="FKacuqf1ft0tfly1qywmstsm7k7">
       <ColNames>admin_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.303</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.303</ModifiedTimestamp>
@@ -17654,7 +17681,7 @@ ward_id</RefColNames>
       <RefTableId>1205579333</RefTableId>
       <RefTableName>staff</RefTableName>
     </foreign-key>
-    <index id="5701" parent="5579" name="PK__administ__43AA4141D0259537">
+    <index id="5707" parent="5580" name="PK__administ__43AA4141D0259537">
       <Clustering>1</Clustering>
       <ColNames>admin_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -17662,7 +17689,7 @@ ward_id</RefColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5702" parent="5579" name="PK__administ__43AA4141D0259537">
+    <key id="5708" parent="5580" name="PK__administ__43AA4141D0259537">
       <CreatedTimestamp>2024-11-27.01:33:42.553</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.553</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -17670,22 +17697,22 @@ ward_id</RefColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__administ__43AA4141D0259537</UnderlyingIndexName>
     </key>
-    <column id="5703" parent="5580" name="bill_id">
+    <column id="5709" parent="5581" name="bill_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5704" parent="5580" name="class_id">
+    <column id="5710" parent="5581" name="class_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5705" parent="5580" name="tutor_id">
+    <column id="5711" parent="5581" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5706" parent="5580" name="FK_class_tutor_has_bills">
+    <foreign-key id="5712" parent="5581" name="FK_class_tutor_has_bills">
       <ColNames>class_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:34:07.943</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:34:07.943</ModifiedTimestamp>
@@ -17695,7 +17722,7 @@ ward_id</RefColNames>
       <RefTableId>837578022</RefTableId>
       <RefTableName>class</RefTableName>
     </foreign-key>
-    <foreign-key id="5707" parent="5580" name="FKsf48ynifqguinlglff5tw96hg">
+    <foreign-key id="5713" parent="5581" name="FKsf48ynifqguinlglff5tw96hg">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.347</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.347</ModifiedTimestamp>
@@ -17704,7 +17731,7 @@ ward_id</RefColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <index id="5708" parent="5580" name="PK__belongs___D706DDB3A07AFA1B">
+    <index id="5714" parent="5581" name="PK__belongs___D706DDB3A07AFA1B">
       <Clustering>1</Clustering>
       <ColNames>bill_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -17712,7 +17739,7 @@ ward_id</RefColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5709" parent="5580" name="PK__belongs___D706DDB3A07AFA1B">
+    <key id="5715" parent="5581" name="PK__belongs___D706DDB3A07AFA1B">
       <CreatedTimestamp>2024-11-27.01:33:42.570</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.570</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -17720,37 +17747,37 @@ ward_id</RefColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__belongs___D706DDB3A07AFA1B</UnderlyingIndexName>
     </key>
-    <column id="5710" parent="5581" name="bill_id">
+    <column id="5716" parent="5582" name="bill_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(11)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5711" parent="5581" name="bill_money">
+    <column id="5717" parent="5582" name="bill_money">
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5712" parent="5581" name="bill_photo_url">
+    <column id="5718" parent="5582" name="bill_photo_url">
       <Position>3</Position>
       <StoredType>varbinary(max)|0s</StoredType>
     </column>
-    <column id="5713" parent="5581" name="bill_status">
+    <column id="5719" parent="5582" name="bill_status">
       <Position>4</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5714" parent="5581" name="bill_type">
+    <column id="5720" parent="5582" name="bill_type">
       <Position>5</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5715" parent="5581" name="admin_id">
+    <column id="5721" parent="5582" name="admin_id">
       <Position>6</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5716" parent="5581" name="vou_id">
+    <column id="5722" parent="5582" name="vou_id">
       <Position>7</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5717" parent="5581" name="FKh9jg27pyo4mw8noxjw8bwx9jv">
+    <foreign-key id="5723" parent="5582" name="FKh9jg27pyo4mw8noxjw8bwx9jv">
       <ColNames>admin_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.367</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.367</ModifiedTimestamp>
@@ -17759,7 +17786,7 @@ ward_id</RefColNames>
       <RefTableId>613577224</RefTableId>
       <RefTableName>administrator</RefTableName>
     </foreign-key>
-    <foreign-key id="5718" parent="5581" name="FKoefcs2e34wufxe18w2yiay4wp">
+    <foreign-key id="5724" parent="5582" name="FKoefcs2e34wufxe18w2yiay4wp">
       <ColNames>vou_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.387</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.387</ModifiedTimestamp>
@@ -17768,7 +17795,7 @@ ward_id</RefColNames>
       <RefTableId>1621580815</RefTableId>
       <RefTableName>voucher</RefTableName>
     </foreign-key>
-    <index id="5719" parent="5581" name="PK__bill__D706DDB3D3F5344D">
+    <index id="5725" parent="5582" name="PK__bill__D706DDB3D3F5344D">
       <Clustering>1</Clustering>
       <ColNames>bill_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -17776,7 +17803,7 @@ ward_id</RefColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5720" parent="5581" name="PK__bill__D706DDB3D3F5344D">
+    <key id="5726" parent="5582" name="PK__bill__D706DDB3D3F5344D">
       <CreatedTimestamp>2024-11-27.01:33:42.587</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.587</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -17784,17 +17811,17 @@ ward_id</RefColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__bill__D706DDB3D3F5344D</UnderlyingIndexName>
     </key>
-    <column id="5721" parent="5582" name="tutor_id">
+    <column id="5727" parent="5583" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5722" parent="5582" name="subject_id">
+    <column id="5728" parent="5583" name="subject_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5723" parent="5582" name="FK6bcoteucwwk88i1a4lcdp7sw8">
+    <foreign-key id="5729" parent="5583" name="FK6bcoteucwwk88i1a4lcdp7sw8">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.490</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.490</ModifiedTimestamp>
@@ -17803,7 +17830,7 @@ ward_id</RefColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <foreign-key id="5724" parent="5582" name="FKq14xl061xrs9cl7sqlmdh4k0i">
+    <foreign-key id="5730" parent="5583" name="FKq14xl061xrs9cl7sqlmdh4k0i">
       <ColNames>subject_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.507</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.507</ModifiedTimestamp>
@@ -17812,22 +17839,22 @@ ward_id</RefColNames>
       <RefTableId>1269579561</RefTableId>
       <RefTableName>subject</RefTableName>
     </foreign-key>
-    <column id="5725" parent="5583" name="tutor_id">
+    <column id="5731" parent="5584" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5726" parent="5583" name="dist_city_id">
+    <column id="5732" parent="5584" name="dist_city_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5727" parent="5583" name="pro_id">
+    <column id="5733" parent="5584" name="pro_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5728" parent="5583" name="FK1qr74e3faeguluvpemc7le4g3">
+    <foreign-key id="5734" parent="5584" name="FK1qr74e3faeguluvpemc7le4g3">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.407</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.407</ModifiedTimestamp>
@@ -17836,7 +17863,7 @@ ward_id</RefColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <foreign-key id="5729" parent="5583" name="FKhc8l5bd7gedi3m5jg9vx5io0j">
+    <foreign-key id="5735" parent="5584" name="FKhc8l5bd7gedi3m5jg9vx5io0j">
       <ColNames>dist_city_id
 pro_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.430</CreatedTimestamp>
@@ -17847,17 +17874,17 @@ pro_id</RefColNames>
       <RefTableId>1029578706</RefTableId>
       <RefTableName>district_city</RefTableName>
     </foreign-key>
-    <column id="5730" parent="5584" name="tutor_id">
+    <column id="5736" parent="5585" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5731" parent="5584" name="ts_id">
+    <column id="5737" parent="5585" name="ts_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5732" parent="5584" name="FKc2phd4xb0yfce6pr25q3y6vmg">
+    <foreign-key id="5738" parent="5585" name="FKc2phd4xb0yfce6pr25q3y6vmg">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.450</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.450</ModifiedTimestamp>
@@ -17866,7 +17893,7 @@ pro_id</RefColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <foreign-key id="5733" parent="5584" name="FKr6wm0ig9vmmwk9qc8gfr5w90s">
+    <foreign-key id="5739" parent="5585" name="FKr6wm0ig9vmmwk9qc8gfr5w90s">
       <ColNames>ts_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.470</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.470</ModifiedTimestamp>
@@ -17875,17 +17902,17 @@ pro_id</RefColNames>
       <RefTableId>1365579903</RefTableId>
       <RefTableName>teaching_style</RefTableName>
     </foreign-key>
-    <column id="5734" parent="5585" name="tutor_id">
+    <column id="5740" parent="5586" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5735" parent="5585" name="class_type_id">
+    <column id="5741" parent="5586" name="class_type_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5736" parent="5585" name="FK3e64e72bxhfkfto9fcdjhyqy1">
+    <foreign-key id="5742" parent="5586" name="FK3e64e72bxhfkfto9fcdjhyqy1">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.530</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.530</ModifiedTimestamp>
@@ -17894,7 +17921,7 @@ pro_id</RefColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <foreign-key id="5737" parent="5585" name="FKig918n4s1aok8prrl091ych7n">
+    <foreign-key id="5743" parent="5586" name="FKig918n4s1aok8prrl091ych7n">
       <ColNames>class_type_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.550</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.550</ModifiedTimestamp>
@@ -17903,30 +17930,30 @@ pro_id</RefColNames>
       <RefTableId>869578136</RefTableId>
       <RefTableName>class_type</RefTableName>
     </foreign-key>
-    <column id="5738" parent="5586" name="cert_id">
+    <column id="5744" parent="5587" name="cert_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5739" parent="5586" name="cert_year">
+    <column id="5745" parent="5587" name="cert_year">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5740" parent="5586" name="cert_grade">
+    <column id="5746" parent="5587" name="cert_grade">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5741" parent="5586" name="tutor_id">
+    <column id="5747" parent="5587" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5742" parent="5586" name="ct_id">
+    <column id="5748" parent="5587" name="ct_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5743" parent="5586" name="FKrgngrw5rp4fmvfnnl9y6ghr9v">
+    <foreign-key id="5749" parent="5587" name="FKrgngrw5rp4fmvfnnl9y6ghr9v">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.610</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.610</ModifiedTimestamp>
@@ -17935,7 +17962,7 @@ pro_id</RefColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <foreign-key id="5744" parent="5586" name="FKifcrm5368hy811q1bnn005jxx">
+    <foreign-key id="5750" parent="5587" name="FKifcrm5368hy811q1bnn005jxx">
       <ColNames>ct_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.567</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.567</ModifiedTimestamp>
@@ -17944,7 +17971,7 @@ pro_id</RefColNames>
       <RefTableId>805577908</RefTableId>
       <RefTableName>certificate_type</RefTableName>
     </foreign-key>
-    <index id="5745" parent="5586" name="PK__certific__0746A33CFCDA0B58">
+    <index id="5751" parent="5587" name="PK__certific__0746A33CFCDA0B58">
       <Clustering>1</Clustering>
       <ColNames>cert_id
 tutor_id</ColNames>
@@ -17953,7 +17980,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5746" parent="5586" name="PK__certific__0746A33CFCDA0B58">
+    <key id="5752" parent="5587" name="PK__certific__0746A33CFCDA0B58">
       <CreatedTimestamp>2024-11-27.01:33:42.660</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.660</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -17961,17 +17988,17 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__certific__0746A33CFCDA0B58</UnderlyingIndexName>
     </key>
-    <column id="5747" parent="5587" name="ct_id">
+    <column id="5753" parent="5588" name="ct_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(6)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5748" parent="5587" name="ct_name">
+    <column id="5754" parent="5588" name="ct_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5749" parent="5587" name="PK__certific__33D47D09559772C1">
+    <index id="5755" parent="5588" name="PK__certific__33D47D09559772C1">
       <Clustering>1</Clustering>
       <ColNames>ct_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -17979,7 +18006,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5750" parent="5587" name="PK__certific__33D47D09559772C1">
+    <key id="5756" parent="5588" name="PK__certific__33D47D09559772C1">
       <CreatedTimestamp>2024-11-27.01:33:42.673</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.673</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -17987,62 +18014,62 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__certific__33D47D09559772C1</UnderlyingIndexName>
     </key>
-    <check id="5751" parent="5588" name="CHK_Class_Deposit_Salary">
+    <check id="5757" parent="5589" name="CHK_Class_Deposit_Salary">
       <CreatedTimestamp>2024-12-10.07:24:29.127</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.07:24:29.127</ModifiedTimestamp>
       <ObjectId>1634104862</ObjectId>
       <Predicate>[class_deposit]&lt;=[salary]</Predicate>
     </check>
-    <column id="5752" parent="5588" name="class_id">
+    <column id="5758" parent="5589" name="class_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(40072)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5753" parent="5588" name="class_deposit">
+    <column id="5759" parent="5589" name="class_deposit">
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5754" parent="5588" name="class_status">
+    <column id="5760" parent="5589" name="class_status">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5755" parent="5588" name="commission_fee">
+    <column id="5761" parent="5589" name="commission_fee">
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5756" parent="5588" name="requirements">
+    <column id="5762" parent="5589" name="requirements">
       <Position>5</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5757" parent="5588" name="date_start">
+    <column id="5763" parent="5589" name="date_start">
       <Position>6</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5758" parent="5588" name="salary">
+    <column id="5764" parent="5589" name="salary">
       <Position>7</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5759" parent="5588" name="addr_id">
+    <column id="5765" parent="5589" name="addr_id">
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5760" parent="5588" name="student_id">
+    <column id="5766" parent="5589" name="student_id">
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5761" parent="5588" name="ts_id">
+    <column id="5767" parent="5589" name="ts_id">
       <NotNull>1</NotNull>
       <Position>10</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5762" parent="5588" name="tutor_id">
+    <column id="5768" parent="5589" name="tutor_id">
       <Position>11</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5763" parent="5588" name="FKridltcnrqtlt0smu6cy4m01bl">
+    <foreign-key id="5769" parent="5589" name="FKridltcnrqtlt0smu6cy4m01bl">
       <ColNames>addr_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.663</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.663</ModifiedTimestamp>
@@ -18051,7 +18078,7 @@ tutor_id</ColNames>
       <RefTableId>581577110</RefTableId>
       <RefTableName>address</RefTableName>
     </foreign-key>
-    <foreign-key id="5764" parent="5588" name="FKg87lmtxf7966u4njwvtrfj2c0">
+    <foreign-key id="5770" parent="5589" name="FKg87lmtxf7966u4njwvtrfj2c0">
       <ColNames>student_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.643</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.643</ModifiedTimestamp>
@@ -18060,7 +18087,7 @@ tutor_id</ColNames>
       <RefTableId>1237579447</RefTableId>
       <RefTableName>student</RefTableName>
     </foreign-key>
-    <foreign-key id="5765" parent="5588" name="FK9rp4l5g6ur82gvaoyn756x3gs">
+    <foreign-key id="5771" parent="5589" name="FK9rp4l5g6ur82gvaoyn756x3gs">
       <ColNames>ts_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.627</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.627</ModifiedTimestamp>
@@ -18069,7 +18096,7 @@ tutor_id</ColNames>
       <RefTableId>1365579903</RefTableId>
       <RefTableName>teaching_style</RefTableName>
     </foreign-key>
-    <foreign-key id="5766" parent="5588" name="FKsjxn0xj2p8f1oaios3secjjep">
+    <foreign-key id="5772" parent="5589" name="FKsjxn0xj2p8f1oaios3secjjep">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.683</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.683</ModifiedTimestamp>
@@ -18078,7 +18105,7 @@ tutor_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <index id="5767" parent="5588" name="PK__class__FDF4798625B73710">
+    <index id="5773" parent="5589" name="PK__class__FDF4798625B73710">
       <Clustering>1</Clustering>
       <ColNames>class_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18086,7 +18113,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5768" parent="5588" name="PK__class__FDF4798625B73710">
+    <key id="5774" parent="5589" name="PK__class__FDF4798625B73710">
       <CreatedTimestamp>2024-11-27.01:33:42.690</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.690</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18094,7 +18121,7 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__class__FDF4798625B73710</UnderlyingIndexName>
     </key>
-    <trigger id="5769" parent="5588" name="trigger_class_address_belongs_student">
+    <trigger id="5775" parent="5589" name="trigger_class_address_belongs_student">
       <CreatedTimestamp>2024-12-09.01:20:13.247</CreatedTimestamp>
       <Disabled>1</Disabled>
       <Events>IU</Events>
@@ -18103,17 +18130,17 @@ tutor_id</ColNames>
       <SourceTextLength>589</SourceTextLength>
       <Turn>after-stmt</Turn>
     </trigger>
-    <column id="5770" parent="5589" name="class_type_id">
+    <column id="5776" parent="5590" name="class_type_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(15)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5771" parent="5589" name="class_type_name">
+    <column id="5777" parent="5590" name="class_type_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5772" parent="5589" name="PK__class_ty__7A8F0F9BFF293141">
+    <index id="5778" parent="5590" name="PK__class_ty__7A8F0F9BFF293141">
       <Clustering>1</Clustering>
       <ColNames>class_type_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18121,7 +18148,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5773" parent="5589" name="PK__class_ty__7A8F0F9BFF293141">
+    <key id="5779" parent="5590" name="PK__class_ty__7A8F0F9BFF293141">
       <CreatedTimestamp>2024-11-27.01:33:42.700</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.700</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18129,31 +18156,31 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__class_ty__7A8F0F9BFF293141</UnderlyingIndexName>
     </key>
-    <column id="5774" parent="5590" name="cq_id">
+    <column id="5780" parent="5591" name="cq_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(6)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5775" parent="5590" name="cq_status">
+    <column id="5781" parent="5591" name="cq_status">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5776" parent="5590" name="requirement">
+    <column id="5782" parent="5591" name="requirement">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5777" parent="5590" name="addr_id">
+    <column id="5783" parent="5591" name="addr_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5778" parent="5590" name="student_id">
+    <column id="5784" parent="5591" name="student_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5779" parent="5590" name="FKlukrgcdg066f6f1efnn8ilr33">
+    <foreign-key id="5785" parent="5591" name="FKlukrgcdg066f6f1efnn8ilr33">
       <ColNames>addr_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.720</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.720</ModifiedTimestamp>
@@ -18162,7 +18189,7 @@ tutor_id</ColNames>
       <RefTableId>581577110</RefTableId>
       <RefTableName>address</RefTableName>
     </foreign-key>
-    <foreign-key id="5780" parent="5590" name="FK5h41j02ipe9txheh7rrs7hfmj">
+    <foreign-key id="5786" parent="5591" name="FK5h41j02ipe9txheh7rrs7hfmj">
       <ColNames>student_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.700</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.700</ModifiedTimestamp>
@@ -18171,7 +18198,7 @@ tutor_id</ColNames>
       <RefTableId>1237579447</RefTableId>
       <RefTableName>student</RefTableName>
     </foreign-key>
-    <index id="5781" parent="5590" name="PK__consulta__8F1497C7E7761B57">
+    <index id="5787" parent="5591" name="PK__consulta__8F1497C7E7761B57">
       <Clustering>1</Clustering>
       <ColNames>cq_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18179,7 +18206,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5782" parent="5590" name="PK__consulta__8F1497C7E7761B57">
+    <key id="5788" parent="5591" name="PK__consulta__8F1497C7E7761B57">
       <CreatedTimestamp>2024-11-27.01:33:42.717</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.717</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18187,34 +18214,34 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__consulta__8F1497C7E7761B57</UnderlyingIndexName>
     </key>
-    <column id="5783" parent="5591" name="degr_id">
+    <column id="5789" parent="5592" name="degr_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5784" parent="5591" name="degr_major_name">
+    <column id="5790" parent="5592" name="degr_major_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5785" parent="5591" name="degr_type">
+    <column id="5791" parent="5592" name="degr_type">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5786" parent="5591" name="degr_year">
+    <column id="5792" parent="5592" name="degr_year">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5787" parent="5591" name="tutor_id">
+    <column id="5793" parent="5592" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5788" parent="5591" name="edi_code">
+    <column id="5794" parent="5592" name="edi_code">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5789" parent="5591" name="FKryfhbsm7q2vf1s1kq3vug29m5">
+    <foreign-key id="5795" parent="5592" name="FKryfhbsm7q2vf1s1kq3vug29m5">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.810</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.810</ModifiedTimestamp>
@@ -18223,7 +18250,7 @@ tutor_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <foreign-key id="5790" parent="5591" name="FKt5xpwop91cdcwb8e8prgmu9ra">
+    <foreign-key id="5796" parent="5592" name="FKt5xpwop91cdcwb8e8prgmu9ra">
       <ColNames>edi_code</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.850</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.850</ModifiedTimestamp>
@@ -18232,7 +18259,7 @@ tutor_id</ColNames>
       <RefTableId>997578592</RefTableId>
       <RefTableName>educational_institution</RefTableName>
     </foreign-key>
-    <index id="5791" parent="5591" name="PK__degree__D0E5099485F0F94A">
+    <index id="5797" parent="5592" name="PK__degree__D0E5099485F0F94A">
       <Clustering>1</Clustering>
       <ColNames>degr_id
 tutor_id</ColNames>
@@ -18241,7 +18268,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5792" parent="5591" name="PK__degree__D0E5099485F0F94A">
+    <key id="5798" parent="5592" name="PK__degree__D0E5099485F0F94A">
       <CreatedTimestamp>2024-11-27.01:33:42.760</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.760</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18249,21 +18276,21 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__degree__D0E5099485F0F94A</UnderlyingIndexName>
     </key>
-    <column id="5793" parent="5592" name="dist_city_id">
+    <column id="5799" parent="5593" name="dist_city_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5794" parent="5592" name="name">
+    <column id="5800" parent="5593" name="name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5795" parent="5592" name="pro_id">
+    <column id="5801" parent="5593" name="pro_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5796" parent="5592" name="FKnmdxji8o7gr8q7ax91o7ya1as">
+    <foreign-key id="5802" parent="5593" name="FKnmdxji8o7gr8q7ax91o7ya1as">
       <ColNames>pro_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.870</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.870</ModifiedTimestamp>
@@ -18272,7 +18299,7 @@ tutor_id</ColNames>
       <RefTableId>1141579105</RefTableId>
       <RefTableName>province</RefTableName>
     </foreign-key>
-    <index id="5797" parent="5592" name="PK__district__C7283DDA11BC493D">
+    <index id="5803" parent="5593" name="PK__district__C7283DDA11BC493D">
       <Clustering>1</Clustering>
       <ColNames>dist_city_id
 pro_id</ColNames>
@@ -18281,7 +18308,7 @@ pro_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5798" parent="5592" name="PK__district__C7283DDA11BC493D">
+    <key id="5804" parent="5593" name="PK__district__C7283DDA11BC493D">
       <CreatedTimestamp>2024-11-27.01:33:42.790</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.790</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18289,17 +18316,17 @@ pro_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__district__C7283DDA11BC493D</UnderlyingIndexName>
     </key>
-    <column id="5799" parent="5593" name="edi_code">
+    <column id="5805" parent="5594" name="edi_code">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(8)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5800" parent="5593" name="edi_name">
+    <column id="5806" parent="5594" name="edi_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5801" parent="5593" name="PK__educatio__EA14496D0F9EE5DB">
+    <index id="5807" parent="5594" name="PK__educatio__EA14496D0F9EE5DB">
       <Clustering>1</Clustering>
       <ColNames>edi_code</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18307,7 +18334,7 @@ pro_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5802" parent="5593" name="PK__educatio__EA14496D0F9EE5DB">
+    <key id="5808" parent="5594" name="PK__educatio__EA14496D0F9EE5DB">
       <CreatedTimestamp>2024-11-27.01:33:42.770</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.770</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18315,92 +18342,92 @@ pro_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__educatio__EA14496D0F9EE5DB</UnderlyingIndexName>
     </key>
-    <column id="5803" parent="5594" name="installed_rank">
+    <column id="5809" parent="5595" name="installed_rank">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5804" parent="5594" name="version">
+    <column id="5810" parent="5595" name="version">
       <Position>2</Position>
       <StoredType>nvarchar(50 char)|0s</StoredType>
     </column>
-    <column id="5805" parent="5594" name="description">
+    <column id="5811" parent="5595" name="description">
       <Position>3</Position>
       <StoredType>nvarchar(200 char)|0s</StoredType>
     </column>
-    <column id="5806" parent="5594" name="type">
+    <column id="5812" parent="5595" name="type">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>nvarchar(20 char)|0s</StoredType>
     </column>
-    <column id="5807" parent="5594" name="script">
+    <column id="5813" parent="5595" name="script">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>nvarchar(1000 char)|0s</StoredType>
     </column>
-    <column id="5808" parent="5594" name="checksum">
+    <column id="5814" parent="5595" name="checksum">
       <Position>6</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5809" parent="5594" name="installed_by">
+    <column id="5815" parent="5595" name="installed_by">
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>nvarchar(100 char)|0s</StoredType>
     </column>
-    <column id="5810" parent="5594" name="installed_on">
+    <column id="5816" parent="5595" name="installed_on">
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StoredType>datetime|0s</StoredType>
       <DefaultConstraintId>674101442</DefaultConstraintId>
       <DefaultConstraintName>DF__flyway_sc__insta__282DF8C2</DefaultConstraintName>
     </column>
-    <column id="5811" parent="5594" name="execution_time">
+    <column id="5817" parent="5595" name="execution_time">
       <NotNull>1</NotNull>
       <Position>9</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5812" parent="5594" name="success">
+    <column id="5818" parent="5595" name="success">
       <NotNull>1</NotNull>
       <Position>10</Position>
       <StoredType>bit|0s</StoredType>
     </column>
-    <default id="5813" parent="5594" name="DF__flyway_sc__insta__282DF8C2">
+    <default id="5819" parent="5595" name="DF__flyway_sc__insta__282DF8C2">
       <ColNames>installed_on</ColNames>
       <DefaultExpression>getdate()</DefaultExpression>
       <ModifiedTimestamp>2024-12-06.09:11:11.553</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>674101442</ObjectId>
     </default>
-    <index id="5814" parent="5594" name="flyway_schema_history_pk">
+    <index id="5820" parent="5595" name="flyway_schema_history_pk">
       <Clustering>1</Clustering>
       <ColNames>installed_rank</ColNames>
       <Position>1</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5815" parent="5594" name="flyway_schema_history_s_idx">
+    <index id="5821" parent="5595" name="flyway_schema_history_s_idx">
       <ColNames>success</ColNames>
       <Position>2</Position>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5816" parent="5594" name="flyway_schema_history_pk">
+    <key id="5822" parent="5595" name="flyway_schema_history_pk">
       <CreatedTimestamp>2024-12-06.09:11:11.650</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-06.09:11:11.650</ModifiedTimestamp>
       <ObjectId>690101499</ObjectId>
       <Primary>1</Primary>
       <UnderlyingIndexName>flyway_schema_history_pk</UnderlyingIndexName>
     </key>
-    <column id="5817" parent="5595" name="tutor_id">
+    <column id="5823" parent="5596" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5818" parent="5595" name="edi_code">
+    <column id="5824" parent="5596" name="edi_code">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5819" parent="5595" name="FK1lxje3aotytqmq4utkhp8sdhc">
+    <foreign-key id="5825" parent="5596" name="FK1lxje3aotytqmq4utkhp8sdhc">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.887</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.887</ModifiedTimestamp>
@@ -18409,7 +18436,7 @@ pro_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <foreign-key id="5820" parent="5595" name="FKhxnla6bq8wy3r2ulfgesh8rg">
+    <foreign-key id="5826" parent="5596" name="FKhxnla6bq8wy3r2ulfgesh8rg">
       <ColNames>edi_code</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.910</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.910</ModifiedTimestamp>
@@ -18418,17 +18445,17 @@ pro_id</ColNames>
       <RefTableId>997578592</RefTableId>
       <RefTableName>educational_institution</RefTableName>
     </foreign-key>
-    <column id="5821" parent="5596" name="class_id">
+    <column id="5827" parent="5597" name="class_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5822" parent="5596" name="class_type_id">
+    <column id="5828" parent="5597" name="class_type_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5823" parent="5596" name="FK_class_has_class_types">
+    <foreign-key id="5829" parent="5597" name="FK_class_has_class_types">
       <ColNames>class_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:08:14.500</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:08:14.500</ModifiedTimestamp>
@@ -18438,7 +18465,7 @@ pro_id</ColNames>
       <RefTableId>837578022</RefTableId>
       <RefTableName>class</RefTableName>
     </foreign-key>
-    <foreign-key id="5824" parent="5596" name="FKc0o4fww4apmk8998d5wbcnowf">
+    <foreign-key id="5830" parent="5597" name="FKc0o4fww4apmk8998d5wbcnowf">
       <ColNames>class_type_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.930</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.930</ModifiedTimestamp>
@@ -18447,17 +18474,17 @@ pro_id</ColNames>
       <RefTableId>869578136</RefTableId>
       <RefTableName>class_type</RefTableName>
     </foreign-key>
-    <column id="5825" parent="5597" name="class_id">
+    <column id="5831" parent="5598" name="class_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5826" parent="5597" name="subject_id">
+    <column id="5832" parent="5598" name="subject_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5827" parent="5597" name="FK_class_has_subjects">
+    <foreign-key id="5833" parent="5598" name="FK_class_has_subjects">
       <ColNames>class_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:01:32.597</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:01:32.597</ModifiedTimestamp>
@@ -18467,7 +18494,7 @@ pro_id</ColNames>
       <RefTableId>837578022</RefTableId>
       <RefTableName>class</RefTableName>
     </foreign-key>
-    <foreign-key id="5828" parent="5597" name="FK1objo9cb5gmximil10pnm0n6l">
+    <foreign-key id="5834" parent="5598" name="FK1objo9cb5gmximil10pnm0n6l">
       <ColNames>subject_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.973</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.973</ModifiedTimestamp>
@@ -18476,7 +18503,7 @@ pro_id</ColNames>
       <RefTableId>1269579561</RefTableId>
       <RefTableName>subject</RefTableName>
     </foreign-key>
-    <index id="5829" parent="5597" name="PK__has_subj__E8F436E0BF38F2B4">
+    <index id="5835" parent="5598" name="PK__has_subj__E8F436E0BF38F2B4">
       <Clustering>1</Clustering>
       <ColNames>class_id
 subject_id</ColNames>
@@ -18485,7 +18512,7 @@ subject_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5830" parent="5597" name="PK__has_subj__E8F436E0BF38F2B4">
+    <key id="5836" parent="5598" name="PK__has_subj__E8F436E0BF38F2B4">
       <CreatedTimestamp>2024-12-10.09:26:42.917</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.09:26:42.917</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18493,22 +18520,22 @@ subject_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__has_subj__E8F436E0BF38F2B4</UnderlyingIndexName>
     </key>
-    <column id="5831" parent="5598" name="class_id">
+    <column id="5837" parent="5599" name="class_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5832" parent="5598" name="week_id">
+    <column id="5838" parent="5599" name="week_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5833" parent="5598" name="slot_id">
+    <column id="5839" parent="5599" name="slot_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5834" parent="5598" name="FK_class_has_days_and_times">
+    <foreign-key id="5840" parent="5599" name="FK_class_has_days_and_times">
       <ColNames>class_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:12:25.213</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:12:25.213</ModifiedTimestamp>
@@ -18518,7 +18545,7 @@ subject_id</ColNames>
       <RefTableId>837578022</RefTableId>
       <RefTableName>class</RefTableName>
     </foreign-key>
-    <foreign-key id="5835" parent="5598" name="FKif72av7jucv73f9ibkr06uox0">
+    <foreign-key id="5841" parent="5599" name="FKif72av7jucv73f9ibkr06uox0">
       <ColNames>week_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.053</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.053</ModifiedTimestamp>
@@ -18527,7 +18554,7 @@ subject_id</ColNames>
       <RefTableId>1701581100</RefTableId>
       <RefTableName>week_day</RefTableName>
     </foreign-key>
-    <foreign-key id="5836" parent="5598" name="FK2fk55oivf98qhsicqui3alt7">
+    <foreign-key id="5842" parent="5599" name="FK2fk55oivf98qhsicqui3alt7">
       <ColNames>slot_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.037</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.037</ModifiedTimestamp>
@@ -18536,7 +18563,7 @@ subject_id</ColNames>
       <RefTableId>1397580017</RefTableId>
       <RefTableName>time_slot</RefTableName>
     </foreign-key>
-    <index id="5837" parent="5598" name="PK__is_held___8A4B20E47D4A7CBF">
+    <index id="5843" parent="5599" name="PK__is_held___8A4B20E47D4A7CBF">
       <Clustering>1</Clustering>
       <ColNames>class_id
 slot_id
@@ -18546,7 +18573,7 @@ week_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5838" parent="5598" name="PK__is_held___8A4B20E47D4A7CBF">
+    <key id="5844" parent="5599" name="PK__is_held___8A4B20E47D4A7CBF">
       <CreatedTimestamp>2024-11-27.01:33:42.877</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.877</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18554,31 +18581,31 @@ week_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__is_held___8A4B20E47D4A7CBF</UnderlyingIndexName>
     </key>
-    <column id="5839" parent="5599" name="user_id">
+    <column id="5845" parent="5600" name="user_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(21)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5840" parent="5599" name="full_name">
+    <column id="5846" parent="5600" name="full_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5841" parent="5599" name="password">
+    <column id="5847" parent="5600" name="password">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5842" parent="5599" name="phone_number">
+    <column id="5848" parent="5600" name="phone_number">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5843" parent="5599" name="user_sex">
+    <column id="5849" parent="5600" name="user_sex">
       <Position>5</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5844" parent="5599" name="PK__user__B9BE370FBE782162">
+    <index id="5850" parent="5600" name="PK__user__B9BE370FBE782162">
       <Clustering>1</Clustering>
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18586,13 +18613,13 @@ week_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5845" parent="5599" name="UK_9q63snka3mdh91as4io72espi">
+    <index id="5851" parent="5600" name="UK_9q63snka3mdh91as4io72espi">
       <ColNames>phone_number</ColNames>
       <Position>2</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5846" parent="5599" name="PK__user__B9BE370FBE782162">
+    <key id="5852" parent="5600" name="PK__user__B9BE370FBE782162">
       <CreatedTimestamp>2024-11-27.01:33:43.163</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.163</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18600,23 +18627,23 @@ week_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__user__B9BE370FBE782162</UnderlyingIndexName>
     </key>
-    <key id="5847" parent="5599" name="UK_9q63snka3mdh91as4io72espi">
+    <key id="5853" parent="5600" name="UK_9q63snka3mdh91as4io72espi">
       <CreatedTimestamp>2024-11-27.01:33:43.167</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.167</ModifiedTimestamp>
       <ObjectId>1605580758</ObjectId>
       <UnderlyingIndexName>UK_9q63snka3mdh91as4io72espi</UnderlyingIndexName>
     </key>
-    <column id="5848" parent="5600" name="pro_id">
+    <column id="5854" parent="5601" name="pro_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(2)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5849" parent="5600" name="pro_name">
+    <column id="5855" parent="5601" name="pro_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5850" parent="5600" name="PK__province__335E4CA6F85EDA6B">
+    <index id="5856" parent="5601" name="PK__province__335E4CA6F85EDA6B">
       <Clustering>1</Clustering>
       <ColNames>pro_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18624,7 +18651,7 @@ week_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5851" parent="5600" name="PK__province__335E4CA6F85EDA6B">
+    <key id="5857" parent="5601" name="PK__province__335E4CA6F85EDA6B">
       <CreatedTimestamp>2024-11-27.01:33:42.890</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.890</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18632,17 +18659,17 @@ week_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__province__335E4CA6F85EDA6B</UnderlyingIndexName>
     </key>
-    <column id="5852" parent="5601" name="qualification">
+    <column id="5858" parent="5602" name="qualification">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5853" parent="5601" name="tutor_id">
+    <column id="5859" parent="5602" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5854" parent="5601" name="FKk2tcm4ke292hb7abt38te0ncs">
+    <foreign-key id="5860" parent="5602" name="FKk2tcm4ke292hb7abt38te0ncs">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.073</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.073</ModifiedTimestamp>
@@ -18651,7 +18678,7 @@ week_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <index id="5855" parent="5601" name="PK__qualific__36DBF234D087AAAF">
+    <index id="5861" parent="5602" name="PK__qualific__36DBF234D087AAAF">
       <Clustering>1</Clustering>
       <ColNames>qualification
 tutor_id</ColNames>
@@ -18660,7 +18687,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5856" parent="5601" name="PK__qualific__36DBF234D087AAAF">
+    <key id="5862" parent="5602" name="PK__qualific__36DBF234D087AAAF">
       <CreatedTimestamp>2024-11-27.01:33:42.910</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.910</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18668,17 +18695,17 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__qualific__36DBF234D087AAAF</UnderlyingIndexName>
     </key>
-    <column id="5857" parent="5602" name="ta_id">
+    <column id="5863" parent="5603" name="ta_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5858" parent="5602" name="subject_id">
+    <column id="5864" parent="5603" name="subject_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5859" parent="5602" name="FK4y5s4a2g7o1poux1nmetr33u1">
+    <foreign-key id="5865" parent="5603" name="FK4y5s4a2g7o1poux1nmetr33u1">
       <ColNames>ta_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.157</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.157</ModifiedTimestamp>
@@ -18687,7 +18714,7 @@ tutor_id</ColNames>
       <RefTableId>1477580302</RefTableId>
       <RefTableName>tutor_application</RefTableName>
     </foreign-key>
-    <foreign-key id="5860" parent="5602" name="FK32qyi4pc1uyr6stf9sfkxip6t">
+    <foreign-key id="5866" parent="5603" name="FK32qyi4pc1uyr6stf9sfkxip6t">
       <ColNames>subject_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.140</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.140</ModifiedTimestamp>
@@ -18696,17 +18723,17 @@ tutor_id</ColNames>
       <RefTableId>1269579561</RefTableId>
       <RefTableName>subject</RefTableName>
     </foreign-key>
-    <column id="5861" parent="5603" name="ta_id">
+    <column id="5867" parent="5604" name="ta_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5862" parent="5603" name="class_type_id">
+    <column id="5868" parent="5604" name="class_type_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5863" parent="5603" name="FKqueawcuhj4x4ihvtl7rjvfjak">
+    <foreign-key id="5869" parent="5604" name="FKqueawcuhj4x4ihvtl7rjvfjak">
       <ColNames>ta_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.200</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.200</ModifiedTimestamp>
@@ -18715,7 +18742,7 @@ tutor_id</ColNames>
       <RefTableId>1477580302</RefTableId>
       <RefTableName>tutor_application</RefTableName>
     </foreign-key>
-    <foreign-key id="5864" parent="5603" name="FKh5avg94ju23vgt5l0qnmpofaw">
+    <foreign-key id="5870" parent="5604" name="FKh5avg94ju23vgt5l0qnmpofaw">
       <ColNames>class_type_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.177</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.177</ModifiedTimestamp>
@@ -18724,28 +18751,28 @@ tutor_id</ColNames>
       <RefTableId>869578136</RefTableId>
       <RefTableName>class_type</RefTableName>
     </foreign-key>
-    <column id="5865" parent="5604" name="date_of_birth">
+    <column id="5871" parent="5605" name="date_of_birth">
       <Position>1</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5866" parent="5604" name="national_id">
+    <column id="5872" parent="5605" name="national_id">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5867" parent="5604" name="place_of_origin">
+    <column id="5873" parent="5605" name="place_of_origin">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5868" parent="5604" name="profile_photo_url">
+    <column id="5874" parent="5605" name="profile_photo_url">
       <Position>4</Position>
       <StoredType>varbinary(255 char)|0s</StoredType>
     </column>
-    <column id="5869" parent="5604" name="staff_id">
+    <column id="5875" parent="5605" name="staff_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5870" parent="5604" name="FKdb7iapv23chqgotel5wy2s5y6">
+    <foreign-key id="5876" parent="5605" name="FKdb7iapv23chqgotel5wy2s5y6">
       <ColNames>staff_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.090</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.090</ModifiedTimestamp>
@@ -18754,7 +18781,7 @@ tutor_id</ColNames>
       <RefTableId>1573580644</RefTableId>
       <RefTableName>oft_user</RefTableName>
     </foreign-key>
-    <index id="5871" parent="5604" name="PK__staff__1963DD9C113A2B0A">
+    <index id="5877" parent="5605" name="PK__staff__1963DD9C113A2B0A">
       <Clustering>1</Clustering>
       <ColNames>staff_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18762,7 +18789,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5872" parent="5604" name="PK__staff__1963DD9C113A2B0A">
+    <key id="5878" parent="5605" name="PK__staff__1963DD9C113A2B0A">
       <CreatedTimestamp>2024-11-27.01:33:42.927</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.927</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18770,20 +18797,20 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__staff__1963DD9C113A2B0A</UnderlyingIndexName>
     </key>
-    <column id="5873" parent="5605" name="stu_grade">
+    <column id="5879" parent="5606" name="stu_grade">
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5874" parent="5605" name="stu_school">
+    <column id="5880" parent="5606" name="stu_school">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5875" parent="5605" name="student_id">
+    <column id="5881" parent="5606" name="student_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5876" parent="5605" name="FKg7bmoq2rcqn7hb518ecjrrofk">
+    <foreign-key id="5882" parent="5606" name="FKg7bmoq2rcqn7hb518ecjrrofk">
       <ColNames>student_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.113</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.113</ModifiedTimestamp>
@@ -18792,7 +18819,7 @@ tutor_id</ColNames>
       <RefTableId>1573580644</RefTableId>
       <RefTableName>oft_user</RefTableName>
     </foreign-key>
-    <index id="5877" parent="5605" name="PK__student__2A33069AA71F26BD">
+    <index id="5883" parent="5606" name="PK__student__2A33069AA71F26BD">
       <Clustering>1</Clustering>
       <ColNames>student_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18800,7 +18827,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5878" parent="5605" name="PK__student__2A33069AA71F26BD">
+    <key id="5884" parent="5606" name="PK__student__2A33069AA71F26BD">
       <CreatedTimestamp>2024-11-27.01:33:42.943</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.943</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18808,17 +18835,17 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__student__2A33069AA71F26BD</UnderlyingIndexName>
     </key>
-    <column id="5879" parent="5606" name="subject_id">
+    <column id="5885" parent="5607" name="subject_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(7)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5880" parent="5606" name="subject_name">
+    <column id="5886" parent="5607" name="subject_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5881" parent="5606" name="PK__subject__5004F6601E883218">
+    <index id="5887" parent="5607" name="PK__subject__5004F6601E883218">
       <Clustering>1</Clustering>
       <ColNames>subject_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18826,7 +18853,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5882" parent="5606" name="PK__subject__5004F6601E883218">
+    <key id="5888" parent="5607" name="PK__subject__5004F6601E883218">
       <CreatedTimestamp>2024-11-27.01:33:42.960</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:42.960</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18834,31 +18861,31 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__subject__5004F6601E883218</UnderlyingIndexName>
     </key>
-    <column id="5883" parent="5607" name="teaching_appl_id">
+    <column id="5889" parent="5608" name="teaching_appl_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(6)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5884" parent="5607" name="application_status">
+    <column id="5890" parent="5608" name="application_status">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5885" parent="5607" name="date_of_creation">
+    <column id="5891" parent="5608" name="date_of_creation">
       <Position>3</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5886" parent="5607" name="class_id">
+    <column id="5892" parent="5608" name="class_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5887" parent="5607" name="tutor_id">
+    <column id="5893" parent="5608" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5888" parent="5607" name="FK_class_has_teaching_applications">
+    <foreign-key id="5894" parent="5608" name="FK_class_has_teaching_applications">
       <ColNames>class_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:44:26.377</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:44:26.377</ModifiedTimestamp>
@@ -18868,7 +18895,7 @@ tutor_id</ColNames>
       <RefTableId>837578022</RefTableId>
       <RefTableName>class</RefTableName>
     </foreign-key>
-    <foreign-key id="5889" parent="5607" name="FK_tutor_has_teaching_applications">
+    <foreign-key id="5895" parent="5608" name="FK_tutor_has_teaching_applications">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:44:26.460</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:44:26.460</ModifiedTimestamp>
@@ -18878,7 +18905,7 @@ tutor_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <index id="5890" parent="5607" name="PK__teaching__72D0F005BE643AFF">
+    <index id="5896" parent="5608" name="PK__teaching__72D0F005BE643AFF">
       <Clustering>1</Clustering>
       <ColNames>teaching_appl_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18886,7 +18913,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5891" parent="5607" name="PK__teaching__72D0F005BE643AFF">
+    <key id="5897" parent="5608" name="PK__teaching__72D0F005BE643AFF">
       <CreatedTimestamp>2024-11-27.01:33:43.007</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.007</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18894,17 +18921,17 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__teaching__72D0F005BE643AFF</UnderlyingIndexName>
     </key>
-    <column id="5892" parent="5608" name="ts_id">
+    <column id="5898" parent="5609" name="ts_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(3)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5893" parent="5608" name="ts_name">
+    <column id="5899" parent="5609" name="ts_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5894" parent="5608" name="PK__teaching__F310C15B9190CF4E">
+    <index id="5900" parent="5609" name="PK__teaching__F310C15B9190CF4E">
       <Clustering>1</Clustering>
       <ColNames>ts_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18912,7 +18939,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5895" parent="5608" name="PK__teaching__F310C15B9190CF4E">
+    <key id="5901" parent="5609" name="PK__teaching__F310C15B9190CF4E">
       <CreatedTimestamp>2024-11-27.01:33:43.023</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.023</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18920,21 +18947,21 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__teaching__F310C15B9190CF4E</UnderlyingIndexName>
     </key>
-    <column id="5896" parent="5609" name="slot_id">
+    <column id="5902" parent="5610" name="slot_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(8)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5897" parent="5609" name="end_time">
+    <column id="5903" parent="5610" name="end_time">
       <Position>2</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5898" parent="5609" name="start_time">
+    <column id="5904" parent="5610" name="start_time">
       <Position>3</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <index id="5899" parent="5609" name="PK__time_slo__971A01BBBC71DAB9">
+    <index id="5905" parent="5610" name="PK__time_slo__971A01BBBC71DAB9">
       <Clustering>1</Clustering>
       <ColNames>slot_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -18942,7 +18969,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5900" parent="5609" name="PK__time_slo__971A01BBBC71DAB9">
+    <key id="5906" parent="5610" name="PK__time_slo__971A01BBBC71DAB9">
       <CreatedTimestamp>2024-11-27.01:33:43.040</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.040</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -18950,36 +18977,36 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__time_slo__971A01BBBC71DAB9</UnderlyingIndexName>
     </key>
-    <column id="5901" parent="5610" name="bio">
+    <column id="5907" parent="5611" name="bio">
       <Position>1</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5902" parent="5610" name="date_joined">
+    <column id="5908" parent="5611" name="date_joined">
       <Position>2</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5903" parent="5610" name="inviting_code">
+    <column id="5909" parent="5611" name="inviting_code">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5904" parent="5610" name="n_of_invitations">
+    <column id="5910" parent="5611" name="n_of_invitations">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5905" parent="5610" name="rate">
+    <column id="5911" parent="5611" name="rate">
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5906" parent="5610" name="tutor_id">
+    <column id="5912" parent="5611" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5907" parent="5610" name="invited_code">
+    <column id="5913" parent="5611" name="invited_code">
       <Position>7</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5908" parent="5610" name="FK36na5bhf5o5rf3h0osgwxci6f">
+    <foreign-key id="5914" parent="5611" name="FK36na5bhf5o5rf3h0osgwxci6f">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.270</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.270</ModifiedTimestamp>
@@ -18988,7 +19015,7 @@ tutor_id</ColNames>
       <RefTableId>1205579333</RefTableId>
       <RefTableName>staff</RefTableName>
     </foreign-key>
-    <foreign-key id="5909" parent="5610" name="FKn6esf2ou7po2yjmvkfvwk9swp">
+    <foreign-key id="5915" parent="5611" name="FKn6esf2ou7po2yjmvkfvwk9swp">
       <ColNames>invited_code</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.290</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.290</ModifiedTimestamp>
@@ -18997,7 +19024,7 @@ tutor_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <index id="5910" parent="5610" name="PK__tutor__50DE5D013481E3A0">
+    <index id="5916" parent="5611" name="PK__tutor__50DE5D013481E3A0">
       <Clustering>1</Clustering>
       <ColNames>tutor_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -19005,13 +19032,13 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <index id="5911" parent="5610" name="UK_g5accvpotj6irddk8dn58ef47">
+    <index id="5917" parent="5611" name="UK_g5accvpotj6irddk8dn58ef47">
       <ColNames>inviting_code</ColNames>
       <Position>2</Position>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5912" parent="5610" name="PK__tutor__50DE5D013481E3A0">
+    <key id="5918" parent="5611" name="PK__tutor__50DE5D013481E3A0">
       <CreatedTimestamp>2024-11-27.01:33:43.057</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.057</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -19019,46 +19046,46 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__tutor__50DE5D013481E3A0</UnderlyingIndexName>
     </key>
-    <key id="5913" parent="5610" name="UK_g5accvpotj6irddk8dn58ef47">
+    <key id="5919" parent="5611" name="UK_g5accvpotj6irddk8dn58ef47">
       <CreatedTimestamp>2024-11-27.01:33:43.060</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.060</ModifiedTimestamp>
       <ObjectId>1461580245</ObjectId>
       <UnderlyingIndexName>UK_g5accvpotj6irddk8dn58ef47</UnderlyingIndexName>
     </key>
-    <column id="5914" parent="5611" name="ta_id">
+    <column id="5920" parent="5612" name="ta_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(5)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5915" parent="5611" name="requirement">
+    <column id="5921" parent="5612" name="requirement">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5916" parent="5611" name="ta_status">
+    <column id="5922" parent="5612" name="ta_status">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5917" parent="5611" name="addr_id">
+    <column id="5923" parent="5612" name="addr_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5918" parent="5611" name="student_id">
+    <column id="5924" parent="5612" name="student_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5919" parent="5611" name="ts_id">
+    <column id="5925" parent="5612" name="ts_id">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5920" parent="5611" name="tutor_id">
+    <column id="5926" parent="5612" name="tutor_id">
       <Position>7</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5921" parent="5611" name="FK82b82kk6r5c3vi2ce3sksldg3">
+    <foreign-key id="5927" parent="5612" name="FK82b82kk6r5c3vi2ce3sksldg3">
       <ColNames>addr_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.310</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.310</ModifiedTimestamp>
@@ -19067,7 +19094,7 @@ tutor_id</ColNames>
       <RefTableId>581577110</RefTableId>
       <RefTableName>address</RefTableName>
     </foreign-key>
-    <foreign-key id="5922" parent="5611" name="FKr6wontwagl1nm0y1e38ksl636">
+    <foreign-key id="5928" parent="5612" name="FKr6wontwagl1nm0y1e38ksl636">
       <ColNames>student_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.377</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.377</ModifiedTimestamp>
@@ -19076,7 +19103,7 @@ tutor_id</ColNames>
       <RefTableId>1237579447</RefTableId>
       <RefTableName>student</RefTableName>
     </foreign-key>
-    <foreign-key id="5923" parent="5611" name="FKol6ktbsmnlbyxhgssywurwacq">
+    <foreign-key id="5929" parent="5612" name="FKol6ktbsmnlbyxhgssywurwacq">
       <ColNames>ts_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.353</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.353</ModifiedTimestamp>
@@ -19085,7 +19112,7 @@ tutor_id</ColNames>
       <RefTableId>1365579903</RefTableId>
       <RefTableName>teaching_style</RefTableName>
     </foreign-key>
-    <foreign-key id="5924" parent="5611" name="FKht5y7uy8wf0c8973b5qso14py">
+    <foreign-key id="5930" parent="5612" name="FKht5y7uy8wf0c8973b5qso14py">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.333</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.333</ModifiedTimestamp>
@@ -19094,7 +19121,7 @@ tutor_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <index id="5925" parent="5611" name="PK__tutor_ap__532C5F477AB22ECC">
+    <index id="5931" parent="5612" name="PK__tutor_ap__532C5F477AB22ECC">
       <Clustering>1</Clustering>
       <ColNames>ta_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -19102,7 +19129,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5926" parent="5611" name="PK__tutor_ap__532C5F477AB22ECC">
+    <key id="5932" parent="5612" name="PK__tutor_ap__532C5F477AB22ECC">
       <CreatedTimestamp>2024-11-27.01:33:43.093</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.093</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -19110,35 +19137,35 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__tutor_ap__532C5F477AB22ECC</UnderlyingIndexName>
     </key>
-    <column id="5927" parent="5612" name="tutor_review_id">
+    <column id="5933" parent="5613" name="tutor_review_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(6)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5928" parent="5612" name="comment">
+    <column id="5934" parent="5613" name="comment">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5929" parent="5612" name="rate">
+    <column id="5935" parent="5613" name="rate">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="5930" parent="5612" name="time_stamp">
+    <column id="5936" parent="5613" name="time_stamp">
       <Position>4</Position>
       <StoredType>datetime2|0s</StoredType>
     </column>
-    <column id="5931" parent="5612" name="class_id">
+    <column id="5937" parent="5613" name="class_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5932" parent="5612" name="student_id">
+    <column id="5938" parent="5613" name="student_id">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5933" parent="5612" name="FK_class_has_reviews">
+    <foreign-key id="5939" parent="5613" name="FK_class_has_reviews">
       <ColNames>class_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:18:44.920</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:18:44.920</ModifiedTimestamp>
@@ -19148,7 +19175,7 @@ tutor_id</ColNames>
       <RefTableId>837578022</RefTableId>
       <RefTableName>class</RefTableName>
     </foreign-key>
-    <foreign-key id="5934" parent="5612" name="FK_student_has_reviews">
+    <foreign-key id="5940" parent="5613" name="FK_student_has_reviews">
       <ColNames>student_id</ColNames>
       <CreatedTimestamp>2024-12-10.08:18:44.953</CreatedTimestamp>
       <ModifiedTimestamp>2024-12-10.08:18:44.953</ModifiedTimestamp>
@@ -19158,7 +19185,7 @@ tutor_id</ColNames>
       <RefTableId>1237579447</RefTableId>
       <RefTableName>student</RefTableName>
     </foreign-key>
-    <index id="5935" parent="5612" name="PK__tutor_re__D4AFEF0DF4E1B218">
+    <index id="5941" parent="5613" name="PK__tutor_re__D4AFEF0DF4E1B218">
       <Clustering>1</Clustering>
       <ColNames>tutor_review_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -19166,7 +19193,7 @@ tutor_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5936" parent="5612" name="PK__tutor_re__D4AFEF0DF4E1B218">
+    <key id="5942" parent="5613" name="PK__tutor_re__D4AFEF0DF4E1B218">
       <CreatedTimestamp>2024-11-27.01:33:43.113</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.113</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -19174,27 +19201,27 @@ tutor_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__tutor_re__D4AFEF0DF4E1B218</UnderlyingIndexName>
     </key>
-    <column id="5937" parent="5613" name="contact_email">
+    <column id="5943" parent="5614" name="contact_email">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5938" parent="5613" name="contact_phone_number">
+    <column id="5944" parent="5614" name="contact_phone_number">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5939" parent="5613" name="social_media_link">
+    <column id="5945" parent="5614" name="social_media_link">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5940" parent="5613" name="user_id">
+    <column id="5946" parent="5614" name="user_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5941" parent="5613" name="FKddu27uy0rw5j7e3oso0oaixpb">
+    <foreign-key id="5947" parent="5614" name="FKddu27uy0rw5j7e3oso0oaixpb">
       <ColNames>user_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.450</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.450</ModifiedTimestamp>
@@ -19203,7 +19230,7 @@ tutor_id</ColNames>
       <RefTableId>1573580644</RefTableId>
       <RefTableName>oft_user</RefTableName>
     </foreign-key>
-    <index id="5942" parent="5613" name="PK__user_con__D48DB2F9C2B7C342">
+    <index id="5948" parent="5614" name="PK__user_con__D48DB2F9C2B7C342">
       <Clustering>1</Clustering>
       <ColNames>contact_email
 contact_phone_number
@@ -19214,7 +19241,7 @@ user_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5943" parent="5613" name="PK__user_con__D48DB2F9C2B7C342">
+    <key id="5949" parent="5614" name="PK__user_con__D48DB2F9C2B7C342">
       <CreatedTimestamp>2024-11-27.01:33:43.130</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.130</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -19222,26 +19249,26 @@ user_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__user_con__D48DB2F9C2B7C342</UnderlyingIndexName>
     </key>
-    <column id="5944" parent="5614" name="vou_id">
+    <column id="5950" parent="5615" name="vou_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(9)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5945" parent="5614" name="vou_discount">
+    <column id="5951" parent="5615" name="vou_discount">
       <Position>2</Position>
       <StoredType>numeric(10,2)|0s</StoredType>
     </column>
-    <column id="5946" parent="5614" name="vou_status">
+    <column id="5952" parent="5615" name="vou_status">
       <Position>3</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5947" parent="5614" name="tutor_id">
+    <column id="5953" parent="5615" name="tutor_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5948" parent="5614" name="FKcnmevrlfntsyenhdm7pw4nc51">
+    <foreign-key id="5954" parent="5615" name="FKcnmevrlfntsyenhdm7pw4nc51">
       <ColNames>tutor_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.470</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.470</ModifiedTimestamp>
@@ -19250,7 +19277,7 @@ user_id</ColNames>
       <RefTableId>1429580131</RefTableId>
       <RefTableName>tutor</RefTableName>
     </foreign-key>
-    <index id="5949" parent="5614" name="PK__voucher__2EE2FB2871EBD7B1">
+    <index id="5955" parent="5615" name="PK__voucher__2EE2FB2871EBD7B1">
       <Clustering>1</Clustering>
       <ColNames>vou_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -19258,7 +19285,7 @@ user_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5950" parent="5614" name="PK__voucher__2EE2FB2871EBD7B1">
+    <key id="5956" parent="5615" name="PK__voucher__2EE2FB2871EBD7B1">
       <CreatedTimestamp>2024-11-27.01:33:43.180</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.180</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -19266,17 +19293,17 @@ user_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__voucher__2EE2FB2871EBD7B1</UnderlyingIndexName>
     </key>
-    <column id="5951" parent="5615" name="cq_id">
+    <column id="5957" parent="5616" name="cq_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5952" parent="5615" name="ts_id">
+    <column id="5958" parent="5616" name="ts_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5953" parent="5615" name="FK26fesjsocc01dbgx181y3t2od">
+    <foreign-key id="5959" parent="5616" name="FK26fesjsocc01dbgx181y3t2od">
       <ColNames>cq_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.490</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.490</ModifiedTimestamp>
@@ -19285,7 +19312,7 @@ user_id</ColNames>
       <RefTableId>901578250</RefTableId>
       <RefTableName>consultation_req</RefTableName>
     </foreign-key>
-    <foreign-key id="5954" parent="5615" name="FKbx2fiopchptn8sutjqcb1vilx">
+    <foreign-key id="5960" parent="5616" name="FKbx2fiopchptn8sutjqcb1vilx">
       <ColNames>ts_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.513</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:44.513</ModifiedTimestamp>
@@ -19294,17 +19321,17 @@ user_id</ColNames>
       <RefTableId>1365579903</RefTableId>
       <RefTableName>teaching_style</RefTableName>
     </foreign-key>
-    <column id="5955" parent="5616" name="cq_id">
+    <column id="5961" parent="5617" name="cq_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5956" parent="5616" name="subject_id">
+    <column id="5962" parent="5617" name="subject_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5957" parent="5616" name="FKmc6mvmcbusb7cg5h63np6lafm">
+    <foreign-key id="5963" parent="5617" name="FKmc6mvmcbusb7cg5h63np6lafm">
       <ColNames>cq_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.753</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.753</ModifiedTimestamp>
@@ -19313,7 +19340,7 @@ user_id</ColNames>
       <RefTableId>901578250</RefTableId>
       <RefTableName>consultation_req</RefTableName>
     </foreign-key>
-    <foreign-key id="5958" parent="5616" name="FK4i9rgrd26ce2mm2n96i46p04o">
+    <foreign-key id="5964" parent="5617" name="FK4i9rgrd26ce2mm2n96i46p04o">
       <ColNames>subject_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.737</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.737</ModifiedTimestamp>
@@ -19322,17 +19349,17 @@ user_id</ColNames>
       <RefTableId>1269579561</RefTableId>
       <RefTableName>subject</RefTableName>
     </foreign-key>
-    <column id="5959" parent="5617" name="cq_id">
+    <column id="5965" parent="5618" name="cq_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5960" parent="5617" name="class_type_id">
+    <column id="5966" parent="5618" name="class_type_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5961" parent="5617" name="FKjc9iv1ckct96hg70qtmgi8jkl">
+    <foreign-key id="5967" parent="5618" name="FKjc9iv1ckct96hg70qtmgi8jkl">
       <ColNames>cq_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.773</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.773</ModifiedTimestamp>
@@ -19341,7 +19368,7 @@ user_id</ColNames>
       <RefTableId>901578250</RefTableId>
       <RefTableName>consultation_req</RefTableName>
     </foreign-key>
-    <foreign-key id="5962" parent="5617" name="FKtltlrrjldfdkfsyujuq0lq9f2">
+    <foreign-key id="5968" parent="5618" name="FKtltlrrjldfdkfsyujuq0lq9f2">
       <ColNames>class_type_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:43.790</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.790</ModifiedTimestamp>
@@ -19350,26 +19377,26 @@ user_id</ColNames>
       <RefTableId>869578136</RefTableId>
       <RefTableName>class_type</RefTableName>
     </foreign-key>
-    <column id="5963" parent="5618" name="ward_id">
+    <column id="5969" parent="5619" name="ward_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5964" parent="5618" name="ward_name">
+    <column id="5970" parent="5619" name="ward_name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <column id="5965" parent="5618" name="dist_city_id">
+    <column id="5971" parent="5619" name="dist_city_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5966" parent="5618" name="pro_id">
+    <column id="5972" parent="5619" name="pro_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="5967" parent="5618" name="FK75ye4g45h42tv2vmvrbs61pf4">
+    <foreign-key id="5973" parent="5619" name="FK75ye4g45h42tv2vmvrbs61pf4">
       <ColNames>dist_city_id
 pro_id</ColNames>
       <CreatedTimestamp>2024-11-27.01:33:44.533</CreatedTimestamp>
@@ -19380,7 +19407,7 @@ pro_id</RefColNames>
       <RefTableId>1029578706</RefTableId>
       <RefTableName>district_city</RefTableName>
     </foreign-key>
-    <index id="5968" parent="5618" name="PK__ward__5B1156530646B891">
+    <index id="5974" parent="5619" name="PK__ward__5B1156530646B891">
       <Clustering>1</Clustering>
       <ColNames>dist_city_id
 pro_id
@@ -19390,7 +19417,7 @@ ward_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5969" parent="5618" name="PK__ward__5B1156530646B891">
+    <key id="5975" parent="5619" name="PK__ward__5B1156530646B891">
       <CreatedTimestamp>2024-11-27.01:33:43.213</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.213</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -19398,17 +19425,17 @@ ward_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__ward__5B1156530646B891</UnderlyingIndexName>
     </key>
-    <column id="5970" parent="5619" name="week_id">
+    <column id="5976" parent="5620" name="week_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>1(8)</SequenceIdentity>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5971" parent="5619" name="name">
+    <column id="5977" parent="5620" name="name">
       <Position>2</Position>
       <StoredType>varchar(255 char)|0s</StoredType>
     </column>
-    <index id="5972" parent="5619" name="PK__week_day__CEF979DF28AC90C5">
+    <index id="5978" parent="5620" name="PK__week_day__CEF979DF28AC90C5">
       <Clustering>1</Clustering>
       <ColNames>week_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -19416,7 +19443,7 @@ ward_id</ColNames>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5973" parent="5619" name="PK__week_day__CEF979DF28AC90C5">
+    <key id="5979" parent="5620" name="PK__week_day__CEF979DF28AC90C5">
       <CreatedTimestamp>2024-11-27.01:33:43.230</CreatedTimestamp>
       <ModifiedTimestamp>2024-11-27.01:33:43.230</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
@@ -19424,22 +19451,22 @@ ward_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK__week_day__CEF979DF28AC90C5</UnderlyingIndexName>
     </key>
-    <column id="5974" parent="5620" name="class_type_id">
+    <column id="5980" parent="5621" name="class_type_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5975" parent="5621" name="subject_id">
+    <column id="5981" parent="5622" name="subject_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5976" parent="5622" name="week_id">
+    <column id="5982" parent="5623" name="week_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <column id="5977" parent="5622" name="slot_id">
+    <column id="5983" parent="5623" name="slot_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>bigint|0s</StoredType>
