@@ -13,8 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
-
 
 @RestController
 @RequestMapping("/api/v1/classes")
@@ -52,7 +50,7 @@ public class ClassController
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteClass(@PathVariable Long id) throws SQLServerException
+    public void deleteClass(@PathVariable Long id)
     {
         classService.deleteClass(id);
     }
