@@ -19,10 +19,6 @@ html {
 body {
   font-size: 1.6rem;
   font-family: var(--font-Inter);
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
   background-color: #ffdfd3;
   height: 100%;
 }

@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import lombok.Builder;
+
 /**
  * DTO for {@link com.database241.onlinetutorfinding.entity.clAss.Class}
  */
+@Builder
 public record ClassCreateClassRequestDto(
                 Long classDeposit,
                 String classStatus,

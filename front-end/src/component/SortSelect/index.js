@@ -1,8 +1,8 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { GoSearch } from "react-icons/go";
-import React from "react";
-import { FaSortAmountUp } from "react-icons/fa";
+import { IconButton, MenuItem, Select } from "@mui/material";
+import React, { useState } from "react";
+import { FaSortAmountDown, FaSortAmountUp } from "react-icons/fa";
 import { FiChevronsDown } from "react-icons/fi";
+import { GoSearch } from "react-icons/go";
 
 const SortSelect = ({
   item,
@@ -12,6 +12,7 @@ const SortSelect = ({
   handleFilterChange,
   filters,
 }) => {
+  const [sort, setSort] = useState("ASC");
   return (
     <div className="sort-item">
       {index !== sortList.length - 1 && index !== sortList.length - 2 ? (
@@ -26,9 +27,10 @@ const SortSelect = ({
           sx={{
             width: "170px",
             fontFamily: "Itim",
-            fontSize: "20px",
+            fontSize: "25px",
             fontStyle: "normal",
             fontWeight: "400",
+            color: "#957dad",
             lineHeight: "normal",
           }}
           displayEmpty
@@ -36,18 +38,18 @@ const SortSelect = ({
             index === sortList.length - 2 ? FaSortAmountUp : FiChevronsDown
           }
         >
-          <MenuItem value={""} sx={{ background: "#E0BBE4 !important" }}>
+          <MenuItem value={""} key={""} sx={{ background: "#E0BBE4 !important" }}>
             {item}
           </MenuItem>
           {Object.keys(filters)[index] === "subjectName"? 
-          <MenuItem value={"ALL"} sx={{ background: "#E0BBE4 !important" }}>
+          <MenuItem value={"ALL"} key={"ALL"} sx={{ background: "#E0BBE4 !important" }}>
             {"Tat ca"}
           </MenuItem> : <></>}
-          {console.log(Object.values(listItems).at(index))}
           {Object.values(listItems)
             .at(index)
             .map((it) => (
               <MenuItem
+                key={it.name}
                 value={it.name}
                 sx={{ background: "#E0BBE4 !important" }}
               >
@@ -58,13 +60,19 @@ const SortSelect = ({
       ) : index === sortList.length - 2 ? (
         <h4
           style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
+          onClick={(e) => {
+            sort === "ASC"? setSort("DESC") : setSort("ASC");
+            handleFilterChange("sortOrder", sort === "ASC"? "DESC" : "ASC");
+          }}
         >
           {item}
-          <FaSortAmountUp />
+          <IconButton>
+          {sort === "ASC"?<FaSortAmountUp /> : <FaSortAmountDown/>}
+          </IconButton>
         </h4>
       ) : (
         <h4 style={{ display: "flex", alignItems: "center" }}>
-          <input placeholder={item} style={{ all: "unset" }} />
+          <input placeholder={item} style={{ all: "unset" }} onChange={(e) => handleFilterChange("phoneNumber", e.target.value)} />
           <GoSearch />
         </h4>
       )}

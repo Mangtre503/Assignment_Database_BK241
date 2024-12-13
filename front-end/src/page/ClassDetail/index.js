@@ -3,8 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import EditIcon from "../../assets/icons/EditIcon.svg";
 import "./ClassDetail.css";
+import { FiEdit } from "react-icons/fi";
 import api from "../../api";
-import { Backdrop, CircularProgress } from "@mui/material";
+import { Backdrop, CircularProgress, IconButton } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { closeBackDrop, openBackDrop } from "../../redux/action";
 import { useSnackbar } from "../../component/SnackbarProvider";
@@ -115,7 +116,9 @@ function ClassDetail() {
       <h1>
         Mã lớp học: <p>{idClass}</p>
       </h1>
-      <img onClick={() => navigate("/update-class/" + idClass)} src={EditIcon} alt="EditIcon" />
+      <IconButton className="img" onClick={() => navigate("/update-class/" + idClass)}>
+        <FiEdit size={48} color="#957DAD"/>
+      </IconButton>
       <div className="form-ta">
         {listTitleTop.map((item) => (
           <Grid container className="grid-container-top" key={item.title1}>

@@ -19,6 +19,7 @@ import com.database241.onlinetutorfinding.request.ClassCreateClassRequestDto;
 import com.database241.onlinetutorfinding.request.ClassUpdateClassRequestDto;
 import com.database241.onlinetutorfinding.response.ClassGetClassResponseDto;
 import com.database241.onlinetutorfinding.response.ClassGetClassesResponseDto;
+import com.database241.onlinetutorfinding.response.ClassUpdateResponse;
 import com.database241.onlinetutorfinding.service.ClassService;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
@@ -37,6 +38,11 @@ public class ClassController
             throws SQLServerException
     {
         classService.createClass(classCreateClassRequestDto);
+    }
+
+    @GetMapping("update/{classId}")
+    public ResponseEntity<ClassUpdateResponse> getDetailClassUpdate(@PathVariable Long classId){
+        return ResponseEntity.ok(classService.getDetailClassUpdate(classId));
     }
 
 

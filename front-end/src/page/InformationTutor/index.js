@@ -52,6 +52,8 @@ function InformationTutor() {
     nofInvitations: null,
     codeInvited: "",
     bio: "",
+    acceptedCount: "",
+    deniedCount: "",
   });
 
   async function getTutorInfo() {
@@ -91,8 +93,21 @@ function InformationTutor() {
     dispatch(closeBackDrop());
   }
 
+  async function getSumaryTutor(){
+    try{
+      dispatch(openBackDrop());
+      const response = await api.get(`api/v1/tutors/summary/${idTutor}`);
+      console.log(response);
+      setTutorInfo((prev) => ({...prev, ...response.data}))
+    }catch(e){
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
+  }
+
   useEffect(() => {
     getTutorInfo();
+    getSumaryTutor();
   }, []);
 
   return (
@@ -168,6 +183,18 @@ function InformationTutor() {
             </Grid>
           </>
         ))}
+        <Grid item className="item title" xs={3}>
+          Số đơn được chấp nhận
+        </Grid>
+        <Grid item className="item" xs={3}>
+        {tutorInfo.acceptedCount}
+        </Grid>
+        <Grid item className="item title" xs={3}>
+          Số đơn bị từ chối
+        </Grid>
+        <Grid item className="item" xs={3}>
+        {tutorInfo.deniedCount}
+        </Grid>
       </Grid>
     </div>
   );

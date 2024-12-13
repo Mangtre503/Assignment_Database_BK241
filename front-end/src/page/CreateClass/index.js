@@ -4,19 +4,20 @@ import {
   Checkbox,
   CircularProgress,
   Grid,
+  IconButton,
   ListItemText,
   MenuItem,
   OutlinedInput,
   Select,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import "./CreateClass.css";
-import { useParams } from "react-router-dom";
-import api from "../../api";
 import { useDispatch, useSelector } from "react-redux";
+import api from "../../api";
 import AddIcon from "../../assets/icons/AddIcon.svg";
-import { closeBackDrop, openBackDrop } from "../../redux/action";
 import { useSnackbar } from "../../component/SnackbarProvider";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
+import "./CreateClass.css";
+import { FiPlusCircle } from "react-icons/fi";
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -173,42 +174,66 @@ function CreateClass() {
 
   async function getAllStyle() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/styles`);
       setTeachingStyle(response.data);
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
   async function getAllSubject() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/subjects`);
       setSubjects(response.data);
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
   async function getAllClassType() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/types`);
       setClassTypes(response.data);
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
   async function getAllAddress() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(
         `api/v1/addresses/${formCreateClass.studentPhoneNumber}`
       );
       setAddresses(response.data);
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
   async function getAllTimeSlot() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/times`);
       setTimeSlot(response.data);
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
   async function getAllWeekenDay() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/days`);
       console.log(response);
       setWeekDay(response.data);
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
 
   useEffect(() => {
@@ -319,6 +344,9 @@ function CreateClass() {
                               <Select
                                 sx={{
                                   width: "426px",
+                                  background: '#FEC8D8',
+                                borderRadius: '20px',
+                                border: '3px solid #957DAD'
                                 }}
                                 value={dateAndTimeDtoSelect.weekId}
                                 onChange={(e) =>
@@ -382,6 +410,9 @@ function CreateClass() {
                                 <Select
                                   sx={{
                                     width: "426px",
+                                    background: '#FEC8D8',
+                                borderRadius: '20px',
+                                border: '3px solid #957DAD'
                                   }}
                                   value={dateAndTimeDtoSelect.slotId}
                                   onChange={(e) =>
@@ -426,11 +457,9 @@ function CreateClass() {
                                   ))}
                                 </Select>
                                 {item.title2 === "Giờ dạy" ? (
-                                  <img
-                                    onClick={handleAddTime}
-                                    src={AddIcon}
-                                    alt="AddIcon"
-                                  />
+                                 <IconButton onClick={handleAddTime}>
+                                 <FiPlusCircle size={48} color="#957DAD"/>
+                                 </IconButton>
                                 ) : (
                                   <></>
                                 )}
@@ -465,6 +494,9 @@ function CreateClass() {
                             onChange={handleChange}
                             sx={{
                               width: "426px",
+                              background: '#FEC8D8',
+                                borderRadius: '20px',
+                                border: '3px solid #957DAD'
                             }}
                             input={<OutlinedInput label="Tag" />}
                             renderValue={(selected) =>
@@ -527,6 +559,7 @@ function CreateClass() {
                             textTransform: "capitalize",
                             borderRadius: "15px",
                             color: "#000",
+                            background: formCreateClass.classStatus === "Da giao"? "#FEC8D8" : "#D291BC"
                           }}
                           onClick={() => {
                             setFormCreateClass({
@@ -558,6 +591,9 @@ function CreateClass() {
                         <Select
                           sx={{
                             width: "426px",
+                            background: '#FEC8D8',
+                                borderRadius: '20px',
+                                border: '3px solid #957DAD'
                           }}
                           value={formCreateClass.tsId}
                           onChange={(e) =>
@@ -592,6 +628,9 @@ function CreateClass() {
                           onChange={handleChangeTypeClass}
                           sx={{
                             width: "426px",
+                            background: '#FEC8D8',
+                                borderRadius: '20px',
+                                border: '3px solid #957DAD'
                           }}
                           input={<OutlinedInput label="Tag" />}
                           renderValue={(selected) =>
@@ -678,6 +717,9 @@ function CreateClass() {
                         <Select
                           sx={{
                             width: "426px",
+                            background: '#FEC8D8',
+                                borderRadius: '20px',
+                                border: '3px solid #957DAD'
                           }}
                           value={formCreateClass.addrId}
                           onChange={(e) =>

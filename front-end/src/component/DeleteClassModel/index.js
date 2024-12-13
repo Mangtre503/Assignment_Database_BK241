@@ -7,14 +7,14 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { dialogClose } from '../../redux/action';
+import { dialogClassClose, dialogClose } from '../../redux/action';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function AlertDialogSlide({updateStatus}) {
-  const state = useSelector(state => state.dialogAction);
+export default function AlertClassDialogSlide({deleteClassFunc}) {
+  const state = useSelector(state => state.dialogClassAction);
   const open = state.status;
   const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ export default function AlertDialogSlide({updateStatus}) {
         open={open}
         TransitionComponent={Transition}
         keepMounted
-        onClose={() => dispatch(dialogClose())}
+        onClose={() => dispatch(dialogClassClose())}
         aria-describedby="alert-dialog-slide-description"
         sx={{
             "& .MuiPaper-root": {
@@ -35,12 +35,12 @@ export default function AlertDialogSlide({updateStatus}) {
         <DialogTitle>{"Cảnh báo"}</DialogTitle>
         <DialogContent>
           <DialogContentText color='#957DAD' id="alert-dialog-slide-description">
-          Bạn có chắc chắn muốn mở lớp cho đơn này không?
+          Bạn có chắc chắn muốn xóa lớp này không?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => dispatch(dialogClose())}>Hủy</Button>
-          <Button onClick={() => updateStatus(state.data.value, state.data.id)}>Mở lớp</Button>
+          <Button onClick={() => dispatch(dialogClassClose())}>Hủy</Button>
+          <Button onClick={() => deleteClassFunc(state.data)}>Xóa</Button>
         </DialogActions>
       </Dialog>
   );

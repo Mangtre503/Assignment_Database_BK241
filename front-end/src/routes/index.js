@@ -15,6 +15,7 @@ import TeachingApplication from "../page/TeachingApplication";
 import TutorRegistration from "../page/TutorRegistration";
 import { useSelector } from "react-redux";
 import UpdateClass from "../page/UpdateClass";
+import ReportPage from "../page/ReportPage";
 
 const Routers = () => {
     const userData = useSelector(state => state.accountAction);
@@ -55,6 +56,10 @@ const Routers = () => {
                 {
                     path: 'update-class/:idClass',
                     element: userData? <UpdateClass/> : <Navigate to={"/login"}/>
+                },
+                {
+                    path: 'report',
+                    element: userData? <ReportPage/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'create-class',

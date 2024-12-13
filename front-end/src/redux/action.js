@@ -75,3 +75,32 @@ export const openBackDrop = () => {
     }
   }
   
+  export const dialogClassOpen = (slug) => {
+    return{
+      type: "OPENCLASSDIALOG",
+      data: slug,
+    }
+  }
+  
+  export const dialogClassClose = () => {
+    return{
+      type: "CLOSECLASSDIALOG",
+      data: null,
+    }
+  }
+  
+  const dialogClassState = {
+    status: false,
+    data: null,
+  }
+  
+  export const dialogClassAction = (state = dialogClassState, action) => {
+    switch (action.type) {
+      case "OPENCLASSDIALOG":
+        return {status: true, data: action.data};
+      case "CLOSECLASSDIALOG":
+        return {status: false, data: null};
+      default:
+        return state;
+    }
+  }

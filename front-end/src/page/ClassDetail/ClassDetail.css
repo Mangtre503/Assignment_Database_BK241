@@ -24,7 +24,7 @@
     color: #000;
   }
   
-  .container-ta > img {
+  .container-ta > .img {
     margin-left: auto;
     cursor: pointer;
   }

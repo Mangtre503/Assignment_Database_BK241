@@ -1,20 +1,19 @@
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import AddIcon from "../../assets/icons/AddIcon.svg";
+import { Backdrop, CircularProgress, IconButton } from "@mui/material";
 import { debounce } from "lodash";
+import { useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { FiPlusCircle } from "react-icons/fi";
+import { FaRegTrashAlt } from "react-icons/fa";
+import api from "../../api";
+import AddIcon from "../../assets/icons/AddIcon.svg";
 import CalendarIcon from "../../assets/icons/CalendarIcon.svg";
 import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import ClassItem from "../../component/ClassItem";
-import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
-import IncreaseIcon from "../../assets/icons/increase.svg";
-import { FiChevronsDown } from "react-icons/fi";
-import SearchIcon from "../../assets/icons/SearchIcon.svg";
-import api from "../../api";
-import "./Classes.css";
-import { useDispatch, useSelector } from "react-redux";
-import { closeBackDrop, openBackDrop } from "../../redux/action";
-import { Backdrop, CircularProgress, MenuItem, Select } from "@mui/material";
 import SortSelect from "../../component/SortSelect";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
+import "./Classes.css";
+import { useSnackbar } from "../../component/SnackbarProvider";
 
 function Classes() {
   const open = useSelector(state => state.backdropAction);
@@ -34,8 +33,6 @@ function Classes() {
     status: [],
     subject: [],
   });
-  const [selectedDateFrom, setSelectedDateFrom] = useState();
-  const [selectedDateTo, setSelectedDateTo] = useState();
   const navigate = useNavigate();
 
   // Function
@@ -50,34 +47,40 @@ function Classes() {
     }
   }
 
-  function handleChangeDate(e) {
-    if (e.target.id === "from-date-inp") {
-      setSelectedDateFrom(e.target.value);
-    } else {
-      setSelectedDateTo(e.target.value);
-    }
-  }
+  const { showSnackbar } = useSnackbar();
+
   async function getAllStyle() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/styles`);
       listItems.style.push(...Array.from(response.data).map(it => ({...it, name: it.tsName})));
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
   async function getAllSubject() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/subjects`);
       listItems.subject.push(...Array.from(response.data).map(it => ({...it, name: it.subjectName})));
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
   async function getAllClassType() {
     try {
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/types`);
       listItems.grades.push(...Array.from(response.data).map(it => ({...it, name: it.classTypeName})));
-    } catch (e) {}
+    } catch (e) {
+      showSnackbar("Lỗi kết nối");
+    }
+    dispatch(closeBackDrop());
   }
 
   useEffect(() => {
-    fetchClasses();
     getAllStyle();
     getAllSubject();
     getAllClassType();
@@ -91,20 +94,29 @@ function Classes() {
 
   const [filters, setFilters] = useState({
     classTypeName: "",
-    teachingStyle: "",
+    tsName: "",
     classStatus: "",
     subjectName: "",
-    classId: "",
     phoneNumber: "",
-    dateStart: "",
+    dateStartFrom: "",
+    dateStartTo: "",
+    sortOrder: ""
   });
+
   useEffect(() => {
-    if (filters.classTypeName || filters.subjectName || filters.phoneNumber) {
-      setListClass([]); // Reset the list when filters change
-      setPage(0);
-      setHasMore(true);
+    if (page === 0) {
+      fetchClasses();
+    }
+  }, [page]);
+
+  useEffect(() => {
+    if (Object.values(filters).some((value) => value)) {
+      setListClass([]); // Reset danh sách
+      setPage(0);       // Reset trang
+      setHasMore(true); // Reset trạng thái tải
     }
   }, [filters]);
+  
   // Hàm cập nhật bộ lọc
   const handleFilterChange = (key, value) => {
     if(key === "subjectName"){
@@ -116,7 +128,7 @@ function Classes() {
     }
     setFilters((prev) => ({
       ...prev,
-      [key]: value,
+      [key]: value === 'ALL'? "" : value,
     }));
   };
 
@@ -127,8 +139,6 @@ function Classes() {
 
   const fetchClasses = useCallback(async () => {
     if (loading || !hasMore) return;
-  
-    console.log("Fetching classes, page:", page, "hasMore:", hasMore); // Debugging
   
     setLoading(true);
     try {
@@ -144,14 +154,8 @@ function Classes() {
         },
       });
       
-      console.log("Response data:", response.data);      
-  
       const { content } = response.data;
       const totalPages = response.data.page.totalPages;
-      console.log("Total pages:", totalPages); // Debugging
-
-  
-      console.log("Fetched classes:", content); // Debugging
   
       setListClass((prevClasses) => [...prevClasses, ...content]);
       setHasMore(page + 1 < totalPages);
@@ -161,7 +165,7 @@ function Classes() {
 
     } catch (error) {
       console.error("Error fetching classes:", error);
-      setError("Không thể tải dữ liệu lớp học. Vui lòng thử lại sau!");
+      showSnackbar("Lỗi kết nối");
       dispatch(closeBackDrop());
 
     } finally {
@@ -201,12 +205,16 @@ function Classes() {
 
   async function handleRenueve(key, value){
     try{
+      dispatch(openBackDrop());
       const response = await api.get(`api/v1/revenue?type=${key}` + (key !== "ALL"? `&input=${value}` : ''));
       setRevenue(response.data);
     }catch(e){
-      console.log(e);
+      showSnackbar("Lỗi kết nối");
     }
+    dispatch(closeBackDrop());
   }
+
+  const [deleteClass, setDeleteClass] = useState(false);
 
   return (
     <>
@@ -223,12 +231,12 @@ function Classes() {
             <h3>Lọc từ ngày: </h3>
             <div className="box-inp">
               <label htmlFor="from-date" id="from-date" onClick={handleFocus}>
-                <p>{selectedDateFrom || "nhập ngày bắt đầu..."}</p>
+                <p>{filters.dateStartFrom || "nhập ngày bắt đầu..."}</p>
                 <img src={CalendarIcon} alt="CalendarIcon" />
               </label>
               <input
                 id="from-date-inp"
-                onChange={handleChangeDate}
+                onChange={(e) => handleFilterChange("dateStartFrom", e.target.value)}
                 type="date"
               />
             </div>
@@ -237,19 +245,19 @@ function Classes() {
           <div className="filter-to box-filter">
             <div className="box-inp">
               <label htmlFor="to-date" id="to-date" onClick={handleFocus}>
-                <p>{selectedDateTo || "nhập ngày kết thúc..."}</p>
+                <p>{filters.dateStartTo || "nhập ngày kết thúc..."}</p>
                 <img src={CalendarIcon} alt="CalendarIcon" />
               </label>
-              <input id="to-date-inp" onChange={handleChangeDate} type="date" />
+              <input id="to-date-inp" onChange={(e) => handleFilterChange("dateStartTo", e.target.value)} type="date" />
             </div>
           </div>
           <div className="option-btn">
-            <img
-              onClick={() => navigate("/create-class")}
-              src={AddIcon}
-              alt="AddIcon"
-            />
-            <img src={TrashIcon} alt="TrashIcon" />
+            <IconButton onClick={() => navigate("/create-class")}>
+              <FiPlusCircle size={48} color="#957DAD"/>
+            </IconButton>
+            <IconButton>
+              <FaRegTrashAlt size={48} color="#957DAD" onClick={() => setDeleteClass(prev => !prev)}/>
+            </IconButton>
             <div>
               <div>Doanh thu: {revenue.currentRevenue}</div>
               <div>Dự kiến: {revenue.expectedRevenue}</div>
@@ -264,7 +272,7 @@ function Classes() {
         </div>
         <div className="container-card-list">
           {listClass.map((item) => (
-            <ClassItem infoClass={item} />
+            <ClassItem setPage={setPage} setHasMore={setHasMore} setListClass={setListClass} deleteClass={deleteClass} infoClass={item} />
           ))}
         </div>
       </div>
