@@ -7,12 +7,13 @@ import TrashIcon from "../../assets/icons/TrashIcon.svg";
 import ClassItem from "../../component/ClassItem";
 import ChevronsDownIcon from "../../assets/icons/ChevronsDown.svg";
 import IncreaseIcon from "../../assets/icons/increase.svg";
+import { FiChevronsDown } from "react-icons/fi";
 import SearchIcon from "../../assets/icons/SearchIcon.svg";
 import api from "../../api";
 import "./Classes.css";
 import { useDispatch, useSelector } from "react-redux";
 import { closeBackDrop, openBackDrop } from "../../redux/action";
-import { Backdrop, CircularProgress } from "@mui/material";
+import { Backdrop, CircularProgress, MenuItem, Select } from "@mui/material";
 import SortSelect from "../../component/SortSelect";
 
 function Classes() {
@@ -90,13 +91,12 @@ function Classes() {
 
   const [filters, setFilters] = useState({
     classTypeName: "",
-    subjectName: "",
-    phoneNumber: "",
-    districtName: "",
     teachingStyle: "",
     classStatus: "",
-    dateStart: "",
+    subjectName: "",
     classId: "",
+    phoneNumber: "",
+    dateStart: "",
   });
   useEffect(() => {
     if (filters.classTypeName || filters.subjectName || filters.phoneNumber) {
@@ -107,6 +107,13 @@ function Classes() {
   }, [filters]);
   // Hàm cập nhật bộ lọc
   const handleFilterChange = (key, value) => {
+    if(key === "subjectName"){
+      if(value === 'ALL'){
+        handleRenueve('ALL');
+      } else {
+        handleRenueve('Subject', value);
+      }
+    }
     setFilters((prev) => ({
       ...prev,
       [key]: value,
@@ -185,6 +192,22 @@ function Classes() {
     };
   }, [fetchClasses, loading, hasMore]); // Thêm các dependency cần thiết
 
+  const [revenue, setRevenue] = useState({
+    currentRevenue: null,
+    discountRevenue: null,
+    errorMessage: null,
+    expectedRevenue: null,
+  });
+
+  async function handleRenueve(key, value){
+    try{
+      const response = await api.get(`api/v1/revenue?type=${key}` + (key !== "ALL"? `&input=${value}` : ''));
+      setRevenue(response.data);
+    }catch(e){
+      console.log(e);
+    }
+  }
+
   return (
     <>
       <div className="container-classes">
@@ -227,11 +250,16 @@ function Classes() {
               alt="AddIcon"
             />
             <img src={TrashIcon} alt="TrashIcon" />
+            <div>
+              <div>Doanh thu: {revenue.currentRevenue}</div>
+              <div>Dự kiến: {revenue.expectedRevenue}</div>
+              <div>Tổng giảm: {revenue.discountRevenue}</div>
+            </div>
           </div>
         </div>
         <div className="sort-list">
         {sortList.map((item, index) => (
-        <SortSelect key={index} item={item} index={index} sortList={sortList} listItems={listItems}/>
+        <SortSelect key={index} item={item} filters={filters} handleFilterChange={handleFilterChange} index={index} sortList={sortList} handleRenueve={handleRenueve} listItems={listItems}/>
       ))}
         </div>
         <div className="container-card-list">
