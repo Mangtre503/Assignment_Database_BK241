@@ -11,12 +11,16 @@ import com.database241.onlinetutorfinding.repository.SystemUserRepository;
 import com.database241.onlinetutorfinding.request.ClassCreateClassRequestDto;
 import com.database241.onlinetutorfinding.request.ClassUpdateClassRequestDto;
 import com.database241.onlinetutorfinding.response.ClassGetClassResponseDto;
+import com.database241.onlinetutorfinding.response.ClassGetClassesResponseDto;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
+import java.util.List;
 
 
 @Service
@@ -84,7 +88,7 @@ public class ClassService
     }
 
 
-    public void deleteClass(Long id) throws SQLServerException
+    public void deleteClass(Long id)
     {
         classDao.deleteClass(id);
     }
@@ -95,5 +99,30 @@ public class ClassService
         Class aClass = classRepositoryJPA.findById(classId).orElseThrow(() -> new ResourceNotFoundException("Class not found: " + classId));
 
         return classMapper.toDto1(aClass);
+    }
+
+    public Page<ClassGetClassesResponseDto> getPaginatedClasses(Pageable pageable, String classTypeName, String tsName, String name, String classStatus, String subjectName, String phoneNumber, String dateStartFrom, String dateStartTo, String sortOrder)
+    {
+        List<ClassGetClassesResponseDto> allClasses = classDao.getAllClasses(
+                classTypeName,
+                tsName,
+                name,
+                classStatus,
+                subjectName,
+                phoneNumber,
+                dateStartFrom,
+                dateStartTo,
+                sortOrder
+        );
+
+        int totalElements = allClasses.size();
+        /*
+        inefficient pagination
+         */
+        int start = (int) pageable.getOffset();
+        int end = Math.min((start + pageable.getPageSize()), totalElements);
+        List<ClassGetClassesResponseDto> paginatedList = allClasses.subList(start, end);
+
+        return new PageImpl<>(paginatedList, pageable, totalElements);
     }
 }
