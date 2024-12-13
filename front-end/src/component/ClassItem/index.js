@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import "./ClassItem.css";
+import dayjs from "dayjs";
+
+const formatDay = (str) => {
+  return dayjs(str).format("DD/MM/YYYY");
+}
 
 function ClassItem(props){
-    // const {idClass} = useParams("idClass");
   const { infoClass } = props;
   const navigate = useNavigate();
   return (
@@ -12,33 +16,29 @@ function ClassItem(props){
           Mã lớp học: <h4>{infoClass.classId}</h4>
         </div>
         <h5>
-          Ngày bắt đầu: <p>{infoClass.startDate}</p>
+          Ngày bắt đầu: <p>{formatDay(infoClass.dateStart)}</p>
         </h5>
         <div className="content-card">
           <div className="left-content">
             <p>
-              Trạng thái: <span className={"status " + (infoClass.status === "Đã giao"? "assigned" : "not-yet-assigned")}>{infoClass.status}</span>
+              Trạng thái: <span className={"status " + (infoClass.classStatus === "Da giao"? "assigned" : "not-yet-assigned")}>{infoClass.classStatus}</span>
             </p>
             <p>
               Kiểu dạy: <span>{infoClass.teachingStyle}</span>
             </p>
             <p>
-              Khối lớp: <span>{infoClass.grade}</span>
+              Khối lớp: <span>{infoClass.classTypeNames}</span>
             </p>
           </div>
           <div className="right-content">
             <p>
-              Khu vực: <span>{infoClass.area}</span>
+              Khu vực: <span>{infoClass.districtName}</span>
             </p>
             <p>
               Môn học:{" "}
-              {Array.from(infoClass.subject).map((item, index) => (
                 <span>
-                  {index + 1 < Array.from(infoClass.subject).length
-                    ? (item + ", ")
-                    : item}
+                  {infoClass.subjectNames}
                 </span>
-              ))}
             </p>
             <p>
               SĐT:{" "}

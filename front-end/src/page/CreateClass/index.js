@@ -121,31 +121,11 @@ function CreateClass() {
       await api.post(`api/v1/classes`, formCreateClass);
       showSnackbar("Tạo lớp mới thành công");
     } catch (e) {
-      const status = e.response.status;
-      if(status === 50001){
-        showSnackbar("Phải chọn ít nhất một địa chỉ")
-      } else if(status === 50002){
-        showSnackbar("Tiền cọc phải nhỏ hơn mức lương");
-      } else if(status === 50003){
-        showSnackbar("Lớp đã bị thay đổi hoặc xóa");
-      } else if(status === 50004){
-        showSnackbar("Có 1 hoặc nhiều môn học không tồn tại");
-      } else if(status === 50005){
-        showSnackbar("Có 1 hoặc nhiều kiểu lớp không tồn tại");
-      } else if(status === 50006){
-        showSnackbar("Ngày trong tuần hoặc thời gian không được phép lựa chọn");
-      } else if(status === 50007){
-        showSnackbar("Lớp phải có 1 học sinh");
-      } else if(status === 50008){
-        showSnackbar("Lớp phải có 1 kiểu dạy");
-      } else if(status === 50009){
-        showSnackbar("Học sinh không có địa chỉ này");
-      } else if(status === 50010){
-        showSnackbar("Lớp này có thể không tồn tại");
-      } else{
+      if(e.response.data.message){
+        showSnackbar(e.response.data.message)
+      }else{
         showSnackbar("Lỗi không xác định");
       }
-
     }
     dispatch(closeBackDrop());
   }

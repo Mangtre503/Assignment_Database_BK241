@@ -114,6 +114,5 @@
 }
 
 .sort-item input{
-  all: unset;
   display: flex;
 }
