@@ -464,7 +464,7 @@ CREATE TABLE [dbo].[tutor](
 	[n_of_invitations] [int] NULL,
 	[rate] [int] NULL,
 	[tutor_id] [bigint] NOT NULL,
-	[invited_code] [bigint] NULL,
+	[invited_code] [varchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[tutor_id] ASC
@@ -856,7 +856,7 @@ GO
 ALTER TABLE [dbo].[tutor] CHECK CONSTRAINT [FK36na5bhf5o5rf3h0osgwxci6f]
 GO
 ALTER TABLE [dbo].[tutor]  WITH CHECK ADD  CONSTRAINT [FKn6esf2ou7po2yjmvkfvwk9swp] FOREIGN KEY([invited_code])
-REFERENCES [dbo].[tutor] ([tutor_id])
+REFERENCES [dbo].[tutor] ([inviting_code])
 GO
 ALTER TABLE [dbo].[tutor] CHECK CONSTRAINT [FKn6esf2ou7po2yjmvkfvwk9swp]
 GO
