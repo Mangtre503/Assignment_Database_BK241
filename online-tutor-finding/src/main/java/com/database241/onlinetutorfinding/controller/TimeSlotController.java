@@ -1,16 +1,19 @@
 package com.database241.onlinetutorfinding.controller;
 
 
-import com.database241.onlinetutorfinding.entity.clAss.TimeSlot;
-import com.database241.onlinetutorfinding.repository.TimeSlotRepository;
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.database241.onlinetutorfinding.repository.TimeSlotRepository;
+import com.database241.onlinetutorfinding.response.TimeSlotResponse;
+
+import lombok.RequiredArgsConstructor;
 
 
 @RestController
@@ -22,10 +25,10 @@ public class TimeSlotController
 
 
     @GetMapping
-    ResponseEntity<List<TimeSlot>> getTimeSlots()
+    ResponseEntity<List<TimeSlotResponse>> getTimeSlots()
     {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(timeSlotRepository.findAll());
+                .body(timeSlotRepository.findAll().stream().map(it -> TimeSlotResponse.builder().endTime(it.getEndTime()).id(it.getId()).startTime(it.getStartTime()).build()).collect(Collectors.toList()));
     }
 }

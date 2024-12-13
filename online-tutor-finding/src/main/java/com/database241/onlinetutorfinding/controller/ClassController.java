@@ -1,16 +1,24 @@
 package com.database241.onlinetutorfinding.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.database241.onlinetutorfinding.request.ClassCreateClassRequestDto;
 import com.database241.onlinetutorfinding.request.ClassUpdateClassRequestDto;
 import com.database241.onlinetutorfinding.response.ClassGetClassResponseDto;
 import com.database241.onlinetutorfinding.service.ClassService;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
+import lombok.RequiredArgsConstructor;
 
 
 @RestController

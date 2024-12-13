@@ -14,6 +14,7 @@ import NotFound from "../page/NotFound";
 import TeachingApplication from "../page/TeachingApplication";
 import TutorRegistration from "../page/TutorRegistration";
 import { useSelector } from "react-redux";
+import UpdateClass from "../page/UpdateClass";
 
 const Routers = () => {
     const userData = useSelector(state => state.accountAction);
@@ -50,6 +51,10 @@ const Routers = () => {
                 {
                     path: 'class/:idClass',
                     element: userData? <ClassDetail/> : <Navigate to={"/login"}/>
+                },
+                {
+                    path: 'update-class/:idClass',
+                    element: userData? <UpdateClass/> : <Navigate to={"/login"}/>
                 },
                 {
                     path: 'create-class',

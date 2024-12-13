@@ -26,6 +26,7 @@
   
   .container-ta > img {
     margin-left: auto;
+    cursor: pointer;
   }
   
   .container-ta .form-ta {
@@ -35,7 +36,7 @@
   }
   
   .grid-container-top {
-    height: 50px;
+    min-height: 50px;
     color: #000;
     font-family: Itim;
     font-size: 24px;
@@ -45,7 +46,7 @@
   }
   
   .grid-item-top {
-    height: 50px;
+    height: 100%;
   }
   
   .item.title {

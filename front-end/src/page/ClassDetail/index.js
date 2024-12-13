@@ -1,78 +1,121 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import EditIcon from "../../assets/icons/EditIcon.svg";
 import "./ClassDetail.css";
+import api from "../../api";
+import { Backdrop, CircularProgress } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
+import { useSnackbar } from "../../component/SnackbarProvider";
+const formatCurrency = (value) => {
+  return new Intl.NumberFormat('vi-VN').format(value);
+};
 
 function ClassDetail() {
-  const { idClass } = useParams();
+  const { idClass } = useParams("idClass");
   const navigate = useNavigate();
+  const open = useSelector(state => state.backdropAction)
+  const dispatch = useDispatch();
+  const { showSnackbar } = useSnackbar();
   const [data, setData] = useState({
-    status: "Đã giao",
-    startDate: "07/10/2022",
-    salary: "2.000.000",
-    deposit: "200.000",
-    commission: "",
-    form: "Trực tiếp",
-    student: "Trần Thanh",
-    tutor: "Nguyễn Việt Anh",
-    subjects: "Ngữ Văn,Toán,KH-XH",
-    grade: "4",
-    day: "Thứ 4",
-    time: "11:00 - 13:00",
-    address: "215, đường Nguyễn Văn Trỗi, phường 11, quận Phú Nhuận, TP. Hồ Chí Minh",
+    id: null,
+    classStatus: "",
+    dateStart: "",
+    salary: "",
+    classDeposit: "",
+    commissionFee: "",
+    teachingStyleTName: "",
+    studentName: "",
+    tutorFullName: "",
+    subjects: "",
+    classTypes: "",
+    weekDay: "",
+    time: "",
+    address: "",
     requirements: "",
-    invoiceCode: "2 (Đã hoàn)",
-    teachingApplicationCode: "1 (Từ chối)",
+    invoiceCode: "",
+    teachingApplicationCode: "",
   });
 
   const listTitleTop = [
     {
       title1: "Trạng thái",
       title2: "Ngày bắt đầu",
-      data1: data.status,
-      data2: data.startDate,
+      data1: data.classStatus,
+      data2: data.dateStart,
     },
     {
       title1: "Mức lương",
       title2: "Tiền đặt cọc",
       data1: data.salary,
-      data2: data.deposit,
+      data2: data.classDeposit,
     },
     {
       title1: "Tiền hoa hồng",
       title2: "Kiểu dạy",
-      data1: data.commission,
-      data2: data.form,
+      data1: data.commissionFee,
+      data2: data.teachingStyleTName,
     },
     {
       title1: "Học viên",
       title2: "Gia sư",
-      data1: data.student,
-      data2: data.tutor,
+      data1: data.studentName,
+      data2: data.tutorFullName,
     },
     {
       title1: "Môn học",
       title2: "Khối lớp",
       data1: data.subjects,
-      data2: data.grade,
+      data2: data.classTypes,
     },
     {
       title1: "Buổi dạy",
       title2: "Giờ dạy",
-      data1: data.day,
+      data1: data.weekDay,
       data2: data.time,
     },
   ];
+
+  async function getDetailClass(){
+    try{
+      dispatch(openBackDrop());
+      const response = await api.get(`api/v1/classes/${idClass}`);
+      console.log(response);
+      setData({
+        ...response.data,
+        subjects: Array.from(response.data.subjects).join(', '),
+        classTypes: Array.from(response.data.classTypes).join(', '),
+        weekDay: Array.from(response.data.dateAndTimeList).map(item => item.weekDay).join("\n"),
+        time: Array.from(response.data.dateAndTimeList).map(item => item.time).join("\n"),
+        commissionFee: `${formatCurrency(response.data.commissionFee)}đ`,
+        classDeposit: `${formatCurrency(response.data.classDeposit)}đ`,
+        salary: `${formatCurrency(response.data.salary)}đ`,
+      })
+    }catch(e){
+      showSnackbar("Lỗi kết nối, vui lòng thử lại sau");
+    }
+    dispatch(closeBackDrop());
+  }
+  
+  useEffect(() => {
+    getDetailClass();
+  }, []);
 
   const listTitleBottom = ["Địa chỉ", "Yêu cầu"];
 
   return (
     <div className="container-ta">
+      <Backdrop
+        sx={(theme) => ({ color: "#fff", zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <h1>
         Mã lớp học: <p>{idClass}</p>
       </h1>
-      <img src={EditIcon} alt="EditIcon" />
+      <img onClick={() => navigate("/update-class/" + idClass)} src={EditIcon} alt="EditIcon" />
       <div className="form-ta">
         {listTitleTop.map((item) => (
           <Grid container className="grid-container-top" key={item.title1}>
