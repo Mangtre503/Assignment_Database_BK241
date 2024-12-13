@@ -15,7 +15,8 @@ import java.util.Map;
 
 @Repository
 @RequiredArgsConstructor
-public class ClassDao {
+public class ClassDao
+{
     private final JdbcTemplate jdbcTemplate;
 
 
@@ -50,7 +51,8 @@ public class ClassDao {
 
 
     public void insertTime(Long classId, List<DateAndTimeDto> dateAndTimeDtoList)
-            throws SQLServerException {
+            throws SQLServerException
+    {
         SQLServerDataTable timeListDataTable = createTimeListDataTable(dateAndTimeDtoList);
         SimpleJdbcCall simpleJdbcCall =
                 new SimpleJdbcCall(jdbcTemplate)
@@ -65,12 +67,11 @@ public class ClassDao {
     }
 
 
-    public int updateClass(ClassUpdateClassRequestDto classUpdateClassRequestDto)
-            throws SQLServerException
+    public void updateClass(ClassUpdateClassRequestDto classUpdateClassRequestDto)
     {
         String sql = "{CALL update_class(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
 
-        return jdbcTemplate.update
+        jdbcTemplate.update
                 (
                         sql,
                         classUpdateClassRequestDto.classId(),
