@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import com.database241.onlinetutorfinding.repository.SystemUserRepository;
 import com.database241.onlinetutorfinding.util.Util;
 
-import java.util.List;
 
 @Configuration
 public class HashAllPassConfig implements Runnable {
