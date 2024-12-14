@@ -154,9 +154,7 @@ function RegistrationItem(props) {
             <p>
               SĐT:{" "}
               <span>
-                {String(infoRegistration.phoneNumber).substring(0, 4)}{" "}
-                {String(infoRegistration.phoneNumber).substring(4, 7)}{" "}
-                {String(infoRegistration.phoneNumber).substring(7, 10)}
+                {infoRegistration.phoneNumber}
               </span>
             </p>
             <p>

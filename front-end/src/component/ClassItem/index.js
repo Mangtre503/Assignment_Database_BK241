@@ -79,9 +79,7 @@ function ClassItem(props){
             <p>
               SĐT:{" "}
               <span>
-                {String(infoClass.phoneNumber).substring(0, 4)}{" "}
-                {String(infoClass.phoneNumber).substring(4, 7)}{" "}
-                {String(infoClass.phoneNumber).substring(7, 10)}
+                {infoClass.phoneNumber}
               </span>
             </p>
           </div>

@@ -31,7 +31,7 @@ public class Tutor extends Staff
     @Column(name = "date_joined")
     private LocalDateTime dateJoined;
 
-    @Column(name = "inviting_code")
+    @Column(name = "inviting_code", unique = true) // Ensure this column is unique if needed
     private String invitingCode;
 
     @Column(name = "n_of_invitations")
@@ -45,8 +45,8 @@ public class Tutor extends Staff
         has invited me
      */
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "invited_code")
-    private Tutor invitedCode;
+    @JoinColumn(name = "invited_code", referencedColumnName = "inviting_code")
+    private Tutor invitedCode;  // References another tutor's "inviting_code" field
 
     @OneToMany(mappedBy = "tutor",
             fetch = FetchType.LAZY,

@@ -41,9 +41,7 @@ function RequestItem({ infoRequest }) {
         <p>
           SĐT:{" "}
           <span>
-            {String(infoRequest.phoneNumber).substring(0, 4)}{" "}
-            {String(infoRequest.phoneNumber).substring(4, 7)}{" "}
-            {String(infoRequest.phoneNumber).substring(7, 10)}
+            {infoRequest.phoneNumber}
           </span>
         </p>
       </div>
