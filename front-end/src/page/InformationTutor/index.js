@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import "./InformationTutor.css";
 import { Backdrop, Box, CircularProgress, Grid, Rating } from "@mui/material";
-import UserInfoIcon from "../../assets/icons/UserInfoIcon.svg";
+import dayjs from "dayjs";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import api from "../../api";
+import UserInfoIcon from "../../assets/icons/UserInfoIcon.svg";
 import { useSnackbar } from "../../component/SnackbarProvider";
 import { closeBackDrop, openBackDrop } from "../../redux/action";
-import api from "../../api";
-import dayjs from "dayjs";
+import "./InformationTutor.css";
 
 const formatDate = (dateStr) => {
   return dayjs(dateStr).format("DD/MM/YYYY");
@@ -52,14 +52,13 @@ function InformationTutor() {
     nofInvitations: null,
     codeInvited: "",
     bio: "",
-    acceptedCount: "",
-    deniedCount: "",
   });
 
   async function getTutorInfo() {
     try {
       dispatch(openBackDrop());
       const response = await api.get(`user/information?id=${idTutor}`);
+      const response1 = await api.get(`api/v1/tutors/summary/${idTutor}`);
       const data = {
         fullname: response.data.fullname,
         sex: response.data.sex,
@@ -83,6 +82,8 @@ function InformationTutor() {
         nofInvitations: response.data.nofInvitations,
         codeInvited: response.data.codeInvited,
         bio: response.data.bio,
+        acceptedCount: response1.data.acceptedCount,
+        deniedCount: response1.data.deniedCount,
       };
       delete data.contact;
       console.log(data);
@@ -93,21 +94,8 @@ function InformationTutor() {
     dispatch(closeBackDrop());
   }
 
-  async function getSumaryTutor(){
-    try{
-      dispatch(openBackDrop());
-      const response = await api.get(`api/v1/tutors/summary/${idTutor}`);
-      console.log(response);
-      setTutorInfo((prev) => ({...prev, ...response.data}))
-    }catch(e){
-      showSnackbar("Lỗi kết nối");
-    }
-    dispatch(closeBackDrop());
-  }
-
   useEffect(() => {
     getTutorInfo();
-    getSumaryTutor();
   }, []);
 
   return (
@@ -135,8 +123,10 @@ function InformationTutor() {
         container
         sx={{ borderCollapse: "collapse", border: "1px solid #957DAD" }}
       >
-        {Object.entries(tutorInfo).map((item, index) => (
+        {Object.entries(tutorInfo).map((item, index) => 
+          index + 2 < Object.entries(tutorInfo).length?
           <>
+          
             <Grid
               item
               xs={
@@ -180,9 +170,9 @@ function InformationTutor() {
               ) : (
                 item[1]
               )}
-            </Grid>
-          </>
-        ))}
+            </Grid> 
+          </>: <></>
+        )}
         <Grid item className="item title" xs={3}>
           Số đơn được chấp nhận
         </Grid>
