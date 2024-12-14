@@ -1,24 +1,23 @@
 import {
-    Backdrop,
-    Button,
-    Checkbox,
-    CircularProgress,
-    Grid,
-    IconButton,
-    ListItemText,
-    MenuItem,
-    OutlinedInput,
-    Select,
-  } from "@mui/material";
-  import { useEffect, useState } from "react";
-  import { useDispatch, useSelector } from "react-redux";
-  import api from "../../api";
-  import AddIcon from "../../assets/icons/AddIcon.svg";
-  import { useSnackbar } from "../../component/SnackbarProvider";
-  import { closeBackDrop, openBackDrop } from "../../redux/action";
-import { useNavigate, useParams } from "react-router-dom";
+  Backdrop,
+  Button,
+  Checkbox,
+  CircularProgress,
+  Grid,
+  IconButton,
+  ListItemText,
+  MenuItem,
+  OutlinedInput,
+  Select,
+} from "@mui/material";
 import dayjs from "dayjs";
+import { useEffect, useState } from "react";
 import { FiPlusCircle } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import api from "../../api";
+import { useSnackbar } from "../../component/SnackbarProvider";
+import { closeBackDrop, openBackDrop } from "../../redux/action";
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
   const MenuProps = {
@@ -233,16 +232,20 @@ import { FiPlusCircle } from "react-icons/fi";
       dispatch(closeBackDrop());
     }
     async function getAllAddress() {
-      try {
-        dispatch(openBackDrop());
-        const response = await api.get(
-          `api/v1/addresses/${formCreateClass.studentPhoneNumber}`
-        );
+      if(formCreateClass.studentPhoneNumber){
+
+        try {
+          dispatch(openBackDrop());
+          const response = await api.get(
+            `api/v1/addresses/${formCreateClass.studentPhoneNumber}`
+          );
+        console.log(response.data);
         setAddresses(response.data);
       } catch (e) {
         showSnackbar("Lỗi kết nối");
       }
       dispatch(closeBackDrop());
+    }
     }
     async function getAllTimeSlot() {
       try {
